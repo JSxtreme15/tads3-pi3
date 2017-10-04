@@ -1,2 +1,2 @@
-br/senac/pi3/servlets/ClienteServlet.class
-br/senac/pi3/entidades/ClienteEntidade.class
+br\senac\pi3\entidades\ClienteEntidade.class
+br\senac\pi3\servlets\ClienteServlet.class
