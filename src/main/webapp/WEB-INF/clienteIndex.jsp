@@ -32,6 +32,8 @@
             </div>
         </nav>
 
+        <br/>
+        
         <main class="container">
             <table>
                 <thead>
@@ -59,6 +61,12 @@
                 </tbody>
             </table>
         </main>
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Criar cliente" href="./clientes/cadastro">
+                <i class="large material-icons">add</i>
+            </a>
+        </div>
 
         <footer class="page-footer teal">
             <div class="container">

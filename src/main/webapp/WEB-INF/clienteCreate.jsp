@@ -14,8 +14,8 @@
 
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
         <nav class="white" role="navigation">
@@ -33,40 +33,50 @@
         </nav>
 
         <br/>
-        
+
         <main class="container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Cpf</th>
-                        <th>Logradouro</th>
-                        <th>Número</th>
-                        <th>Cep</th>
-                    </tr>
-                </thead>
+            <p class="flow-text">Cadastro de cliente</p>
+            <div class="row">
+                <form name="form-clientes" action="#" method="POST" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="nome">Nome</label>
+                            <input id="nome" type="text" class="validate" required="required">
+                        </div>
 
-                <tbody>
-                    <c:forEach items="${clientes}" var="cliente">
-                        <tr>
-                            <td><c:out value="${cliente.getNome()}" /></td>
-                            <td><c:out value="${cliente.getEmail()}" /></td>
-                            <td><c:out value="${cliente.getCpf()}" /></td>
-                            <td><c:out value="${cliente.getLogradouro()}" /></td>
-                            <td><c:out value="${cliente.getNumeroResidencia()}" /></td>
-                            <td><c:out value="${cliente.getCep()}" /></td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
+                        <div class="input-field col s6">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" class="validate" required="required">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <label for="cpf">Cpf</label>
+                            <input id="cpf" type="text" class="validate" required="required">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <label for="cep">Cep</label>
+                            <input id="cep" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <label for="logradouro">Logradouro</label>
+                            <input id="logradouro" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <label for="numero">Número</label>
+                            <input id="numero" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field right">
+                            <a href="http://localhost:8080/pi3/clientes" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i> Cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </main>
-
-        <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Criar cliente" href="./clientes/cadastro">
-                <i class="large material-icons">add</i>
-            </a>
-        </div>
 
         <footer class="page-footer teal">
             <div class="container">
@@ -107,8 +117,8 @@
 
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="js/materialize.js"></script>
-        <script src="js/init.js"></script>
+        <script src="../js/materialize.js"></script>
+        <script src="../js/init.js"></script>
 
     </body>
 </html>
