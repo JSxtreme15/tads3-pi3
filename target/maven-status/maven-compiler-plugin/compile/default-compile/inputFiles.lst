@@ -1,5 +1,7 @@
+/home/allan/NetBeansProjects/pi3/src/main/java/br/senac/pi3/daos/ClienteDAO.java
 /home/allan/NetBeansProjects/pi3/src/main/java/br/senac/pi3/entidades/FornecedorEntidade.java
 /home/allan/NetBeansProjects/pi3/src/main/java/br/senac/pi3/servlets/FornecedorServlet.java
 /home/allan/NetBeansProjects/pi3/src/main/java/br/senac/pi3/servlets/ClienteCadastroServlet.java
+/home/allan/NetBeansProjects/pi3/src/main/java/br/senac/pi3/daos/Conexao.java
 /home/allan/NetBeansProjects/pi3/src/main/java/br/senac/pi3/servlets/ClienteServlet.java
 /home/allan/NetBeansProjects/pi3/src/main/java/br/senac/pi3/entidades/ClienteEntidade.java
