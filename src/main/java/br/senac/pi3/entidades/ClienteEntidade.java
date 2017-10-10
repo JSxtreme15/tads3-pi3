@@ -10,6 +10,7 @@ package br.senac.pi3.entidades;
  * @author allan
  */
 public class ClienteEntidade {
+    public int id;
     public String nome;
     public String email;
     public String cpf;
@@ -18,6 +19,18 @@ public class ClienteEntidade {
     public String numeroResidencia;
     public String cep;
 
+    public ClienteEntidade(int id, String nome, String email, String cpf, String telefone, String logradouro, String numeroResidencia, String cep) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.logradouro = logradouro;
+        this.numeroResidencia = numeroResidencia;
+        this.cep = cep;
+    }
+    
+    
     public ClienteEntidade(String nome, String email, String cpf, String telefone, String logradouro, String numeroResidencia, String cep) {
         this.nome = nome;
         this.email = email;
@@ -26,6 +39,14 @@ public class ClienteEntidade {
         this.logradouro = logradouro;
         this.numeroResidencia = numeroResidencia;
         this.cep = cep;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

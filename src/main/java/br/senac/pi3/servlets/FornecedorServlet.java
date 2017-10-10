@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FornecedorServlet", urlPatterns = { "/fornecedor" })
+@WebServlet(name = "FornecedorServlet", urlPatterns = { "/fornecedores" })
 public class FornecedorServlet extends HttpServlet {
 
     @Override

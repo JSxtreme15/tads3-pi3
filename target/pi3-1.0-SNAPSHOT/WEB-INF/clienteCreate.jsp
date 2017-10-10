@@ -18,59 +18,62 @@
         <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <nav class="white" role="navigation">
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="#" class="brand-logo">Logo</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Navbar Link</a></li>
-                </ul>
-
-                <ul id="nav-mobile" class="side-nav">
-                    <li><a href="#">Navbar Link</a></li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <jsp:include page="header.jsp" />
+        
+        <nav style="transform: translateY(-21px);" class="teal">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/clientes" class="breadcrumb">Clientes</a>
+                        <a href="${pageContext.request.contextPath}/cadastro" class="breadcrumb">Cadastro de Clientes</a>
+                    </div>
+                </div>
             </div>
         </nav>
-
-        <br/>
-
+        
         <main class="container">
-            <p class="flow-text">Cadastro de cliente</p>
             <div class="row">
                 <form name="form-clientes" action="#" method="POST" class="col s12">
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
                             <input id="nome" type="text" class="validate" required="required">
                         </div>
 
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m12 l4">
                             <label for="email">Email</label>
                             <input id="email" type="email" class="validate" required="required">
                         </div>
+                        
+                        <div class="input-field col s12 m12 l4">
+                            <label for="email">Telefone</label>
+                            <input id="telefone" type="text" class="validate" required="required" data-mask="(00) 00000-0000">
+                        </div>
 
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6 l6">
                             <label for="cpf">Cpf</label>
-                            <input id="cpf" type="text" class="validate" required="required">
+                            <input id="cpf" type="text" class="validate" required="required" data-mask="000.000.000-00">
                         </div>
 
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6 l6">
                             <label for="cep">Cep</label>
-                            <input id="cep" type="text" class="validate">
+                            <input id="cep" type="text" class="validate col s11" data-mask="00000-000">
+                            <i class="material-icons col s1" id="search-cep" style="transform: translateY(21px);cursor: pointer;">search</i>
                         </div>
 
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6 l6">
                             <label for="logradouro">Logradouro</label>
                             <input id="logradouro" type="text" class="validate">
                         </div>
 
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6 l6">
                             <label for="numero">Número</label>
-                            <input id="numero" type="text" class="validate">
+                            <input id="numero" type="number" class="validate">
                         </div>
 
                         <div class="input-field right">
-                            <a href="http://localhost:8080/pi3/clientes" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <a href="${pageContext.request.contextPath}/clientes" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
                             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i> Cadastrar</button>
                         </div>
                     </div>
@@ -78,45 +81,11 @@
             </div>
         </main>
 
-        <footer class="page-footer teal">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Company Bio</h5>
-                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Settings</h5>
-                        <ul>
-                            <li><a class="white-text" href="#!">Link 1</a></li>
-                            <li><a class="white-text" href="#!">Link 2</a></li>
-                            <li><a class="white-text" href="#!">Link 3</a></li>
-                            <li><a class="white-text" href="#!">Link 4</a></li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Connect</h5>
-                        <ul>
-                            <li><a class="white-text" href="#!">Link 1</a></li>
-                            <li><a class="white-text" href="#!">Link 2</a></li>
-                            <li><a class="white-text" href="#!">Link 3</a></li>
-                            <li><a class="white-text" href="#!">Link 4</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-                </div>
-            </div>
-        </footer>
-
-
+        <jsp:include page="footer.jsp" />
+        
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="../js/jquery.mask.min.js"></script>
         <script src="../js/materialize.js"></script>
         <script src="../js/init.js"></script>
 

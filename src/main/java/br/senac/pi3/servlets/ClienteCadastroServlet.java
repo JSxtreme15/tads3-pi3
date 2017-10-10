@@ -5,6 +5,7 @@
  */
 package br.senac.pi3.servlets;
 
+import br.senac.pi3.entidades.ClienteEntidade;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,5 +27,18 @@ public class ClienteCadastroServlet extends HttpServlet{
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/clienteCreate.jsp");
         dispatcher.forward(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
+        String telefone = request.getParameter("telefone");
+        String cpf = request.getParameter("cpf");
+        String cep = request.getParameter("cep");
+        String logradouro = request.getParameter("logradouro");
+        
+        ClienteEntidade novoCliente = new ClienteEntidade(nome, email, cpf, telefone, logradouro, telefone, cep);
+        
     }
 }
