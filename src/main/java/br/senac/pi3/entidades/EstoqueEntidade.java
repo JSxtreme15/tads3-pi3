@@ -9,7 +9,7 @@ package br.senac.pi3.entidades;
  *
  * @author Joao Sergio
  */
-public class Estoque {
+public class EstoqueEntidade {
     public String id;
     public String nome;
     public String valor;
@@ -18,7 +18,7 @@ public class Estoque {
     public String quantEstoque;
     public String cep;
 
-    public Estoque(String id, String nome, String valor, String desenvolv, String console, String quantEstoque) {
+    public EstoqueEntidade(String id, String nome, String valor, String desenvolv, String console, String quantEstoque) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
@@ -28,7 +28,7 @@ public class Estoque {
         
     }
 
-    public Estoque(String felipe, String felipevieiragmailcom, String string, String _9_70707070, String rua_Manuel_da_Nobrega, String string0, String string1) {
+    public EstoqueEntidade(String felipe, String felipevieiragmailcom, String string, String _9_70707070, String rua_Manuel_da_Nobrega, String string0, String string1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

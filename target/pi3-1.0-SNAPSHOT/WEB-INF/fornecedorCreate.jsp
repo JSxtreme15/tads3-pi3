@@ -25,8 +25,8 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/clientes" class="breadcrumb">Clientes</a>
-                        <a href="${pageContext.request.contextPath}/clientes/cadastro" class="breadcrumb">Cadastro de Clientes</a>
+                        <a href="${pageContext.request.contextPath}/fornecedores" class="breadcrumb">Fonecedores</a>
+                        <a href="${pageContext.request.contextPath}/cadastro" class="breadcrumb">Cadastro de Fornecedores</a>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
         
         <main class="container">
             <div class="row">
-                <form name="form-clientes" action="#" method="POST" class="col s12">
+                <form name="form-fornecedores" action="#" method="POST" class="col s12">
                     <div class="row">
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
@@ -52,8 +52,8 @@
                         </div>
 
                         <div class="input-field col s12 m6 l6">
-                            <label for="cpf">Cpf</label>
-                            <input name="cpf" id="cpf" type="text" class="validate" required="required" data-mask="000.000.000-00">
+                            <label for="cnpj">CNPJ</label>
+                            <input name="cnpj" id="cnpj" type="text" class="validate" required="required" data-mask="00.000.000/0000-00">
                         </div>
 
                         <div class="input-field col s12 m6 l6">
@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="input-field right">
-                            <a href="${pageContext.request.contextPath}/clientes" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <a href="${pageContext.request.contextPath}/fornecedores" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
                             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i> Cadastrar</button>
                         </div>
                     </div>
