@@ -16,10 +16,10 @@ public class ClienteEntidade {
     public String cpf;
     public String telefone;
     public String logradouro;
-    public String numeroResidencia;
+    public int numeroResidencia;
     public String cep;
 
-    public ClienteEntidade(int id, String nome, String email, String cpf, String telefone, String logradouro, String numeroResidencia, String cep) {
+    public ClienteEntidade(int id, String nome, String email, String cpf, String telefone, String logradouro, int numeroResidencia, String cep) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -31,7 +31,7 @@ public class ClienteEntidade {
     }
     
     
-    public ClienteEntidade(String nome, String email, String cpf, String telefone, String logradouro, String numeroResidencia, String cep) {
+    public ClienteEntidade(String nome, String email, String cpf, String telefone, String logradouro, int numeroResidencia, String cep) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
@@ -89,11 +89,11 @@ public class ClienteEntidade {
         this.logradouro = logradouro;
     }
 
-    public String getNumeroResidencia() {
+    public int getNumeroResidencia() {
         return numeroResidencia;
     }
 
-    public void setNumeroResidencia(String numeroResidencia) {
+    public void setNumeroResidencia(int numeroResidencia) {
         this.numeroResidencia = numeroResidencia;
     }
 

@@ -38,38 +38,38 @@
                     <div class="row">
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
-                            <input id="nome" type="text" class="validate" required="required">
+                            <input name="nome" id="nome" type="text" class="validate" required="required">
                         </div>
 
                         <div class="input-field col s12 m12 l4">
                             <label for="email">Email</label>
-                            <input id="email" type="email" class="validate" required="required">
+                            <input name="email" id="email" type="email" class="validate" required="required">
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
-                            <label for="email">Telefone</label>
-                            <input id="telefone" type="text" class="validate" required="required" data-mask="(00) 00000-0000">
+                            <label for="telefone">Telefone</label>
+                            <input name="telefone" id="telefone" type="text" class="validate" required="required" data-mask="(00) 00000-0000">
                         </div>
 
                         <div class="input-field col s12 m6 l6">
                             <label for="cpf">Cpf</label>
-                            <input id="cpf" type="text" class="validate" required="required" data-mask="000.000.000-00">
+                            <input name="cpf" id="cpf" type="text" class="validate" required="required" data-mask="000.000.000-00">
                         </div>
 
                         <div class="input-field col s12 m6 l6">
                             <label for="cep">Cep</label>
-                            <input id="cep" type="text" class="validate col s11" data-mask="00000-000">
+                            <input name="cep" id="cep" type="text" class="validate col s11" data-mask="00000-000">
                             <i class="material-icons col s1" id="search-cep" style="transform: translateY(21px);cursor: pointer;">search</i>
                         </div>
 
                         <div class="input-field col s12 m6 l6">
                             <label for="logradouro">Logradouro</label>
-                            <input id="logradouro" type="text" class="validate">
+                            <input name="logradouro" id="logradouro" type="text" class="validate">
                         </div>
 
                         <div class="input-field col s12 m6 l6">
                             <label for="numero">Número</label>
-                            <input id="numero" type="number" class="validate">
+                            <input name="numero" id="numero" type="number" class="validate">
                         </div>
 
                         <div class="input-field right">

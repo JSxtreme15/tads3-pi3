@@ -5,6 +5,7 @@
  */
 package br.senac.pi3.servlets;
 
+import br.senac.pi3.daos.ClienteDAO;
 import br.senac.pi3.entidades.ClienteEntidade;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -21,6 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ClienteServletCadastro", urlPatterns = { "/clientes/cadastro" })
 public class ClienteCadastroServlet extends HttpServlet{
     
+    public ClienteDAO clientesDao = new ClienteDAO();
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -30,15 +33,19 @@ public class ClienteCadastroServlet extends HttpServlet{
     }
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String telefone = request.getParameter("telefone");
         String cpf = request.getParameter("cpf");
         String cep = request.getParameter("cep");
         String logradouro = request.getParameter("logradouro");
+        int numero = Integer.parseInt(request.getParameter("numero"));
         
-        ClienteEntidade novoCliente = new ClienteEntidade(nome, email, cpf, telefone, logradouro, telefone, cep);
+        ClienteEntidade novoCliente = new ClienteEntidade(nome, email, cpf, telefone, logradouro, numero, cep);
+        clientesDao.cadastrar(novoCliente);
+        
+        response.sendRedirect(request.getContextPath() + "/clientes");
         
     }
 }

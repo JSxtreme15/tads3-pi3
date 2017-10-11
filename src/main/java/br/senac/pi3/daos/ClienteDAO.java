@@ -26,7 +26,7 @@ public class ClienteDAO {
         List<ClienteEntidade> clientes = new ArrayList<ClienteEntidade>();
         
         try {
-            String sql = "SELECT * FROM clientes";
+            String sql = "SELECT * FROM clientes ORDER BY id DESC";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
             
             ResultSet resultado = comando.executeQuery();
@@ -36,11 +36,11 @@ public class ClienteDAO {
                     resultado.getInt("id"),
                     resultado.getString("nome"),
                     resultado.getString("email"),
-                    resultado.getString("telefone"),
                     resultado.getString("cpf"),
-                    resultado.getString("cep"),
+                    resultado.getString("telefone"),
                     resultado.getString("logradouro"),
-                    resultado.getString("numero")
+                    resultado.getInt("numero"),
+                    resultado.getString("cep")
                 );
                 
                 clientes.add(cliente);
@@ -55,5 +55,31 @@ public class ClienteDAO {
         }
         
         return null;
+    }
+    
+    public boolean cadastrar(ClienteEntidade cliente) {
+        try {
+            String sql = "INSERT INTO clientes (nome, email, telefone, cpf, cep, logradouro, numero) values(?,?,?,?,?,?,?);";
+            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+
+            comando.setString(1, cliente.getNome());
+            comando.setString(2, cliente.getEmail());
+            comando.setString(3, cliente.getTelefone());
+            comando.setString(4, cliente.getCpf());
+            comando.setString(5, cliente.getCep());
+            comando.setString(6, cliente.getLogradouro());
+            comando.setInt(7, cliente.getNumeroResidencia());
+
+            comando.execute();
+            
+            return true;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexao.FecharConexao();
+        }
+        
+        return false;
     }
 }
