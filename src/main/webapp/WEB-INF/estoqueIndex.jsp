@@ -3,7 +3,6 @@
     Created on : 10/10/2017, 14:34:46
     Author     : Joao Sergio
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -15,25 +14,24 @@
 
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="${pageContext.request.contextPath}/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <nav class="white" role="navigation">
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="#" class="brand-logo">Logo</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Navbar Link</a></li>
-                </ul>
-
-                <ul id="nav-mobile" class="side-nav">
-                    <li><a href="#">Navbar Link</a></li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <jsp:include page="header.jsp"/>
+        
+        <nav style="transform: translateY(-21px);" class="teal">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/estoque" class="breadcrumb">Estoque</a>
+                    </div>
+                </div>
             </div>
         </nav>
 
-        <br/>
+        
         
         <main class="container">
             <table>
@@ -49,7 +47,7 @@
                 </thead>
 
                 <tbody>
-                    <c:forEach items="${estoques}" var="estoque">
+                    <c:forEach items="${estoque}" var="estoque">
                         <tr>
                             <td><c:out value="${estoque.getId()}" /></td>
                             <td><c:out value="${estoque.getNome()}" /></td>
@@ -62,12 +60,8 @@
                 </tbody>
             </table>
         </main>
-
-        <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Criar estoque" href="./estoques/cadastro">
-                <i class="large material-icons">add</i>
-            </a>
-        </div>
+                    
+        <br/>
 
         <footer class="page-footer teal">
             <div class="container">
@@ -98,18 +92,17 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-                </div>
+            
+            <jsp:include page="footer.jsp"/>
+            
             </div>
         </footer>
 
 
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="js/materialize.js"></script>
-        <script src="js/init.js"></script>
+        <script src="${pageContext.request.contextPath}/js/materialize.js"></script>
+        <script src="${pageContext.request.contextPath}/js/init.js"></script>
 
     </body>
 </html>

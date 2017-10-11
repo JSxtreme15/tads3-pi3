@@ -21,6 +21,10 @@ public class FornecedorEntidade {
         this.cnpj = cnpj;
     }
 
+    public FornecedorEntidade(String nome, String email, String cnpj, String telefone, String logradouro, String telefone0, String cep) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     public String getCodigo() {
         return codigo;
     }
