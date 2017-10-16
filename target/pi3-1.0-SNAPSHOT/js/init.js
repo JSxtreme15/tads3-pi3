@@ -2,6 +2,7 @@
     $(function () {
         $('.button-collapse').sideNav();
         $('.parallax').parallax();
+        $('.modal').modal();
 
         $('#search-cep').click(() => {
             let cep = $("#cep").val();
@@ -17,6 +18,11 @@
                 $('#logradouro').change();
                 $('#numero').focus();
             });
+        });
+        
+        $("a[data-target='delete']").click((event) => {
+            let url = $(event)[0].currentTarget.id;
+            $("#delete #btn-delete").attr("href", url);
         });
 
     }); // end of document ready

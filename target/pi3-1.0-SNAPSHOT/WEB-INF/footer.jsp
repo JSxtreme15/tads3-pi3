@@ -40,3 +40,14 @@
         </div>
     </div>
 </footer>
+
+  <div id="delete" class="modal">
+    <div class="modal-content">
+      <h4><i class="material-icons">warning</i> Tem certeza ?</h4>
+      <p>O item será apagado permanentemente!!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+      <a href="#!" class="waves-effect waves-green btn-flat red white-text" id="btn-delete">Excluir</a>
+    </div>
+  </div>

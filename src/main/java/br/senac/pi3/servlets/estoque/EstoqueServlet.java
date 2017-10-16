@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.senac.pi3.servlets;
+package br.senac.pi3.servlets.estoque;
 
 import br.senac.pi3.entidades.EstoqueEntidade;
 import java.io.IOException;

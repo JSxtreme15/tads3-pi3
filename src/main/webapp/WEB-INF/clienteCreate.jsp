@@ -34,7 +34,7 @@
         
         <main class="container">
             <div class="row">
-                <form name="form-clientes" action="#" method="POST" class="col s12">
+                <form name="form-clientes" action="#" method="POST" class="col s12" accept-charset="UTF-8">
                     <div class="row">
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>

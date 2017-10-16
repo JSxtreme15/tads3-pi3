@@ -32,7 +32,7 @@
         </nav>
 
 
-        <main class="container">
+        <main class="container-fluid">
             <table class="striped responsive-table">
                 <thead>
                     <tr>
@@ -44,6 +44,7 @@
                         <th>Logradouro</th>
                         <th>Número</th>
                         <th>Cep</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
 
@@ -58,6 +59,8 @@
                             <td><c:out value="${cliente.getLogradouro()}" /></td>
                             <td><c:out value="${cliente.getNumeroResidencia()}" /></td>
                             <td><c:out value="${cliente.getCep()}" /></td>
+                            <td><a href="#" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
+                            <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/clientes/excluir?cliente=${cliente.getId()}"><i class="material-icons left">delete</i>Editar</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>

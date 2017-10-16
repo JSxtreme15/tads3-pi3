@@ -5,6 +5,9 @@
  *
  * Made By MaterializeCSS.com
  */
+.container-fluid {
+    padding: 0 25px !important;
+}
 
 nav ul a,
 nav .brand-logo {

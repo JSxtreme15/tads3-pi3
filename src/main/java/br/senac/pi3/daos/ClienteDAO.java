@@ -82,4 +82,24 @@ public class ClienteDAO {
         
         return false;
     }
+    
+    
+    public boolean excluir(int clienteId) {
+        try {
+            String sql = "DELETE FROM clientes WHERE id = ?;";
+            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            comando.setInt(1, clienteId);
+
+            comando.execute();
+            
+            return true;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexao.FecharConexao();
+        }
+        
+        return false;
+    }
 }
