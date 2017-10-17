@@ -24,7 +24,7 @@ public class ClienteExcluirServlet extends HttpServlet{
     @Override
      public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
          
-        int id = Integer.parseInt(request.getParameter("cliente"));
+        int id = Integer.parseInt(request.getParameter("id"));
         clientesDao.excluir(id);
          
         response.sendRedirect(request.getContextPath() + "/clientes");

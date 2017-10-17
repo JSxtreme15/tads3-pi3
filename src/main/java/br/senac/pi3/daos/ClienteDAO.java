@@ -57,6 +57,42 @@ public class ClienteDAO {
         return null;
     }
     
+    public ClienteEntidade find(int id) {
+        List<ClienteEntidade> clientes = new ArrayList<ClienteEntidade>();
+        
+        try {
+            String sql = "SELECT * FROM clientes WHERE id = ?";
+            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            comando.setInt(1, id);
+            
+            ResultSet resultado = comando.executeQuery();
+            
+            if (resultado.next()) {                
+                ClienteEntidade cliente = new ClienteEntidade(
+                    resultado.getInt("id"),
+                    resultado.getString("nome"),
+                    resultado.getString("email"),
+                    resultado.getString("cpf"),
+                    resultado.getString("telefone"),
+                    resultado.getString("logradouro"),
+                    resultado.getInt("numero"),
+                    resultado.getString("cep")
+                );
+                
+                return cliente;
+            }
+            
+            return null;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexao.FecharConexao();
+        }
+        
+        return null;
+    }
+    
     public boolean cadastrar(ClienteEntidade cliente) {
         try {
             String sql = "INSERT INTO clientes (nome, email, telefone, cpf, cep, logradouro, numero) values(?,?,?,?,?,?,?);";
@@ -69,6 +105,33 @@ public class ClienteDAO {
             comando.setString(5, cliente.getCep());
             comando.setString(6, cliente.getLogradouro());
             comando.setInt(7, cliente.getNumeroResidencia());
+
+            comando.execute();
+            
+            return true;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexao.FecharConexao();
+        }
+        
+        return false;
+    }
+    
+    public boolean atualizar(int id, ClienteEntidade cliente) {
+        try {
+            String sql = "UPDATE clientes SET nome = ?, email = ?, telefone = ?, cpf = ?, cep = ?, logradouro = ?, numero = ? WHERE id = ?;";
+            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+
+            comando.setString(1, cliente.getNome());
+            comando.setString(2, cliente.getEmail());
+            comando.setString(3, cliente.getTelefone());
+            comando.setString(4, cliente.getCpf());
+            comando.setString(5, cliente.getCep());
+            comando.setString(6, cliente.getLogradouro());
+            comando.setInt(7, cliente.getNumeroResidencia());
+            comando.setInt(8, id);
 
             comando.execute();
             
