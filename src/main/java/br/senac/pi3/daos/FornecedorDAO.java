@@ -5,7 +5,7 @@
  */
 package br.senac.pi3.daos;
 
-import br.senac.pi3.entidades.ClienteEntidade;
+import br.senac.pi3.entidades.FornecedorEntidade;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,38 +18,39 @@ import java.util.logging.Logger;
  *
  * @author allan
  */
-public class ClienteDAO {
+public class FornecedorDAO {
     
     public Conexao conexao = new Conexao();
     
-    public List<ClienteEntidade> todos() {
-        List<ClienteEntidade> clientes = new ArrayList<ClienteEntidade>();
+    public List<FornecedorEntidade> todos() {
+        List<FornecedorEntidade> fornecedores = new ArrayList<FornecedorEntidade>();
         
         try {
-            String sql = "SELECT * FROM clientes ORDER BY id DESC";
+            String sql = "SELECT * FROM fornecedores ORDER BY id DESC";
+            System.out.println(sql);
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
             
             ResultSet resultado = comando.executeQuery();
             
             while (resultado.next()) {                
-                ClienteEntidade cliente = new ClienteEntidade(
+                FornecedorEntidade fornecedor = new FornecedorEntidade(
                     resultado.getInt("id"),
                     resultado.getString("nome"),
                     resultado.getString("email"),
-                    resultado.getString("cpf"),
                     resultado.getString("telefone"),
+                    resultado.getString("cnpj"),
+                    resultado.getString("cep"),
                     resultado.getString("logradouro"),
-                    resultado.getInt("numero"),
-                    resultado.getString("cep")
+                    resultado.getInt("numero")
                 );
                 
-                clientes.add(cliente);
+                fornecedores.add(fornecedor);
             }
             
-            return clientes;
+            return fornecedores;
             
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             conexao.FecharConexao();
         }
@@ -57,34 +58,34 @@ public class ClienteDAO {
         return null;
     }
     
-    public ClienteEntidade find(int id) {
+    public FornecedorEntidade find(int id) {
         
         try {
-            String sql = "SELECT * FROM clientes WHERE id = ?";
+            String sql = "SELECT * FROM fornecedores WHERE id = ?";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
             comando.setInt(1, id);
             
             ResultSet resultado = comando.executeQuery();
             
             if (resultado.next()) {                
-                ClienteEntidade cliente = new ClienteEntidade(
+                FornecedorEntidade fornecedor = new FornecedorEntidade(
                     resultado.getInt("id"),
                     resultado.getString("nome"),
                     resultado.getString("email"),
-                    resultado.getString("cpf"),
                     resultado.getString("telefone"),
+                    resultado.getString("cnpj"),
+                    resultado.getString("cep"),
                     resultado.getString("logradouro"),
-                    resultado.getInt("numero"),
-                    resultado.getString("cep")
+                    resultado.getInt("numero")
                 );
                 
-                return cliente;
+                return fornecedor;
             }
             
             return null;
             
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             conexao.FecharConexao();
         }
@@ -92,25 +93,25 @@ public class ClienteDAO {
         return null;
     }
     
-    public boolean cadastrar(ClienteEntidade cliente) {
+    public boolean cadastrar(FornecedorEntidade fornecedor) {
         try {
-            String sql = "INSERT INTO clientes (nome, email, telefone, cpf, cep, logradouro, numero) values(?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO fornecedores (nome, email, telefone, cnpj, cep, logradouro, numero) values(?,?,?,?,?,?,?);";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
 
-            comando.setString(1, cliente.getNome());
-            comando.setString(2, cliente.getEmail());
-            comando.setString(3, cliente.getTelefone());
-            comando.setString(4, cliente.getCpf());
-            comando.setString(5, cliente.getCep());
-            comando.setString(6, cliente.getLogradouro());
-            comando.setInt(7, cliente.getNumeroResidencia());
+            comando.setString(1, fornecedor.getNome());
+            comando.setString(2, fornecedor.getEmail());
+            comando.setString(3, fornecedor.getTelefone());
+            comando.setString(4, fornecedor.getCnpj());
+            comando.setString(5, fornecedor.getCep());
+            comando.setString(6, fornecedor.getLogradouro());
+            comando.setInt(7, fornecedor.getNumeroResidencia());
 
             comando.execute();
             
             return true;
             
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             conexao.FecharConexao();
         }
@@ -118,18 +119,18 @@ public class ClienteDAO {
         return false;
     }
     
-    public boolean atualizar(int id, ClienteEntidade cliente) {
+    public boolean atualizar(int id, FornecedorEntidade fornecedor) {
         try {
-            String sql = "UPDATE clientes SET nome = ?, email = ?, telefone = ?, cpf = ?, cep = ?, logradouro = ?, numero = ? WHERE id = ?;";
+            String sql = "UPDATE fornecedores SET nome = ?, email = ?, telefone = ?, cnpj = ?, cep = ?, logradouro = ?, numero = ? WHERE id = ?;";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
 
-            comando.setString(1, cliente.getNome());
-            comando.setString(2, cliente.getEmail());
-            comando.setString(3, cliente.getTelefone());
-            comando.setString(4, cliente.getCpf());
-            comando.setString(5, cliente.getCep());
-            comando.setString(6, cliente.getLogradouro());
-            comando.setInt(7, cliente.getNumeroResidencia());
+            comando.setString(1, fornecedor.getNome());
+            comando.setString(2, fornecedor.getEmail());
+            comando.setString(3, fornecedor.getTelefone());
+            comando.setString(4, fornecedor.getCnpj());
+            comando.setString(5, fornecedor.getCep());
+            comando.setString(6, fornecedor.getLogradouro());
+            comando.setInt(7, fornecedor.getNumeroResidencia());
             comando.setInt(8, id);
 
             comando.execute();
@@ -137,7 +138,7 @@ public class ClienteDAO {
             return true;
             
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             conexao.FecharConexao();
         }
@@ -146,18 +147,18 @@ public class ClienteDAO {
     }
     
     
-    public boolean excluir(int clienteId) {
+    public boolean excluir(int fornecedorId) {
         try {
-            String sql = "DELETE FROM clientes WHERE id = ?;";
+            String sql = "DELETE FROM fornecedores WHERE id = ?;";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
-            comando.setInt(1, clienteId);
+            comando.setInt(1, fornecedorId);
 
             comando.execute();
             
             return true;
             
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             conexao.FecharConexao();
         }

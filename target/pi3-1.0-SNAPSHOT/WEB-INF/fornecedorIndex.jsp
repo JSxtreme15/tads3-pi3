@@ -31,7 +31,7 @@
             </div>
         </nav>
 
-        <main class="container">
+        <main class="container-fluid">
             <table class="striped responsive-table">
                 <thead>
                     <tr>
@@ -42,11 +42,13 @@
                 </thead>
 
                 <tbody>
-                    <c:forEach items="${fornecedor}" var="fornecedor">
+                    <c:forEach items="${fornecedores}" var="fornecedor">
                         <tr>
-                            <td><c:out value="${fornecedor.getCodigo()}" /></td>
+                            <td><c:out value="${fornecedor.getId()}" /></td>
                             <td><c:out value="${fornecedor.getNome()}" /></td>
                             <td><c:out value="${fornecedor.getCnpj()}" /></td>
+                            <td><a href="${pageContext.request.contextPath}/fornecedores/editar?id=${fornecedor.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
+                            <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/fornecedores/excluir?id=${fornecedor.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
