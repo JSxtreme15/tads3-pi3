@@ -10,27 +10,42 @@ package br.senac.pi3.entidades;
  * @author allan
  */
 public class FornecedorEntidade {
-    public String codigo;
+    public int id;
     public String nome;
+    public String email;
     public String cnpj;
-    
+    public String telefone;
+    public String logradouro;
+    public int numeroResidencia;
+    public String cep;
 
-    public FornecedorEntidade(String codigo, String nome, String cnpj) {
-        this.codigo = codigo;
+    public FornecedorEntidade(int id, String nome, String email, String telefone, String cnpj, String cep, String logradouro, int numeroResidencia) {
+        this.id = id;
         this.nome = nome;
+        this.email = email;
         this.cnpj = cnpj;
+        this.telefone = telefone;
+        this.logradouro = logradouro;
+        this.numeroResidencia = numeroResidencia;
+        this.cep = cep;
+    }
+    
+    public FornecedorEntidade(String nome, String email, String telefone, String cnpj, String cep, String logradouro, int numeroResidencia) {
+        this.nome = nome;
+        this.email = email;
+        this.cnpj = cnpj;
+        this.telefone = telefone;
+        this.logradouro = logradouro;
+        this.numeroResidencia = numeroResidencia;
+        this.cep = cep;
     }
 
-    public FornecedorEntidade(String nome, String email, String cnpj, String telefone, String logradouro, String telefone0, String cep) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public int getId() {
+        return id;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -41,6 +56,14 @@ public class FornecedorEntidade {
         this.nome = nome;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getCnpj() {
         return cnpj;
     }
@@ -49,4 +72,39 @@ public class FornecedorEntidade {
         this.cnpj = cnpj;
     }
 
+    public String getTelefone() {
+        return telefone;
     }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public int getNumeroResidencia() {
+        return numeroResidencia;
+    }
+
+    public void setNumeroResidencia(int numeroResidencia) {
+        this.numeroResidencia = numeroResidencia;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+
+
+
+}

@@ -5,6 +5,7 @@
  */
 package br.senac.pi3.servlets.fornecedores;
 
+import br.senac.pi3.servlets.fornecedores.*;
 import br.senac.pi3.daos.FornecedorDAO;
 import br.senac.pi3.entidades.FornecedorEntidade;
 import java.io.IOException;
@@ -19,16 +20,18 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FornecedoresServletCadastro", urlPatterns = { "/fornecedores/cadastro" })
-public class FonecedoresCadastroServlet extends HttpServlet{
-    
-    public FornecedorDAO fornecedorDao = new FornecedorDAO();
+@WebServlet(name = "FornecedorServletEditar", urlPatterns = { "/fornecedores/editar" })
+public class FornecedoresEditarServlet extends HttpServlet{
+    public FornecedorDAO fornecedoresDao = new FornecedorDAO();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/fornecedorCreate.jsp");
+        int id = Integer.parseInt(request.getParameter("id"));
+        request.setAttribute("fornecedor", fornecedoresDao.find(id));
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/fornecedorUpdate.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -42,9 +45,11 @@ public class FonecedoresCadastroServlet extends HttpServlet{
         String logradouro = request.getParameter("logradouro");
         int numero = Integer.parseInt(request.getParameter("numero"));
         
-        FornecedorEntidade novoFornecedor = new FornecedorEntidade(nome, email, telefone, cnpj, cep, logradouro, numero);
-        fornecedorDao.cadastrar(novoFornecedor);
+        FornecedorEntidade fornecedorAtualizado = new FornecedorEntidade(nome, email, telefone, cnpj, cep, logradouro, numero);
+        int id = Integer.parseInt(request.getParameter("id"));
+        fornecedoresDao.atualizar(id, fornecedorAtualizado);
         
         response.sendRedirect(request.getContextPath() + "/fornecedores");
+        
     }
 }
