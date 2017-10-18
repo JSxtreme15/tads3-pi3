@@ -1,0 +1,7 @@
+br\senac\pi3\servlets\clientes\ClienteExcluirServlet.class
+br\senac\pi3\servlets\estoque\EstoqueServlet.class
+br\senac\pi3\servlets\clientes\ClienteEditarServlet.class
+br\senac\pi3\servlets\fornecedores\FornecedorServlet.class
+br\senac\pi3\servlets\clientes\ClienteServlet.class
+br\senac\pi3\servlets\clientes\ClienteCadastroServlet.class
+br\senac\pi3\servlets\fornecedores\FonecedoresCadastroServlet.class
