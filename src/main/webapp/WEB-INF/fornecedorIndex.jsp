@@ -38,6 +38,10 @@
                         <th>Código</th>
                         <th>Nome</th>
                         <th>CNPJ</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
 
@@ -47,6 +51,8 @@
                             <td><c:out value="${fornecedor.getId()}" /></td>
                             <td><c:out value="${fornecedor.getNome()}" /></td>
                             <td><c:out value="${fornecedor.getCnpj()}" /></td>
+                            <td><c:out value="${forncecedor.getEmail()}" /></td>
+                            <td><c:out value="${forncecedor.getTelefone()}" /></td>
                             <td><a href="${pageContext.request.contextPath}/fornecedores/editar?id=${fornecedor.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
                             <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/fornecedores/excluir?id=${fornecedor.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
                         </tr>

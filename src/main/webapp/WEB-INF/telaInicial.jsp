@@ -36,7 +36,7 @@
                     <div class="col s3">
                         <div class="financeiro">
                             <i>Financeiro</i>
-                            <a name="icones" class="material-icons red darken-text" href="${pageContext.request.contextPath}/fornecedores">attach_money</a>
+                            <a name="icones" class="material-icons darken-text" href="${pageContext.request.contextPath}/fornecedores">attach_money</a>
 
                         </div>
                     </div>

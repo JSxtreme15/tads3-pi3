@@ -3,11 +3,13 @@ C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\servlets\clientes\ClienteEditarServlet.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\daos\ClienteDAO.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\servlets\clientes\ClienteExcluirServlet.java
+C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\telaInicial\TelaInicialServlet.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\daos\FornecedorDAO.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\entidades\FornecedorEntidade.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\servlets\clientes\ClienteServlet.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\entidades\ClienteEntidade.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\servlets\clientes\ClienteCadastroServlet.java
+C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\telaInicial\TelaIniciaFinanceirolServlet.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\servlets\estoque\EstoqueServlet.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\daos\Conexao.java
 C:\Users\felipe.vvasconcelos\Documents\NetBeansProjects\tads3-pi3\tads3-pi3\tads3-pi3\src\main\java\br\senac\pi3\servlets\fornecedores\FonecedoresCadastroServlet.java

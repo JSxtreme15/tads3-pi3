@@ -1,5 +1,5 @@
 <%-- 
-    Document   : clienteIndex
+    Document   : fornecedorIndex
     Created on : 03/10/2017, 20:14:36
     Author     : allan
 --%>
@@ -25,8 +25,8 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/clientes" class="breadcrumb">Clientes</a>
-                        <a href="${pageContext.request.contextPath}/clientes/atualizar?id=${cliente.getId()}" class="breadcrumb">Edição de Clientes</a>
+                        <a href="${pageContext.request.contextPath}/fornecedores" class="breadcrumb">Fornecedores</a>
+                        <a href="${pageContext.request.contextPath}/fornecedores/atualizar?id=${fornecedor.getId()}" class="breadcrumb">Edição de Fornecedores</a>
                     </div>
                 </div>
             </div>
@@ -34,46 +34,46 @@
         
         <main class="container">
             <div class="row">
-                <form name="form-clientes" action="#" method="POST" class="col s12" accept-charset="UTF-8">
+                <form name="form-fornecedores" action="#" method="POST" class="col s12" accept-charset="UTF-8">
                     <div class="row">
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="text" class="validate" required="required" value="${cliente.getNome()}">
+                            <input name="nome" id="nome" type="text" class="validate" required="required" value="${fornecedor.getNome()}">
                         </div>
 
                         <div class="input-field col s12 m12 l4">
                             <label for="email">Email</label>
-                            <input name="email" id="email" type="email" class="validate" required="required" value="${cliente.getEmail()}">
+                            <input name="email" id="email" type="email" class="validate" required="required" value="${fornecedor.getEmail()}">
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="telefone">Telefone</label>
-                            <input name="telefone" id="telefone" type="text" class="validate" required="required" data-mask="(00) 00000-0000" value="${cliente.getTelefone()}">
+                            <input name="telefone" id="telefone" type="text" class="validate" required="required" data-mask="(00) 00000-0000" value="${fornecedor.getTelefone()}">
                         </div>
 
                         <div class="input-field col s12 m6 l6">
-                            <label for="cpf">Cpf</label>
-                            <input name="cpf" id="cpf" type="text" class="validate" required="required" data-mask="000.000.000-00" value="${cliente.getCpf()}">
+                            <label for="cnpj">CNPJ</label>
+                            <input name="cnpj" id="cpf" type="text" class="validate" required="required" data-mask="00.000.000/0000-00" value="${fornecedor.getCnpj()}">
                         </div>
 
                         <div class="input-field col s12 m6 l6">
                             <label for="cep">Cep</label>
-                            <input name="cep" id="cep" type="text" class="validate col s11" data-mask="00000-000" value="${cliente.getCep()}">
+                            <input name="cep" id="cep" type="text" class="validate col s11" data-mask="00000-000" value="${fornecedor.getCep()}">
                             <i class="material-icons col s1" id="search-cep" style="transform: translateY(21px);cursor: pointer;">search</i>
                         </div>
 
                         <div class="input-field col s12 m6 l6">
                             <label for="logradouro">Logradouro</label>
-                            <input name="logradouro" id="logradouro" type="text" class="validate" value="${cliente.getLogradouro()}">
+                            <input name="logradouro" id="logradouro" type="text" class="validate" value="${fornecedor.getLogradouro()}">
                         </div>
 
                         <div class="input-field col s12 m6 l6">
                             <label for="numero">Número</label>
-                            <input name="numero" id="numero" type="number" class="validate" value="${cliente.getNumeroResidencia()}">
+                            <input name="numero" id="numero" type="number" class="validate" value="${fornecedor.getNumeroResidencia()}">
                         </div>
 
                         <div class="input-field right">
-                            <a href="${pageContext.request.contextPath}/clientes" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <a href="${pageContext.request.contextPath}/fornecedores" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
                             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Confirmar</button>
                         </div>
                     </div>

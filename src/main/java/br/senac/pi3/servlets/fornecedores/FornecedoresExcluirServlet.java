@@ -17,17 +17,17 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FornecedorExcluirServlet", urlPatterns = { "/fonecedores/excluir" })
+@WebServlet(name = "FornecedorExcluirServlet", urlPatterns = { "/fornecedores/excluir" })
 public class FornecedoresExcluirServlet extends HttpServlet{
     
-    public FornecedorDAO fonecedoresDao = new FornecedorDAO();
+    public FornecedorDAO fornecedoresDao = new FornecedorDAO();
     
     @Override
      public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
          
         int id = Integer.parseInt(request.getParameter("id"));
-        fonecedoresDao.excluir(id);
+        fornecedoresDao.excluir(id);
          
-        response.sendRedirect(request.getContextPath() + "/fonecedores");
+        response.sendRedirect(request.getContextPath() + "/fornecedores");
      }
 }
