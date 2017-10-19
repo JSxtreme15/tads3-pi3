@@ -5,10 +5,16 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<style>
+    img {
+        margin-top:1%; 
+        width:30%; 
+        height:80%;
+    }
+</style>
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-        <a id="logo-container" href="${pageContext.request.contextPath}" class="brand-logo">TARDIS</a>
+        <img id="logo-container" src="http://ap.imagensbrasil.org/images/2017/10/19/astec.png" alt="astec.png"/>
         <ul class="right hide-on-med-and-down">
             <li><a href="${pageContext.request.contextPath}/clientes">Clientes</a></li>
             <li><a href="${pageContext.request.contextPath}/fornecedores">Fornecedores</a></li>

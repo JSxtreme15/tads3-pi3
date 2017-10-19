@@ -17,10 +17,10 @@
             <div class="col l3 s12">
                 <h5 class="white-text">Settings</h5>
                 <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
+                    <li><a class="white-text" href="#!">Cadastro de Clientes</a></li>
+                    <li><a class="white-text" href="#!">Cadastro de Fornecedores</a></li>
+                    <li><a class="white-text" href="#!">Estoque</a></li>
+                    <li><a class="white-text" href="#!">Vendas</a></li>
                 </ul>
             </div>
             <div class="col l3 s12">
