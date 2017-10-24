@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
                         <a href="${pageContext.request.contextPath}/fornecedores" class="breadcrumb">Fonecedores</a>
                         <a href="${pageContext.request.contextPath}/cadastro" class="breadcrumb">Cadastro de Fornecedores</a>
                     </div>
