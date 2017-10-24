@@ -38,6 +38,7 @@
                 <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Código</th>
                         <th>Nome</th>
                         <th>Valor</th>
                         <th>Desenvolvedora</th>
@@ -50,11 +51,12 @@
                     <c:forEach items="${estoque}" var="estoque">
                         <tr>
                             <td><c:out value="${estoque.getId()}" /></td>
+                            <td><c:out value="${estoque.getCodigo()}" /></td>
                             <td><c:out value="${estoque.getNome()}" /></td>
                             <td><c:out value="${estoque.getValor()}" /></td>
-                            <td><c:out value="${estoque.getDesenvolv()}" /></td>
-                            <td><c:out value="${estoque.getConsole()}" /></td>
-                            <td><c:out value="${estoque.getQuantEstoque()}" /></td>
+                            <td><c:out value="${estoque.getDesenvolvedora()}" /></td>
+                            <td><c:out value="${estoque.getPlataforma()}" /></td>
+                            <td><c:out value="${estoque.getQuantidade()}" /></td>
                         </tr>
                     </c:forEach>
                 </tbody>

@@ -6,6 +6,7 @@ br\senac\pi3\servlets\estoque\EstoqueServlet.class
 br\senac\pi3\servlets\clientes\ClienteEditarServlet.class
 br\senac\pi3\daos\ClienteDAO.class
 br\senac\pi3\servlets\fornecedores\FornecedorServlet.class
+br\senac\pi3\daos\EstoqueDAO.class
 br\senac\pi3\entidades\EstoqueEntidade.class
 br\senac\pi3\servlets\clientes\ClienteServlet.class
 br\senac\pi3\servlets\fornecedores\FornecedoresEditarServlet.class
