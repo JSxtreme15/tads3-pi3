@@ -28,7 +28,7 @@
             </div>
         </nav>
 
-        <main class="container">           
+        <main class="container" id="tela-inicio">           
             <form name="inicial" action="#" method="POST" class="col s12">
                 <div class="row">
 

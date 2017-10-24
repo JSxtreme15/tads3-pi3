@@ -54,7 +54,7 @@ p {
 .icon-block .material-icons {
     font-size: inherit;
 }
-.material-icons
+#tela-inicio .material-icons
 {
     font-size: 11em;
 
@@ -87,10 +87,4 @@ footer.page-footer {
 {
     position: auto;
     color: black;
-}
-
-.row
-{
-    margin-top: 100px;
-    margin-bottom: 200px;
 }
