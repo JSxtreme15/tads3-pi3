@@ -33,7 +33,7 @@ public class EstoqueEditarServlet extends HttpServlet{
         response.setContentType("text/html;charset=UTF-8");
         
         int id = Integer.parseInt(request.getParameter("id"));
-        request.setAttribute("fornecedor", estoqueDao.find(id));
+        request.setAttribute("estoque", estoqueDao.find(id));
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/estoqueUpdate.jsp");
         dispatcher.forward(request, response);
