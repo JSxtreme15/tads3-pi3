@@ -44,6 +44,8 @@
                         <th>Desenvolvedora</th>
                         <th>Plataforma</th>
                         <th>Estoque</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
 
@@ -57,6 +59,9 @@
                             <td><c:out value="${estoque.getDesenvolvedora()}" /></td>
                             <td><c:out value="${estoque.getPlataforma()}" /></td>
                             <td><c:out value="${estoque.getQuantidade()}" /></td>
+                            <td><a href="${pageContext.request.contextPath}/estoque/editar?id=${estoque.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
+                            <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/estoque/excluir?id=${estoque.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
+
                         </tr>
                     </c:forEach>
                 </tbody>
