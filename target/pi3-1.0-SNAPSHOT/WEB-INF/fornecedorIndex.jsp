@@ -35,7 +35,7 @@
             <table class="striped responsive-table">
                 <thead>
                     <tr>
-                        <th>Código</th>
+                        <th>ID</th>
                         <th>Nome</th>
                         <th>CNPJ</th>
                         <th>E-mail</th>

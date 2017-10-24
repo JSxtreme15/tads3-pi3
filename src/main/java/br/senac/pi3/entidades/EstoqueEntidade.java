@@ -10,34 +10,39 @@ package br.senac.pi3.entidades;
  * @author Joao Sergio
  */
 public class EstoqueEntidade {
-    public String id;
+    public int id;
+    public int codigo;
     public String nome;
-    public String valor;
-    public String desenvolv;
-    public String console;
-    public String quantEstoque;
-    public String cep;
+    public float valor;
+    public String desenvolvedora;
+    public String plataforma;
+    public int quantidade;
 
-    public EstoqueEntidade(String id, String nome, String valor, String desenvolv, String console, String quantEstoque) {
+    public EstoqueEntidade(int id, int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade) {
         this.id = id;
+        this.codigo = codigo;
         this.nome = nome;
         this.valor = valor;
-        this.desenvolv = desenvolv;
-        this.console = console;
-        this.quantEstoque = quantEstoque;
+        this.desenvolvedora = desenvolvedora;
+        this.plataforma = plataforma;
+        this.quantidade = quantidade;
         
     }
 
-    public EstoqueEntidade(String felipe, String felipevieiragmailcom, String string, String _9_70707070, String rua_Manuel_da_Nobrega, String string0, String string1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -48,36 +53,35 @@ public class EstoqueEntidade {
         this.nome = nome;
     }
 
-    public String getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
 
-    public String getDesenvolv() {
-        return desenvolv;
+    public String getDesenvolvedora() {
+        return desenvolvedora;
     }
 
-    public void setDesenvolv(String desenvolv) {
-        this.desenvolv = desenvolv;
+    public void setDesenvolvedora(String desenvolvedora) {
+        this.desenvolvedora = desenvolvedora;
     }
 
-    public String getConsole() {
-        return console;
+    public String getPlataforma() {
+        return plataforma;
     }
 
-    public void setConsole(String console) {
-        this.console = console;
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
     }
 
-    public String getQuantEstoque() {
-        return quantEstoque;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setQuantEstoque(String quantEstoque) {
-        this.quantEstoque = quantEstoque;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
-
 }
