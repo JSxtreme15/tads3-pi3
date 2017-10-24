@@ -54,7 +54,7 @@ p {
 .icon-block .material-icons {
     font-size: inherit;
 }
-.material-icons
+#tela-inicio .material-icons
 {
     font-size: 11em;
 
@@ -63,4 +63,28 @@ p {
 
 footer.page-footer {
     margin: 0;
+}
+
+#fornecedor
+{
+    position: auto;
+    color: black;
+}
+
+#estoque
+{
+    position: auto;
+    color: black;
+}
+
+#cliente
+{
+    position: auto;
+    color: black;
+}
+
+#ti
+{
+    position: auto;
+    color: black;
 }
