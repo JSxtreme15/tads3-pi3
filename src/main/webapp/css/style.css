@@ -64,3 +64,33 @@ p {
 footer.page-footer {
     margin: 0;
 }
+
+#fornecedor
+{
+    position: auto;
+    color: black;
+}
+
+#estoque
+{
+    position: auto;
+    color: black;
+}
+
+#cliente
+{
+    position: auto;
+    color: black;
+}
+
+#ti
+{
+    position: auto;
+    color: black;
+}
+
+.row
+{
+    margin-top: 100px;
+    margin-bottom: 200px;
+}

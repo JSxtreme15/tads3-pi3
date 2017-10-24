@@ -34,29 +34,29 @@
 
 
                     <div class="col s3">
-                        <div class="financeiro">
-                            <i>Financeiro</i>
-                            <a class="material-icons" href="${pageContext.request.contextPath}/fornecedores">attach_money</a>
+                        <div class="provider">
+                            <i>Fornecedor</i>
+                            <a name="icones" class="material-icons darken-text" id="fornecedor" href="${pageContext.request.contextPath}/fornecedores">local_shipping</a>
 
                         </div>
                     </div>
                     <div class="col s3">
-                        <div class="comercial">                         
-                            <i>Comercial</i>
-                            <a class="material-icons" href="${pageContext.request.contextPath}/Comercial">account_balance</a>
+                        <div class="storage">                         
+                            <i>Estoque</i>
+                            <a name="icones" class="material-icons" id="estoque" href="${pageContext.request.contextPath}/estoque">storage</a>
                         </div>
                     </div>
                     <div class="col s3">
-                        <div class="vendas">
-                            <i>Vendas</i>
-                            <a class="material-icons" href="${pageContext.request.contextPath}/vendas">shopping_cart</a>
+                        <div class="client">
+                            <i>Cliente</i>
+                            <a name="icones" class="material-icons" id="cliente" href="${pageContext.request.contextPath}/clientes">group</a>
                         </div>
                     </div>
 
                     <div class="col s3">
                         <div class="TI">
-                            <i class="material-icons" >computer</i>
-                            <figcaption>TI</figcaption>
+                            <i>TI</i>
+                            <a name="icones" class="material-icons" id="ti" href="${pageContext.request.contextPath}/ti">computer</a>
                         </div>
                     </div>
 
