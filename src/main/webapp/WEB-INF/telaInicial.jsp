@@ -17,7 +17,13 @@
         <link href="${pageContext.request.contextPath}/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
-    <body>
+    <body >
+        <div class="loaderBox">
+            <div class="loadAnim">
+                <div class="loadeAnim1"></div>
+            </div>
+        </div>
+
         <jsp:include page="header.jsp" />
 
         <nav style="transform: translateY(-21px);" class="teal">
@@ -29,39 +35,42 @@
         </nav>
 
         <main class="container" id="tela-inicio">           
-            <form name="inicial" action="#" method="POST" class="col s12">
-                <div class="row">
+
+            <div class="row">
 
 
-                    <div class="col s3">
-                        <div class="provider">
-                            <i>Fornecedor</i>
-                            <a name="icones" class="material-icons darken-text" id="fornecedor" href="${pageContext.request.contextPath}/fornecedores">local_shipping</a>
+                <div class="col s3">
+                    <div class="provider">
+                        <i>Fornecedor</i>
 
-                        </div>
+                        <a name="icones" class="material-icons darken-text"  id="fornecedor" href="${pageContext.request.contextPath}/fornecedores">local_shipping</a>                    
+
                     </div>
-                    <div class="col s3">
-                        <div class="storage">                         
-                            <i>Estoque</i>
-                            <a name="icones" class="material-icons" id="estoque" href="${pageContext.request.contextPath}/estoque">storage</a>
-                        </div>
-                    </div>
-                    <div class="col s3">
-                        <div class="client">
-                            <i>Cliente</i>
-                            <a name="icones" class="material-icons" id="cliente" href="${pageContext.request.contextPath}/clientes">group</a>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="TI">
-                            <i>TI</i>
-                            <a name="icones" class="material-icons" id="ti" href="${pageContext.request.contextPath}/ti">computer</a>
-                        </div>
-                    </div>
-
                 </div>
-            </form>
+
+
+                <div class="col s3">
+                    <div class="storage">                         
+                        <i>Estoque</i>
+                        <a name="icones" class="material-icons" id="estoque" href="${pageContext.request.contextPath}/estoque">storage</a>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <div class="client">
+                        <i>Cliente</i>
+                        <a name="icones" class="material-icons" id="cliente" href="${pageContext.request.contextPath}/clientes">group</a>
+                    </div>
+                </div>
+
+                <div class="col s3">
+                    <div class="TI">
+                        <i>TI</i>
+                        <a name="icones" class="material-icons" id="ti" href="${pageContext.request.contextPath}/ti">computer</a>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </main>
 

@@ -27,3 +27,10 @@
 
     }); // end of document ready
 })(jQuery); // end of jQuery name space
+
+$(window).load(function() {
+
+	$(".loader_inner").fadeOut();
+	$(".loader").delay(400).fadeOut("slow");
+
+});
