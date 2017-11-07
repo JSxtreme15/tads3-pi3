@@ -63,11 +63,11 @@ public class loginServlet extends HttpServlet {
     
     HttpSession sessao = request.getSession();
     sessao.setAttribute("username", username);
-    if ("fodao".equals(username) && "1234".equals(senha)) {
-      sessao.setAttribute("nome", "Usuário Fodão");
+    if ("astec.adm".equals(username) && "1234".equals(senha)) {
+      sessao.setAttribute("nome", "Usuário astec.adm");
       response.sendRedirect(request.getContextPath() + "/telaInicial");
-    } else if ("fodinha".equals(username) && "1234".equals(senha)) {
-      sessao.setAttribute("nome", "Usuário Fodinha");
+    } else if ("astec".equals(username) && "1234".equals(senha)) {
+      sessao.setAttribute("nome", "Usuário astec");
       response.sendRedirect(request.getContextPath() + "/telaInicial");
     } else if ("normal".equals(username) && "1234".equals(senha)) {
       sessao.setAttribute("nome", "Usuário Normal");
