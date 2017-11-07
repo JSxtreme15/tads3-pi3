@@ -92,6 +92,41 @@ public class ClienteDAO {
         return null;
     }
     
+    public ClienteEntidade findWhereEmail(String email) {
+        
+        try {
+            String sql = "SELECT * FROM clientes WHERE email = ?";
+            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            comando.setString(1, email);
+            
+            ResultSet resultado = comando.executeQuery();
+            
+            if (resultado.next()) {                
+                ClienteEntidade cliente = new ClienteEntidade(
+                    resultado.getInt("id"),
+                    resultado.getString("nome"),
+                    resultado.getString("email"),
+                    resultado.getString("cpf"),
+                    resultado.getString("telefone"),
+                    resultado.getString("logradouro"),
+                    resultado.getInt("numero"),
+                    resultado.getString("cep")
+                );
+                
+                return cliente;
+            }
+            
+            return null;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexao.FecharConexao();
+        }
+        
+        return null;
+    }
+    
     public boolean cadastrar(ClienteEntidade cliente) {
         try {
             String sql = "INSERT INTO clientes (nome, email, telefone, cpf, cep, logradouro, numero) values(?,?,?,?,?,?,?);";

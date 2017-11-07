@@ -26,6 +26,7 @@ public class FonecedoresCadastroServlet extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/fornecedorCreate.jsp");
@@ -34,6 +35,9 @@ public class FonecedoresCadastroServlet extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String telefone = request.getParameter("telefone");

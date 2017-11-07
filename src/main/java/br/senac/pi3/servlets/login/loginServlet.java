@@ -27,6 +27,7 @@ public class loginServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
+      request.setCharacterEncoding("UTF-8");
     RequestDispatcher dispatcher
 	    = request.getRequestDispatcher("/WEB-INF/login.jsp");
     dispatcher.forward(request, response);
@@ -37,6 +38,7 @@ public class loginServlet extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
+      request.setCharacterEncoding("UTF-8");
     String username = request.getParameter("username");
     String senha = request.getParameter("senha");
 

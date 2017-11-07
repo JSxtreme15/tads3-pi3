@@ -41,6 +41,13 @@ public class ClienteEntidade {
         this.cep = cep;
     }
     
+    public ClienteEntidade(String nome, String email, String telefone, String cpf) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.cpf = cpf;
+    }
+    
     public int getId() {
         return id;
     }

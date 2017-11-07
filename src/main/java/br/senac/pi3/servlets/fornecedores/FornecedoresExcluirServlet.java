@@ -24,6 +24,7 @@ public class FornecedoresExcluirServlet extends HttpServlet{
     
     @Override
      public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("UTF-8");
          
         int id = Integer.parseInt(request.getParameter("id"));
         fornecedoresDao.excluir(id);

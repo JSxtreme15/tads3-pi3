@@ -27,7 +27,6 @@ public class EstoqueDAO {
         
         try {
             String sql = "SELECT * FROM estoque ORDER BY id DESC";
-            System.out.println(sql);
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
             
             ResultSet resultado = comando.executeQuery();
@@ -91,6 +90,41 @@ public class EstoqueDAO {
         return null;
     }
     
+    
+    public EstoqueEntidade findWhereCode(int codigo) {
+        
+        try {
+            String sql = "SELECT * FROM estoque WHERE codigo = ?";
+            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            comando.setInt(1, codigo);
+            
+            ResultSet resultado = comando.executeQuery();
+            
+            if (resultado.next()) {                
+                EstoqueEntidade estoque = new EstoqueEntidade(
+                    resultado.getInt("id"),
+                    resultado.getInt("codigo"),
+                    resultado.getString("nome"),
+                    resultado.getFloat("valor"),
+                    resultado.getString("desenvolvedora"),
+                    resultado.getString("plataforma"),
+                    resultado.getInt("quantidade")
+                );
+
+                return estoque;
+            }
+            
+            return null;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexao.FecharConexao();
+        }
+        
+        return null;
+    }
+    
     public boolean cadastrar(EstoqueEntidade estoque) {
         try {
             String sql = "INSERT INTO estoque (codigo, nome, valor, desenvolvedora, plataforma, qauntidade) values(?,?,?,?,?,?);";
@@ -128,6 +162,27 @@ public class EstoqueDAO {
             comando.setString(5, estoque.getPlataforma());
             comando.setInt(6, estoque.getQuantidade());
             comando.setInt(8, id);
+
+            comando.execute();
+            
+            return true;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexao.FecharConexao();
+        }
+        
+        return false;
+    }
+    
+    public boolean atualizarQtde(int id, int qtde) {
+        try {
+            String sql = "UPDATE estoque SET quantidade = ? WHERE id = ?;";
+            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            
+            comando.setInt(1, qtde);
+            comando.setInt(2, id);
 
             comando.execute();
             

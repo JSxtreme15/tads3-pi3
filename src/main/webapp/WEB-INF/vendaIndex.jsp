@@ -1,5 +1,5 @@
 <%-- 
-    Document   : clienteIndex
+    Document   : vendaIndex
     Created on : 03/10/2017, 20:14:36
     Author     : allan
 --%>
@@ -25,7 +25,7 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/clientes" class="breadcrumb">Clientes</a>
+                        <a href="${pageContext.request.contextPath}/vendas" class="breadcrumb">Vendas</a>
                     </div>
                 </div>
             </div>
@@ -36,31 +36,26 @@
             <table class="striped responsive-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Cpf</th>
-                        <th>Logradouro</th>
-                        <th>Número</th>
-                        <th>Cep</th>
-                        <th>Ação</th>
+                        <th>Data</th>
+                        <th style="min-width: 100px;">Cliente</th>
+                        <th>Produtos</th>
+                        <th style="min-width: 90px;">Valor</th>
+                        <th style="min-width: 125px;">Pagamento</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <c:forEach items="${clientes}" var="cliente">
+                    <c:forEach items="${vendas}" var="venda">
                         <tr>
-                            <td><c:out value="${cliente.getId()}" /></td>
-                            <td><c:out value="${cliente.getNome()}" /></td>
-                            <td><c:out value="${cliente.getEmail()}" /></td>
-                            <td><c:out value="${cliente.getTelefone()}" /></td>
-                            <td><c:out value="${cliente.getCpf()}" /></td>
-                            <td><c:out value="${cliente.getLogradouro()}" /></td>
-                            <td><c:out value="${cliente.getNumeroResidencia()}" /></td>
-                            <td><c:out value="${cliente.getCep()}" /></td>
-                            <td><a href="${pageContext.request.contextPath}/clientes/editar?id=${cliente.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
-                            <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/clientes/excluir?id=${cliente.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
+                            <td><c:out value="${venda.getDataFormatada()}" /></td>
+                            <td><c:out value="${venda.getCliente().getNome()}" /></td>
+                            <td>
+                                <c:forEach items="${venda.getProdutos()}" var="produto">
+                                    <c:out value="${produto.getNome()}" /> -
+                                </c:forEach>
+                            </td>
+                            <td><c:out value="${venda.getValorFormatado()}" /></td>
+                            <td><c:out value="${venda.getPagamento()}" /></td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -70,7 +65,7 @@
         <br/>
 
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped red darken-3" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="./clientes/cadastro">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="./vendas/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>

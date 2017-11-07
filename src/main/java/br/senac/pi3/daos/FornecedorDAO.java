@@ -27,7 +27,6 @@ public class FornecedorDAO {
         
         try {
             String sql = "SELECT * FROM fornecedores ORDER BY id DESC";
-            System.out.println(sql);
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
             
             ResultSet resultado = comando.executeQuery();

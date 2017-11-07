@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.senac.pi3.servlets.clientes;
+package br.senac.pi3.servlets.vendas;
 
 import br.senac.pi3.daos.ClienteDAO;
+import com.google.gson.Gson;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,17 +18,20 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "ClienteServlet", urlPatterns = { "/clientes" })
-public class ClienteServlet extends HttpServlet {
-    
-    public ClienteDAO clientesDao = new ClienteDAO();
+@WebServlet(name = "VendaObterClienteServlet", urlPatterns = {"/vendas/cliente"})
+public class VendaObterClienteServlet extends HttpServlet {
 
+    public ClienteDAO clienteDao = new ClienteDAO();
+    
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setAttribute("clientes", clientesDao.todos());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/clienteIndex.jsp");
-        dispatcher.forward(request, response);
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        
+        String email = request.getParameter("email");
+
+        String json = new Gson().toJson(clienteDao.findWhereEmail(email));
+        response.getWriter().write(json);
     }
 }

@@ -6,7 +6,6 @@
 package br.senac.pi3.inicio;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kaio.hvsantos
  */
-@WebServlet(name = "TelaInicial", urlPatterns = {"/inicio"})
+@WebServlet(name = "TelaInicial", urlPatterns = {"/telaInicial"})
 public class TelaInicialServlet extends HttpServlet {
 
    
@@ -35,6 +34,7 @@ public class TelaInicialServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         RequestDispatcher dispatcher
                 = request.getRequestDispatcher("/WEB-INF/telaInicial.jsp");
         dispatcher.forward(request, response);
@@ -45,6 +45,7 @@ public class TelaInicialServlet extends HttpServlet {
    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/WEB-INF/jsp/telaInicial.jsp");
             dispatcher.forward(request, response);

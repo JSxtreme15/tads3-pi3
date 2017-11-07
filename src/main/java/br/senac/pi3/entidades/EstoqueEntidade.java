@@ -26,7 +26,6 @@ public class EstoqueEntidade {
         this.desenvolvedora = desenvolvedora;
         this.plataforma = plataforma;
         this.quantidade = quantidade;
-        
     }
 
     public int getId() {

@@ -6,11 +6,7 @@
 package br.senac.pi3.servlets.fornecedores;
 
 import br.senac.pi3.daos.FornecedorDAO;
-import br.senac.pi3.entidades.FornecedorEntidade;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,6 +26,7 @@ public class FornecedorServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
+        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         request.setAttribute("fornecedores", fornecedorDao.todos());
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/fornecedorIndex.jsp");
