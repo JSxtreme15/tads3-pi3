@@ -29,6 +29,10 @@ public class EstoqueEntidade {
         
     }
 
+    public EstoqueEntidade(String id, String codigo, String nome, float valor, String desenvolvedora, String plataforma, int numero) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getId() {
         return id;
     }
