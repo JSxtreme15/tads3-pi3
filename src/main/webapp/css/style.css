@@ -5,6 +5,16 @@
  *
  * Made By MaterializeCSS.com
  */
+.em-breve {
+    transform: rotateZ(35deg);
+    color: red;
+    position: relative;
+    top: -137px;
+    left: 12px;
+    font-size: 3em;
+    width: 150%;
+}
+
 .progress-button {
     bottom: 25px;
     z-index: 10;
@@ -100,7 +110,7 @@ p {
 }
 #tela-inicio .material-icons
 {
-    font-size: 11em;
+    font-size: 14em;
 
 }
 

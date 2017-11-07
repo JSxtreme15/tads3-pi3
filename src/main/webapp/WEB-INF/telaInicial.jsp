@@ -18,22 +18,21 @@
         <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body >
-        <div class="loaderBox">
-            <div class="loadAnim">
-                <div class="loadeAnim1"></div>
-            </div>
-        </div>
 
         <jsp:include page="header.jsp" />
 
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">
                 <div class="nav-wrapper">
-
+                    <div class="col s12">
+                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
+                    </div>
                 </div>
             </div>
         </nav>
 
+        <br>
+                    
         <main class="container" id="tela-inicio">           
 
             <div class="row">
@@ -41,7 +40,7 @@
 
                 <div class="col s3">
                     <div class="provider">
-                        <i>Fornecedor</i>
+                        <i>Fornecedores</i>
 
                         <a name="icones" class="material-icons darken-text"  id="fornecedor" href="${pageContext.request.contextPath}/fornecedores">local_shipping</a>                    
 
@@ -57,7 +56,7 @@
                 </div>
                 <div class="col s3">
                     <div class="client">
-                        <i>Cliente</i>
+                        <i>Clientes</i>
                         <a name="icones" class="material-icons" id="cliente" href="${pageContext.request.contextPath}/clientes">group</a>
                     </div>
                 </div>
@@ -65,7 +64,8 @@
                 <div class="col s3">
                     <div class="TI">
                         <i>TI</i>
-                        <a name="icones" class="material-icons" id="ti" href="${pageContext.request.contextPath}/ti">computer</a>
+                        <a name="icones" class="material-icons" id="ti" href="javascript:;">computer</a>
+                        <p class="em-breve">Em breve</p>
                     </div>
                 </div>
 
