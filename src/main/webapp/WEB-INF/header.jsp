@@ -16,6 +16,7 @@
     <div class="nav-wrapper container">
         <img id="logo-container" src="http://ap.imagensbrasil.org/images/2017/10/19/astec.png" alt="astec.png"/>
         <ul class="right hide-on-med-and-down">
+            <li><a href="${pageContext.request.contextPath}/telaInicial">Início</a></li>
             <li><a href="${pageContext.request.contextPath}/clientes">Clientes</a></li>
             <li><a href="${pageContext.request.contextPath}/fornecedores">Fornecedores</a></li>
             <li><a href="${pageContext.request.contextPath}/estoque">Estoque</a></li>
@@ -23,6 +24,7 @@
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
+            <li><a href="${pageContext.request.contextPath}/telaInicial">Início</a></li>
             <li><a href="${pageContext.request.contextPath}/clientes">Clientes</a></li>
             <li><a href="${pageContext.request.contextPath}/fornecedores">Fornecedores</a></li>
             <li><a href="${pageContext.request.contextPath}/estoque">Estoque</a></li>
