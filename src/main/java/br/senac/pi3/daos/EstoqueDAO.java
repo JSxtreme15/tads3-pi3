@@ -127,7 +127,7 @@ public class EstoqueDAO {
     
     public boolean cadastrar(EstoqueEntidade estoque) {
         try {
-            String sql = "INSERT INTO estoque (codigo, nome, valor, desenvolvedora, plataforma, qauntidade) values(?,?,?,?,?,?);";
+            String sql = "INSERT INTO estoque (codigo, nome, valor, desenvolvedora, plataforma, quantidade) values(?,?,?,?,?,?);";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
 
             comando.setInt(1, estoque.getCodigo());
@@ -152,7 +152,7 @@ public class EstoqueDAO {
     
     public boolean atualizar(int id, EstoqueEntidade estoque) {
         try {
-            String sql = "UPDATE estoque SET codigo = ?, nome = ?, valor = ?, desenvolvedora = ?, plataforma = ?, quantidade = ?, WHERE id = ?;";
+            String sql = "UPDATE estoque SET codigo = ?, nome = ?, valor = ?, desenvolvedora = ?, plataforma = ?, quantidade = ? WHERE id = ?;";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
 
             comando.setInt(1, estoque.getCodigo());
@@ -161,7 +161,7 @@ public class EstoqueDAO {
             comando.setString(4, estoque.getDesenvolvedora());
             comando.setString(5, estoque.getPlataforma());
             comando.setInt(6, estoque.getQuantidade());
-            comando.setInt(8, id);
+            comando.setInt(7, id);
 
             comando.execute();
             

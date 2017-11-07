@@ -27,6 +27,15 @@ public class EstoqueEntidade {
         this.plataforma = plataforma;
         this.quantidade = quantidade;
     }
+    
+    public EstoqueEntidade(int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.valor = valor;
+        this.desenvolvedora = desenvolvedora;
+        this.plataforma = plataforma;
+        this.quantidade = quantidade;
+    }
 
     public int getId() {
         return id;

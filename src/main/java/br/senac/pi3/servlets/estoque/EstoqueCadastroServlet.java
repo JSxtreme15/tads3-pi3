@@ -34,15 +34,14 @@ public class EstoqueCadastroServlet extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String id = request.getParameter("id");
-        String codigo = request.getParameter("codigo");
+        int codigo = Integer.parseInt(request.getParameter("codigo"));
         String nome = request.getParameter("nome");
         float valor = Float.parseFloat(request.getParameter("valor"));
         String desenvolvedora = request.getParameter("desenvolvedora");
         String plataforma = request.getParameter("plataforma");
-        int numero = Integer.parseInt(request.getParameter("quantidade"));
+        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
         
-        EstoqueEntidade novoEstoque = new EstoqueEntidade(id, codigo, nome, valor, desenvolvedora, plataforma, quantidade);
+        EstoqueEntidade novoEstoque = new EstoqueEntidade(codigo, nome, valor, desenvolvedora, plataforma, quantidade);
         estoqueDao.cadastrar(novoEstoque);
         
         response.sendRedirect(request.getContextPath() + "/estoque");

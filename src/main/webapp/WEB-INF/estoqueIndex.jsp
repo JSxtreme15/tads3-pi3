@@ -19,7 +19,7 @@
     </head>
     <body>
         <jsp:include page="header.jsp"/>
-        
+
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">
                 <div class="nav-wrapper">
@@ -31,9 +31,9 @@
             </div>
         </nav>
 
-        
-        
-        <main class="container">
+
+
+        <main class="container-fluid">
             <table>
                 <thead>
                     <tr>
@@ -67,7 +67,13 @@
                 </tbody>
             </table>
         </main>
-                    
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large tooltipped red darken-3" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="${pageContext.request.contextPath}/estoque/cadastro">
+                <i class="large material-icons">add</i>
+            </a>
+        </div>
+
         <br/>
 
         <jsp:include page="footer.jsp"/>

@@ -39,33 +39,33 @@
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="text" class="validate" required="required" value="${estoque.getNome()}">
+                            <input name="nome" id="nome" type="text" class="validate" required="required" value="">
                         </div>
                         
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="valor">Valor</label>
-                            <input name="valor" id="valor" type="text" class="validate" required="required" value="${estoque.getValor()}">
+                            <input name="valor" id="valor" type="text" class="validate" required="required" value="">
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="desenvolvedora">Desenvolvido Por</label>
-                            <input name="desenvolvedora" id="desenvolvedora" type="text" class="validate" required="required" value="${estoque.getDesenvolvedora()}">
+                            <input name="desenvolvedora" id="desenvolvedora" type="text" class="validate" required="required" value="">
                         </div>
 
                         <div class="input-field col s12 m4 l4">
                             <label for="plataforma">Console</label>
-                            <input name="plataforma" id="plataforma" type="text" class="validate" required="required"  value="${estoque.getPlataforma()}">
+                            <input name="plataforma" id="plataforma" type="text" class="validate" required="required"  value="">
                         </div>
 
                         <div class="input-field col s12 m4 l4">
                             <label for="quantidade">Quant. Estoque</label>
-                            <input name="quantidade" id="quantidade" type="text" class="validate" required="required" value="${estoque.getQuantidade()}">
+                            <input name="quantidade" id="quantidade" type="text" class="validate" required="required" value="">
                         </div>
                         
                         <div class="input-field col s12 m4 l4">
                             <label for="codigo">Codigo</label>
-                            <input name="codigo" id="codigo" type="text" class="validate" required="required" value="${estoque.getCodigo()}">
+                            <input name="codigo" id="codigo" type="text" class="validate" required="required" value="">
                         </div>
 
                     
