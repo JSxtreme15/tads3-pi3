@@ -39,33 +39,33 @@
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="text" class="validate" required="required" value="">
+                            <input name="nome" id="nome" type="text" class="validate" required="required" >
                         </div>
                         
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="valor">Valor</label>
-                            <input name="valor" id="valor" type="text" class="validate" required="required" value="">
+                            <input name="valor" id="valor" type="number" class="validate" required="required" data-mask="000.000,00">
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="desenvolvedora">Desenvolvido Por</label>
-                            <input name="desenvolvedora" id="desenvolvedora" type="text" class="validate" required="required" value="">
+                            <input name="desenvolvedora" id="desenvolvedora" type="text" class="validate" required="required" >
                         </div>
 
                         <div class="input-field col s12 m4 l4">
                             <label for="plataforma">Console</label>
-                            <input name="plataforma" id="plataforma" type="text" class="validate" required="required"  value="">
+                            <input name="plataforma" id="plataforma" type="text" class="validate" required="required" >
                         </div>
 
                         <div class="input-field col s12 m4 l4">
                             <label for="quantidade">Quant. Estoque</label>
-                            <input name="quantidade" id="quantidade" type="text" class="validate" required="required" value="">
+                            <input name="quantidade" id="quantidade" type="number" class="validate" required="required" >
                         </div>
                         
                         <div class="input-field col s12 m4 l4">
-                            <label for="codigo">Codigo</label>
-                            <input name="codigo" id="codigo" type="text" class="validate" required="required" value="">
+                            <label for="codigo">Código</label>
+                            <input name="codigo" id="codigo" type="number" class="validate" required="required" data-mask="00000000">
                         </div>
 
                     

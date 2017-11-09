@@ -45,7 +45,7 @@
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="valor">Valor</label>
-                            <input name="valor" id="valor" type="text" class="validate" required="required" value="${estoque.getValor()}">
+                            <input name="valor" id="valor" type="number" class="validate" required="required" data-mask="000.000,00" value="${estoque.getValor()}">
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
@@ -60,12 +60,12 @@
 
                         <div class="input-field col s12 m4 l4">
                             <label for="quantidade">Quant. Estoque</label>
-                            <input name="quantidade" id="quantidade" type="text" class="validate" required="required" value="${estoque.getQuantidade()}">
+                            <input name="quantidade" id="quantidade" type="number" class="validate" required="required" value="${estoque.getQuantidade()}">
                         </div>
                         
                         <div class="input-field col s12 m4 l4">
-                            <label for="codigo">Codigo</label>
-                            <input name="codigo" id="codigo" type="text" class="validate" required="required" value="${estoque.getCodigo()}">
+                            <label for="codigo">Código</label>
+                            <input name="codigo" id="codigo" type="number" class="validate" required="required" data-mask="00000000" value="${estoque.getCodigo()}">
                         </div>
 
                     
