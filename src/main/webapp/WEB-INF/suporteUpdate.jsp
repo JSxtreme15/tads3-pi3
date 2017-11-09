@@ -24,9 +24,9 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
                         <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>
-                        <a href="${pageContext.request.contextPath}/suporte/novochamado" class="breadcrumb">Novo Chamado</a>
+                        <a href="${pageContext.request.contextPath}/suporte/editar?id=${suporte.getId()}" class="breadcrumb">Edição de Chamado</a>
                     </div>
                 </div>
             </div>
@@ -37,23 +37,18 @@
                 <form name="form-suporte" action="#" method="POST" class="col s12" accept-charset="UTF-8">
                     <div class="row">
                         <div class="input-field col s12 m12 l4">
-                            <label for="id">ID</label>
-                            <input name="id" id="nome" type="text" class="validate" required="required">
+                            <label for="nome">Nome</label>
+                            <input name="nome" id="nome" type="text" class="validate" required="required" value="${suporte.getNome()}">
                         </div>
 
                         <div class="input-field col s12 m12 l4">
-                            <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="email" class="validate" required="required">
-                        </div>
-                        
-                        <div class="input-field col s12 m12 l4">
-                            <label for="email">E-mail</label>
-                            <input name="email" id="email" type="text" class="validate" required="required" data-mask="(00) 00000-0000">
+                            <label for="email">Email</label>
+                            <input name="email" id="email" type="email" class="validate" required="required" value="${suporte.getEmail()}">
                         </div>
                         
                         <div class="input-field right">
                             <a href="${pageContext.request.contextPath}/suporte" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
-                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Cadastrar</button>
+                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Confirmar</button>
                         </div>
                     </div>
                 </form>

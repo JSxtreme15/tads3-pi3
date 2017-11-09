@@ -9,34 +9,25 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Company Bio</h5>
-                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                <h5 class="white-text">Astec Games</h5>
+                <p class="grey-text text-lighten-4">Somos uma loja de jogos focada em fornecer o melhor custo benefício, maior praticidade e a mais rápida entrega do mercado.</p>
 
 
             </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Settings</h5>
+            <div class="col l3 s12 right">
+                <h5 class="white-text">Contato</h5>
                 <ul>
-                    <li><a class="white-text" href="#!">Cadastro de Clientes</a></li>
-                    <li><a class="white-text" href="#!">Cadastro de Fornecedores</a></li>
-                    <li><a class="white-text" href="#!">Estoque</a></li>
-                    <li><a class="white-text" href="#!">Vendas</a></li>
-                </ul>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Connect</h5>
-                <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
+                    <li><a class="white-text" href="#!">Avenida Engenheiro Eusébio Stevaux, 899</a></li>
+                    <li><a class="white-text" href="#!">Santo Amaro - São Paulo/SP</a></li>
+                    <li><a class="white-text" href="#!">+55 (011) 5966-8888</a></li>
+                    <li><a class="white-text" href="#!">contato@astecgames.com.br</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">TARDIS</a>
         </div>
     </div>
 </footer>

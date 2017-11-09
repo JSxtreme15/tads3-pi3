@@ -1,5 +1,5 @@
 <%-- 
-    Document   : fornecedorIndex
+    Document   : suporteIndex
     Created on : 03/10/2017, 20:14:36
     Author     : allan
 --%>
@@ -25,7 +25,7 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/fornecedores" class="breadcrumb">Fornecedores</a>
+                        <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>
                     </div>
                 </div>
             </div>
@@ -37,26 +37,22 @@
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>CNPJ</th>
                         <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Editar</th>
-                        <th>Excluir</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <c:forEach items="${fornecedores}" var="fornecedor">
-                        <tr>
-                            <td><c:out value="${fornecedor.getId()}" /></td>
-                            <td><c:out value="${fornecedor.getNome()}" /></td>
-                            <td><c:out value="${fornecedor.getCnpj()}" /></td>
-                            <td><c:out value="${fornecedor.getEmail()}" /></td>
-                            <td><c:out value="${fornecedor.getTelefone()}" /></td>
-                            <td><a href="${pageContext.request.contextPath}/fornecedores/editar?id=${fornecedor.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
-                            <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/fornecedores/excluir?id=${fornecedor.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
-                        </tr>
-                    </c:forEach>
+                    <c:forEach items="${suporte}" var="suporte">
+                    <tr>
+                        <td><c:out value="${suporte.getId()}" /></td>
+                        <td><c:out value="${suporte.getNome()}" /></td>
+                        
+                        <td><c:out value="${suporte.getEmail()}" /></td>
+                        
+                        <td><a href="${pageContext.request.contextPath}/suporte/editar?id=${suporte.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
+                        <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/suporte/excluir?id=${suporte.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
+                    </tr>
+                </c:forEach> 
                 </tbody>
             </table>
         </main>
@@ -64,7 +60,7 @@
         <br /> 
         
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Fornecedor" href="${pageContext.request.contextPath}/fornecedores/cadastro">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Suporte" href="${pageContext.request.contextPath}/suporte/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>
