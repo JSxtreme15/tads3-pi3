@@ -36,24 +36,32 @@
             <div class="row">
                 <form name="form-suporte" action="#" method="POST" class="col s12" accept-charset="UTF-8">
                     <div class="row">
-                        <div class="input-field col s12 m12 l4">
-                            <label for="id">ID</label>
-                            <input name="id" id="nome" type="text" class="validate" required="required">
-                        </div>
-
+                        
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="email" class="validate" required="required">
+                            <input name="nome" id="nome" type="text" class="validate" required="required">
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="email">E-mail</label>
-                            <input name="email" id="email" type="text" class="validate" required="required" data-mask="(00) 00000-0000">
+                            <input name="email" id="email" type="text" class="validate" required="required">
                         </div>
                         
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                  <div class="input-field col s12">
+                                    <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="texto" type="text" class="materialize-textarea" required="required" ></textarea>
+                                        <label for="textarea1">Seu problema...</label>
+                                  </div>
+                                </div>
+                            </form>
+                            </div>
+
                         <div class="input-field right">
                             <a href="${pageContext.request.contextPath}/suporte" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
-                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Cadastrar</button>
+                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Salvar</button>
                         </div>
                     </div>
                 </form>

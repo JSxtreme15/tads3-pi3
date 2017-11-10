@@ -38,6 +38,7 @@
                         <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
 
@@ -46,7 +47,6 @@
                     <tr>
                         <td><c:out value="${suporte.getId()}" /></td>
                         <td><c:out value="${suporte.getNome()}" /></td>
-                        
                         <td><c:out value="${suporte.getEmail()}" /></td>
                         
                         <td><a href="${pageContext.request.contextPath}/suporte/editar?id=${suporte.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
