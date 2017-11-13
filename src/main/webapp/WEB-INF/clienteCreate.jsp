@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>Parallax Template - Materialize</title>
-
+        <title>Astec Games</title>
+        
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="${pageContext.request.contextPath}/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -19,7 +19,7 @@
     </head>
     <body>
         <jsp:include page="header.jsp" />
-        
+
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">
                 <div class="nav-wrapper">
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </nav>
-        
+
         <main class="container">
             <div class="row">
                 <form name="form-clientes" action="#" method="POST" class="col s12" accept-charset="UTF-8">
@@ -45,7 +45,7 @@
                             <label for="email">Email</label>
                             <input name="email" id="email" type="email" class="validate" required="required">
                         </div>
-                        
+
                         <div class="input-field col s12 m12 l4">
                             <label for="telefone">Telefone</label>
                             <input name="telefone" id="telefone" type="text" class="validate" required="required" data-mask="(00) 00000-0000">
@@ -82,7 +82,7 @@
         </main>
 
         <jsp:include page="footer.jsp" />
-        
+
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.mask.min.js"></script>

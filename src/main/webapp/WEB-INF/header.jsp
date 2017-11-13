@@ -12,6 +12,7 @@
         height:80%;
     }
 </style>
+
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
         <img id="logo-container" src="http://ap.imagensbrasil.org/images/2017/10/19/astec.png" alt="astec.png"/>
