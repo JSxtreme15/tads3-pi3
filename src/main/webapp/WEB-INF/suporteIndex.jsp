@@ -35,7 +35,6 @@
             <table class="striped responsive-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Ação</th>
@@ -45,7 +44,6 @@
                 <tbody>
                     <c:forEach items="${suporte}" var="suporte">
                     <tr>
-                        <td><c:out value="${suporte.getId()}" /></td>
                         <td><c:out value="${suporte.getNome()}" /></td>
                         <td><c:out value="${suporte.getEmail()}" /></td>
                         

@@ -35,7 +35,6 @@
             <table class="striped responsive-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nome</th>
                         <th>CNPJ</th>
                         <th>E-mail</th>
@@ -47,7 +46,6 @@
                 <tbody>
                     <c:forEach items="${fornecedores}" var="fornecedor">
                         <tr>
-                            <td><c:out value="${fornecedor.getId()}" /></td>
                             <td><c:out value="${fornecedor.getNome()}" /></td>
                             <td><c:out value="${fornecedor.getCnpj()}" /></td>
                             <td><c:out value="${forncecedor.getEmail()}" /></td>
