@@ -196,3 +196,18 @@ footer.page-footer {
     border: 10px solid #3498db;
 
 }
+
+canvas {
+    position: absolute;
+    z-index: -1;
+}
+
+.container-login {
+    display: inline-block;
+    padding: 32px 48px 0;
+    border: 1px solid #EEE;
+    background-color: rgba(224,224,224,.6);
+    max-width: 411px;
+    -vendor-animation-delay: .4s;
+    -webkit-animation-delay: .4s;
+}
