@@ -17,6 +17,9 @@
 
             $.get(url, (response) => {
                 $('#logradouro').val(response.logradouro);
+                $('#localidade').val(response.localidade);
+                
+                $('#localidade').change();
                 $('#logradouro').change();
                 $('#numero').focus();
             });
