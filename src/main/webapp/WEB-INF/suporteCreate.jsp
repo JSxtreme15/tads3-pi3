@@ -26,7 +26,7 @@
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
                         <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>
-                        <a href="${pageContext.request.contextPath}/suporte/novochamado" class="breadcrumb">Novo Chamado</a>
+                        <a href="${pageContext.request.contextPath}/suporte/novoChamado" class="breadcrumb">Novo Chamado</a>
                     </div>
                 </div>
             </div>

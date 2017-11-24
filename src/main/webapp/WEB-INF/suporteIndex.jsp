@@ -19,16 +19,19 @@
     </head>
     <body>
         <jsp:include page="header.jsp"/>
-        
+
+           
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>
-                    </div>
+                        <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>  
+                    </div>          
                 </div>
+                    
             </div>
+                    
         </nav>
 
         <main class="container-fluid">
@@ -38,6 +41,11 @@
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Ação</th>
+                            <select>
+                                <option value="" disabled selected>Opções</option>
+                                <option value="1">Usuários</option>
+                                <option value="2">Chamados</option>
+                            </select> 
                     </tr>
                 </thead>
 
@@ -58,9 +66,12 @@
         <br /> 
         
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Suporte" href="${pageContext.request.contextPath}/suporte/cadastro">
-                <i class="large material-icons">add</i>
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Suporte" href="${pageContext.request.contextPath}/suporte/novoChamado">
+                <i class="large material-icons">textsms</i>
             </a>
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastro de Usuário" href="${pageContext.request.contextPath}/suporte/cadastroUsuario">
+                <i class="large material-icons">person_add</i>
+            </a>    
         </div>
         
         <jsp:include page="footer.jsp"/>
