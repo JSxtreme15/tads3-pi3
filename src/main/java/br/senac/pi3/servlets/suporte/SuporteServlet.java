@@ -5,32 +5,74 @@
  */
 package br.senac.pi3.servlets.suporte;
 
-import br.senac.pi3.servlets.suporte.*;
-import br.senac.pi3.daos.SuporteDAO;
-import java.io.IOException;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import java.io.*;
+import java.util.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.mail.*;
+import javax.mail.Session;
+import javax.mail.internet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  *
  * @author allan
  */
-@WebServlet(name = "SuporteServlet", urlPatterns = { "/suporte" })
+@WebServlet(name = "SuporteServlet", urlPatterns = {"/suporte"})
 public class SuporteServlet extends HttpServlet {
-    
-    public SuporteDAO suporteDao = new SuporteDAO();
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        request.setAttribute("suporte", suporteDao.todos());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/suporteIndex.jsp");
-        dispatcher.forward(request, response);
+        String Assunto = request.getParameter("Assunto");
+        String Mensagem = request.getParameter("Mensagem");
+
+        // Recipient's email ID needs to be mentioned.
+        String to = "tardis.suporte@gmail.com";
+
+        // Sender's email ID needs to be mentioned
+        String from = "tardis.suporte@gmail.com";
+
+      // Assuming you are sending email from localhost
+      String host = "localhost";
+ 
+      // Get system properties
+      Properties properties = System.getProperties();
+ 
+      // Setup mail server
+      properties.setProperty("mail.smtp.host", host);
+
+        // Get the default Session object.
+        Session session = Session.getDefaultInstance(properties);
+
+        // Set response content type
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        try {
+            // Create a default MimeMessage object.
+            MimeMessage message = new MimeMessage(session);
+
+            // Set From: header field of the header.
+            message.setFrom(new InternetAddress(from));
+
+            // Set To: header field of the header.
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
+            // Set Subject: header field
+            message.setSubject(request.getParameter("Assunto"));
+
+            // Now set the actual message
+            message.setText(request.getParameter("Mensagem"));
+
+            // Send message
+            Transport.send(message);
+            
+        }  catch (javax.mail.MessagingException ex) {
+            System.out.println(ex.getStackTrace());
+        }
+
+            response.sendRedirect(request.getContextPath() + "/telaInicial?enviado=true");
+        }
     }
-}

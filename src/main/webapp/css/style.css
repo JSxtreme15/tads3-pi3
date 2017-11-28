@@ -211,3 +211,8 @@ canvas {
     -vendor-animation-delay: .4s;
     -webkit-animation-delay: .4s;
 }
+
+footer .select-wrapper .caret{
+    color: #fff;
+    
+}

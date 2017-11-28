@@ -1,5 +1,5 @@
 <%-- 
-    Document   : usuarioIndex
+    Document   : suporteIndex
     Created on : 03/10/2017, 20:14:36
     Author     : allan
 --%>
@@ -26,7 +26,7 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/usuario" class="breadcrumb">Usuário</a>  
+                        <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>  
                     </div>          
                 </div>
                     
@@ -38,25 +38,27 @@
             <table class="striped responsive-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Ação</th> 
+                        <th>Ação</th>     
                     </tr>
+                            
+                            <select>
+                                <option value="" disabled selected>Lista de...</option>
+                                <option value="1">Usuários</option>
+                                <option value="2">Chamados</option>
+                            </select>
                 
                 </thead>
 
                 <tbody>
-                    <c:forEach items="${usuario}" var="usuario">
+                    <c:forEach items="${suporte}" var="suporte">
                     <tr>
-                        <td><c:out value="${usuario.getID()}" /></td>
-                        <td><c:out value="${usuario.getNome()}" /></td>
-                        <td><c:out value="${usuario.getEmail()}" /></td>
-                        <td><c:out value="${usuario.getTelefone()}" /></td>
+                        <td><c:out value="${suporte.getNome()}" /></td>
+                        <td><c:out value="${suporte.getEmail()}" /></td>
                         
-                        <td><a href="${pageContext.request.contextPath}/usuario/editar?id=${usuario.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
-                        <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/usuario/excluir?id=${usuario.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
+                        <td><a href="${pageContext.request.contextPath}/suporte/editar?id=${suporte.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
+                        <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/suporte/excluir?id=${suporte.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
                     </tr>
                 </c:forEach> 
                 </tbody>
@@ -66,10 +68,10 @@
         <br /> 
         
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Usuário" href="${pageContext.request.contextPath}/usuario/novoChamado">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Suporte" href="${pageContext.request.contextPath}/suporte/novoChamado">
                 <i class="large material-icons">textsms</i>
             </a>
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastro de Usuário" href="${pageContext.request.contextPath}/usuario/cadastroUsuario">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastro de Usuário" href="${pageContext.request.contextPath}/suporte/cadastroUsuario">
                 <i class="large material-icons">person_add</i>
             </a>    
         </div>

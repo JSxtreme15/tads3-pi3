@@ -67,8 +67,7 @@
                 <div class="col s3">
                     <div class="TI">
                         <i>TI</i>
-                        <a name="icones" class="material-icons" id="ti" href="javascript:;">computer</a>
-                        <p class="em-breve">Em breve</p>
+                        <a name="icones" class="material-icons" id="ti" href="${pageContext.request.contextPath}/suporte">computer</a>
                     </div>
                 </div>
 
