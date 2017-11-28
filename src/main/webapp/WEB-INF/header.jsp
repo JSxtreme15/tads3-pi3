@@ -23,8 +23,12 @@
             <li><a href="${pageContext.request.contextPath}/estoque">Estoque</a></li>
             <li><a href="${pageContext.request.contextPath}/vendas">Vendas</a></li>
             <li><a href="${pageContext.request.contextPath}/filiais">Filiais</a></li>
-            <li><a href="${pageContext.request.contextPath}/suporte">Suporte</a></li>
+            <li><a href="${pageContext.request.contextPath}/suporte">Suporte</a></li>           
+            <li> <a id="logout" class="material-icons" href="${pageContext.request.contextPath}/login">power_settings_new </a><li>
+    
+           
         </ul>
+            
 
         <ul id="nav-mobile" class="side-nav">
             <li><a href="${pageContext.request.contextPath}/telaInicial">Início</a></li>
