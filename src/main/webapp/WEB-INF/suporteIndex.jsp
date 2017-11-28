@@ -26,7 +26,7 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/usuario" class="breadcrumb">Usuário</a>  
+                        <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>  
                     </div>          
                 </div>
                     
@@ -64,17 +64,14 @@
         </main>
 
         <br /> 
-        
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Usuário" href="${pageContext.request.contextPath}/usuario/novoChamado">
-                <i class="large material-icons">textsms</i>
-            </a>
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastro de Usuário" href="${pageContext.request.contextPath}/usuario/cadastroUsuario">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastro de Usuário" href="${pageContext.request.contextPath}/suporte/cadastroUsuario">
                 <i class="large material-icons">person_add</i>
             </a>    
         </div>
         
         <jsp:include page="footer.jsp"/>
+        
 
 
         <!--  Scripts-->

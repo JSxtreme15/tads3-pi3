@@ -38,12 +38,12 @@
                     <div class="row">
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="text" class="validate" required="required">
+                            <input name="nome" id="nome" type="text" class="validate" required="required" data-length="150" maxlength="150">
                         </div>
 
                         <div class="input-field col s12 m12 l4">
                             <label for="email">Email</label>
-                            <input name="email" id="email" type="email" class="validate" required="required">
+                            <input name="email" id="email" type="email" class="validate" required="required" data-length="100" maxlength="100">
                         </div>
 
                         <div class="input-field col s12 m12 l4">
@@ -64,12 +64,12 @@
 
                         <div class="input-field col s12 m6 l6">
                             <label for="logradouro">Logradouro</label>
-                            <input name="logradouro" id="logradouro" type="text" class="validate">
+                            <input name="logradouro" id="logradouro" type="text" class="validate" data-length="150" maxlength="150">
                         </div>
 
                         <div class="input-field col s12 m6 l6">
                             <label for="numero">Número</label>
-                            <input name="numero" id="numero" type="number" class="validate">
+                            <input name="numero" id="numero" type="number" class="validate" maxlength="6">
                         </div>
 
                         <div class="input-field right">

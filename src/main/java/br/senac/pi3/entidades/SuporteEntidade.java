@@ -13,16 +13,17 @@ public class SuporteEntidade {
     public int id;
     public String nome;
     public String email;
+    public String telefone;
     
     
-    public SuporteEntidade(int id, String nome, String email) {
+    public SuporteEntidade(int id, String nome, String email, String telefone) {
         this.id = id;
         this.nome = nome;
         this.email = email;
+        this.telefone = telefone;
         
     }
-
-    public SuporteEntidade(String nome, String email) {
+    public SuporteEntidade(String nome, String email, String telefone) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -52,6 +53,14 @@ public class SuporteEntidade {
 
     public void add(SuporteEntidade suporte) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
 

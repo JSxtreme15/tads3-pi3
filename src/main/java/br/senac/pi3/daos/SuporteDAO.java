@@ -35,7 +35,8 @@ public class SuporteDAO {
                 SuporteEntidade suporte1 = new SuporteEntidade(
                     resultado.getInt("id"),
                     resultado.getString("nome"),
-                    resultado.getString("email")                   
+                    resultado.getString("email"),
+                    resultado.getString("telefone")    
                 );
                 
                 suporte.add(suporte1);
@@ -65,7 +66,8 @@ public class SuporteDAO {
                 SuporteEntidade suporte = new SuporteEntidade(
                     resultado.getInt("id"),
                     resultado.getString("nome"),
-                    resultado.getString("email")
+                    resultado.getString("email"),
+                    resultado.getString("telefone")
                 );
                 
                 return suporte;
@@ -84,12 +86,12 @@ public class SuporteDAO {
     
     public boolean cadastrar(SuporteEntidade suporte) {
         try {
-            String sql = "INSERT INTO suporte (nome, email, telefone) values(?,?,?);";
+            String sql = "INSERT INTO suporte (id, nome, email, telefone) values(?,?,?,?);";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
 
             comando.setString(1, suporte.getNome());
             comando.setString(2, suporte.getEmail());
-            
+            comando.setString(3, suporte.getTelefone());
 
             comando.execute();
             
@@ -111,7 +113,7 @@ public class SuporteDAO {
 
             comando.setString(1, suporte.getNome());
             comando.setString(2, suporte.getEmail());
-            
+            comando.setString(3, suporte.getTelefone());
 
             comando.execute();
             

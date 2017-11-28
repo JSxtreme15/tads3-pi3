@@ -65,7 +65,7 @@
         <br/>
 
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="./vendas/cadastro">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Nova Venda" href="./vendas/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>

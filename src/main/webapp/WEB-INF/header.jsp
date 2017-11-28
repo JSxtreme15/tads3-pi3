@@ -24,7 +24,7 @@
             <li><a href="${pageContext.request.contextPath}/vendas">Vendas</a></li>
             <li><a href="${pageContext.request.contextPath}/filiais">Filiais</a></li>
             <li><a href="${pageContext.request.contextPath}/suporte">Suporte</a></li>           
-            <li> <a id="logout" class="material-icons" href="${pageContext.request.contextPath}/login">power_settings_new </a><li>
+            <li><a id="logout" class="material-icons" href="${pageContext.request.contextPath}/login" class="rigth-align">power_settings_new</a><li>
     
            
         </ul>
@@ -38,8 +38,9 @@
             <li><a href="${pageContext.request.contextPath}/vendas">Vendas</a></li>
             <li><a href="${pageContext.request.contextPath}/filiais">Filiais</a></li>
             <li><a href="${pageContext.request.contextPath}/suporte">Suporte</a></li>
+            <li><a href="#" data-activates="nav-mobile" class="button-collapse" class="material-icons">menu</a></li>
         </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        
     </div>
 </nav>
 

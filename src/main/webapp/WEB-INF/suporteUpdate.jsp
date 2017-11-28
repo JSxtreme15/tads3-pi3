@@ -46,6 +46,11 @@
                             <input name="email" id="email" type="email" class="validate" required="required" value="${suporte.getEmail()}">
                         </div>
                         
+                        <div class="input-field col s12 m12 l4">
+                            <label for="telefone">Telefone</label>
+                            <input name="telefone" id="telefone" type="telefone" class="validate" required="required" value="${suporte.getEmail()}">
+                        </div>
+                        
                         <div class="input-field right">
                             <a href="${pageContext.request.contextPath}/suporte" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
                             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Confirmar</button>
