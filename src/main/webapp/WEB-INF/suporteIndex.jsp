@@ -65,9 +65,6 @@
 
         <br /> 
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Suporte" href="${pageContext.request.contextPath}/protegido/suporte/novoChamado">
-                <i class="large material-icons">textsms</i>
-            </a>
             <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastro de Usuário" href="${pageContext.request.contextPath}/protegido/suporte/cadastroUsuario">
                 <i class="large material-icons">person_add</i>
             </a>    
