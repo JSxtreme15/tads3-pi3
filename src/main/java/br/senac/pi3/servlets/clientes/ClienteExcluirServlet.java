@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "ClienteExcluirServlet", urlPatterns = { "/clientes/excluir" })
+@WebServlet(name = "ClienteExcluirServlet", urlPatterns = { "/protegido/clientes/excluir" })
 public class ClienteExcluirServlet extends HttpServlet{
     
     public ClienteDAO clientesDao = new ClienteDAO();
@@ -27,6 +27,6 @@ public class ClienteExcluirServlet extends HttpServlet{
         int id = Integer.parseInt(request.getParameter("id"));
         clientesDao.excluir(id);
          
-        response.sendRedirect(request.getContextPath() + "/clientes");
+        response.sendRedirect(request.getContextPath() + "/protegido/clientes");
      }
 }

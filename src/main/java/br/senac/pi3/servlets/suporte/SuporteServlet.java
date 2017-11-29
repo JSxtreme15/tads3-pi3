@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "SuporteServlet", urlPatterns = { "/suporte" })
+@WebServlet(name = "SuporteServlet", urlPatterns = { "/protegido/suporte" })
 public class SuporteServlet extends HttpServlet {
     
     public SuporteDAO suporteDao = new SuporteDAO();

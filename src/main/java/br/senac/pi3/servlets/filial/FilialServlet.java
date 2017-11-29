@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FilialServlet", urlPatterns = { "/filiais" })
+@WebServlet(name = "FilialServlet", urlPatterns = { "/protegido/filiais" })
 public class FilialServlet extends HttpServlet {
     
     public FilialDAO filialDao = new FilialDAO();

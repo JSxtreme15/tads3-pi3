@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "ClienteApiServletCadastro", urlPatterns = { "/clientes/cadastro/api" })
+@WebServlet(name = "ClienteApiServletCadastro", urlPatterns = { "/protegido/clientes/cadastro/api" })
 public class ClienteCadastroApiServlet extends HttpServlet{
     
     public ClienteDAO clienteDao = new ClienteDAO();

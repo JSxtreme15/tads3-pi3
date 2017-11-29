@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "SuporteesServletNovoChamado", urlPatterns = { "/suporte/novoChamado" })
+@WebServlet(name = "SuporteesServletNovoChamado", urlPatterns = { "/protegido/suporte/novoChamado" })
 public class SuporteCadastroServlet extends HttpServlet{
     
     public SuporteDAO suporte1Dao = new SuporteDAO();
@@ -46,6 +46,6 @@ public class SuporteCadastroServlet extends HttpServlet{
         SuporteEntidade novoSuporte = new SuporteEntidade(nome, email);
         suporte1Dao.cadastrar(novoSuporte);
         
-        response.sendRedirect(request.getContextPath() + "/suporte");
+        response.sendRedirect(request.getContextPath() + "/protegido/suporte");
     }
 }

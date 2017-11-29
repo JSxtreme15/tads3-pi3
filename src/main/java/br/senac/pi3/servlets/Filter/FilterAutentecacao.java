@@ -5,10 +5,7 @@
  */
 package br.senac.pi3.servlets.Filter;
 
-
- 
-
-import br.senac.pi3.entidades.UsuarioSistema;
+import br.senac.pi3.entidades.UsuarioEntidade;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -16,57 +13,41 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author fernando.tsuda
+ * @author allanzi
  */
-@WebFilter(filterName = "AutorizacaoFilter",
-	servletNames = {"CadastroProdutoServlet"},
-	urlPatterns = {"/protegido/*"})
 public class FilterAutentecacao implements Filter {
 
-  @Override
-  public void init(FilterConfig filterConfig) throws ServletException {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
 
-  }
-
-  @Override
-  public void doFilter(ServletRequest request,
-	  ServletResponse response, FilterChain chain)
-	  throws IOException, ServletException {
-    HttpServletRequest httpRequest = (HttpServletRequest) request; // cast
-    HttpServletResponse httpResponse = (HttpServletResponse) response;
-
-    HttpSession sessao = httpRequest.getSession();
-    if (sessao != null && sessao.getAttribute("usuario") != null) {
-      // Usuario esta logado
-      
-      UsuarioSistema usuario = (UsuarioSistema) sessao.getAttribute("usuario");
-      UsuarioSistemaService service = new UsuarioSistemaServiceMock();
-      
-      String paginaAcessada = httpRequest.getRequestURI();
-      String funcionalidade = 
-	      paginaAcessada.replace(httpRequest.getContextPath(), "");
-      
-      if (service.autorizado(usuario, funcionalidade)) {
-	chain.doFilter(request, response); // Comando que deixa requisição passar para proximo elemento.
-      } else {
-	httpResponse.sendRedirect(httpRequest.getContextPath() + "/erro-nao-autorizado.jsp");
-      }
-    } else {
-      httpResponse.sendRedirect(httpRequest.getContextPath() + "/login");
-      return;
     }
-  }
 
-  @Override
-  public void destroy() {
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
 
-  }
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
+
+        HttpSession sessao = httpRequest.getSession();
+        
+        if (sessao.getAttribute("usuario") == null) {
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/login");
+            return;
+        }
+        
+        chain.doFilter(request, response);
+    }
+
+    @Override
+    public void destroy() {
+
+    }
 
 }

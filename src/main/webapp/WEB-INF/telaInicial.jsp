@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        
+
         <title>Astec Games</title>
         <link rel="icon" type="imagem/png" href="http://ap.imagensbrasil.org/images/2017/10/19/astec.png" /> 
 
@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <div class="provider">
                         <i>Fornecedores</i>
 
-                        <a name="icones" class="material-icons darken-text"  id="fornecedor" href="${pageContext.request.contextPath}/fornecedores">local_shipping</a>                    
+                        <a name="icones" class="material-icons darken-text"  id="fornecedor" href="${pageContext.request.contextPath}/protegido/fornecedores">local_shipping</a>
 
                     </div>
                 </div>
@@ -54,13 +54,14 @@
                 <div class="col s3">
                     <div class="storage">                         
                         <i>Estoque</i>
-                        <a name="icones" class="material-icons" id="estoque" href="${pageContext.request.contextPath}/estoque">storage</a>
+                        <a name="icones" class="material-icons" id="estoque" href="${pageContext.request.contextPath}/protegido/estoque">storage</a>
                     </div>
                 </div>
+
                 <div class="col s3">
                     <div class="client">
                         <i>Clientes</i>
-                        <a name="icones" class="material-icons" id="cliente" href="${pageContext.request.contextPath}/clientes">group</a>
+                        <a name="icones" class="material-icons" id="cliente" href="${pageContext.request.contextPath}/protegido/clientes">group</a>
                     </div>
                 </div>
 

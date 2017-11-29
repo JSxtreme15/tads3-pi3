@@ -24,9 +24,9 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/vendas" class="breadcrumb">Vendas</a>
-                        <a href="${pageContext.request.contextPath}/vendas/cadastro" class="breadcrumb">Cadastro de Venda</a>
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/vendas" class="breadcrumb">Vendas</a>
+                        <a href="${pageContext.request.contextPath}/protegido/vendas/cadastro" class="breadcrumb">Cadastro de Venda</a>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                     </div>
 
                     <div class="input-field right">
-                        <a href="${pageContext.request.contextPath}/vendas" class="waves-effect waves-light btn grey lighten-3 black-text" id="add-client"><i class="material-icons left">arrow_back</i>Voltar</a>
+                        <a href="${pageContext.request.contextPath}/protegido/vendas" class="waves-effect waves-light btn grey lighten-3 black-text" id="add-client"><i class="material-icons left">arrow_back</i>Voltar</a>
                         <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i> Cadastrar</button>
                     </div>
                 </form>
@@ -117,7 +117,7 @@
                 
                 <br>
                 
-                <form name="form-clientes" action="${pageContext.request.contextPath}/clientes/cadastro/api" method="POST" class="col s12" accept-charset="UTF-8">
+                <form name="form-clientes" action="${pageContext.request.contextPath}/protegido/clientes/cadastro/api" method="POST" class="col s12" accept-charset="UTF-8">
                     <div class="row">
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>

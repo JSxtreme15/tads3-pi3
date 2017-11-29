@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.senac.pi3.inicio;
+package br.senac.pi3.servlets.inicio;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kaio.hvsantos
  */
-@WebServlet(name = "TelaInicial", urlPatterns = {"/telaInicial"})
+@WebServlet(name = "TelaInicial", urlPatterns = {"/protegido/telaInicial"})
 public class TelaInicialServlet extends HttpServlet {
 
    

@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FilialServletEditar", urlPatterns = { "/filiais/editar" })
+@WebServlet(name = "FilialServletEditar", urlPatterns = { "/protegido/filiais/editar" })
 public class FilialEditarServlet extends HttpServlet{
     public FilialDAO filiaisDao = new FilialDAO();
     
@@ -51,7 +51,7 @@ public class FilialEditarServlet extends HttpServlet{
         int id = Integer.parseInt(request.getParameter("id"));
         filiaisDao.atualizar(id, filialAtualizado);
         
-        response.sendRedirect(request.getContextPath() + "/filiais");
+        response.sendRedirect(request.getContextPath() + "/protegido/filiais");
         
     }
 }

@@ -22,14 +22,11 @@
         <script>
             var pattern = Trianglify({
                 width: window.innerWidth,
-                height: window.innerHeight
+                height: window.innerHeight,
+                x_colors: 'Spectral'
             });
             document.body.appendChild(pattern.canvas())
         </script>
-        <div class="section"></div>
-        <div class="section"></div>
-        <div class="section"></div>
-        <div class="section"></div>
         <div class="section"></div>
 
 
@@ -67,11 +64,8 @@
                                 <div class='row'>
                                     <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect green darken-4'>Login</button>
                                 </div>
-                                <a href="{{route('password.reset')}}" class="right bold" style="margin-top: 3px">Esqueceu a sua senha ?</a>
-                                <p>
-                                    <input type="checkbox" name="remember" id="test5" />
-                                    <label for="test5" class="grey-text text-darken-3 bold">Lembre-me</label>
-                                </p>
+
+                                <br>
                                 <br>
                             </center>
                         </form>
@@ -101,8 +95,8 @@
                 $('canvas').css('height', height);
             });
         </script>
-        
-                <!--  Scripts-->
+
+        <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.mask.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/materialize.js"></script>

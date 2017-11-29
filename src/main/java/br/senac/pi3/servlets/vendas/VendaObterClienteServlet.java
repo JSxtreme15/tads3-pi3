@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "VendaObterClienteServlet", urlPatterns = {"/vendas/cliente"})
+@WebServlet(name = "VendaObterClienteServlet", urlPatterns = {"/protegido/vendas/cliente"})
 public class VendaObterClienteServlet extends HttpServlet {
 
     public ClienteDAO clienteDao = new ClienteDAO();

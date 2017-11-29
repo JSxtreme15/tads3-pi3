@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "VendaCadastroServlet", urlPatterns = { "/vendas/cadastro" })
+@WebServlet(name = "VendaCadastroServlet", urlPatterns = { "/protegido/vendas/cadastro" })
 public class VendaCadastroServlet extends HttpServlet {
 
     ClienteDAO clienteDao = new ClienteDAO();
@@ -62,7 +62,7 @@ public class VendaCadastroServlet extends HttpServlet {
         removerProdutosEstoque(produtos);
         
         VendaDAO.vendas.add(venda);
-        response.sendRedirect(request.getContextPath() + "/vendas");
+        response.sendRedirect(request.getContextPath() + "/protegido/vendas");
     }
 
     private void removerProdutosEstoque(List<EstoqueEntidade> produtos) {

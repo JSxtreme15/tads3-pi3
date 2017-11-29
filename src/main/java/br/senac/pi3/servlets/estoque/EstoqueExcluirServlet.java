@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Joao Sergio
  */
-@WebServlet(name = "EstoqueExcluirServlet", urlPatterns = { "/estoque/excluir" })
+@WebServlet(name = "EstoqueExcluirServlet", urlPatterns = { "/protegido/estoque/excluir" })
 public class EstoqueExcluirServlet extends HttpServlet{
     
     public EstoqueDAO estoqueDao = new EstoqueDAO();
@@ -27,6 +27,6 @@ public class EstoqueExcluirServlet extends HttpServlet{
         int id = Integer.parseInt(request.getParameter("id"));
         estoqueDao.excluir(id);
          
-        response.sendRedirect(request.getContextPath() + "/estoque");
+        response.sendRedirect(request.getContextPath() + "/protegido/estoque");
      }
 }

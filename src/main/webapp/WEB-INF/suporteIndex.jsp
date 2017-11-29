@@ -25,8 +25,8 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>  
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/suporte" class="breadcrumb">Suporte</a>  
                     </div>          
                 </div>
                     
@@ -55,8 +55,8 @@
                         <td><c:out value="${suporte.getNome()}" /></td>
                         <td><c:out value="${suporte.getEmail()}" /></td>
                         
-                        <td><a href="${pageContext.request.contextPath}/suporte/editar?id=${suporte.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
-                        <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/suporte/excluir?id=${suporte.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
+                        <td><a href="${pageContext.request.contextPath}/protegido/suporte/editar?id=${suporte.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
+                        <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/suporte/excluir?id=${suporte.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
                     </tr>
                 </c:forEach> 
                 </tbody>
@@ -66,10 +66,10 @@
         <br /> 
         
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Suporte" href="${pageContext.request.contextPath}/suporte/novoChamado">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Suporte" href="${pageContext.request.contextPath}/protegido/suporte/novoChamado">
                 <i class="large material-icons">textsms</i>
             </a>
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastro de Usuário" href="${pageContext.request.contextPath}/suporte/cadastroUsuario">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Cadastro de Usuário" href="${pageContext.request.contextPath}/protegido/suporte/cadastroUsuario">
                 <i class="large material-icons">person_add</i>
             </a>    
         </div>

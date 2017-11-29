@@ -24,8 +24,8 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/estoque" class="breadcrumb">Estoque</a>
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/estoque" class="breadcrumb">Estoque</a>
                     </div>
                 </div>
             </div>
@@ -56,9 +56,8 @@
                             <td><c:out value="${estoque.getDesenvolvedora()}" /></td>
                             <td><c:out value="${estoque.getPlataforma()}" /></td>
                             <td><c:out value="${estoque.getQuantidade()}" /></td>
-                            <td><a href="${pageContext.request.contextPath}/estoque/editar?id=${estoque.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
-                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/estoque/excluir?id=${estoque.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
-
+                            <td><a href="${pageContext.request.contextPath}/protegido/estoque/editar?id=${estoque.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
+                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/estoque/excluir?id=${estoque.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -66,7 +65,7 @@
         </main>
 
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped darken-3 pulse" data-position="left" data-delay="50" data-tooltip="Novo Produto" href="${pageContext.request.contextPath}/estoque/cadastro">
+            <a class="btn-floating btn-large tooltipped darken-3 pulse" data-position="left" data-delay="50" data-tooltip="Novo Produto" href="${pageContext.request.contextPath}/protegido/estoque/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>

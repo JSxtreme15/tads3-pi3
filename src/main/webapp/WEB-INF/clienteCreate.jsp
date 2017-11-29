@@ -24,9 +24,9 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/clientes" class="breadcrumb">Clientes</a>
-                        <a href="${pageContext.request.contextPath}/clientes/cadastro" class="breadcrumb">Cadastro de Clientes</a>
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/clientes" class="breadcrumb">Clientes</a>
+                        <a href="${pageContext.request.contextPath}/protegido/clientes/cadastro" class="breadcrumb">Cadastro de Clientes</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="input-field right">
-                            <a href="${pageContext.request.contextPath}/clientes" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <a href="${pageContext.request.contextPath}/protegido/clientes" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
                             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i> Cadastrar</button>
                         </div>
                     </div>

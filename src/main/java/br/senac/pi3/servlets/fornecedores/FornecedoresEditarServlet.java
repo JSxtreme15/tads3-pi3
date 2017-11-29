@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FornecedorServletEditar", urlPatterns = { "/fornecedores/editar" })
+@WebServlet(name = "FornecedorServletEditar", urlPatterns = { "/protegido/fornecedores/editar" })
 public class FornecedoresEditarServlet extends HttpServlet{
     public FornecedorDAO fornecedoresDao = new FornecedorDAO();
     
@@ -52,7 +52,7 @@ public class FornecedoresEditarServlet extends HttpServlet{
         int id = Integer.parseInt(request.getParameter("id"));
         fornecedoresDao.atualizar(id, fornecedorAtualizado);
         
-        response.sendRedirect(request.getContextPath() + "/fornecedores");
+        response.sendRedirect(request.getContextPath() + "/protegido/fornecedores");
         
     }
 }

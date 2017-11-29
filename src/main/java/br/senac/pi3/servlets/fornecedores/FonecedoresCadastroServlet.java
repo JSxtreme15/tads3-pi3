@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FornecedoresServletCadastro", urlPatterns = { "/fornecedores/cadastro" })
+@WebServlet(name = "FornecedoresServletCadastro", urlPatterns = { "/protegido/fornecedores/cadastro" })
 public class FonecedoresCadastroServlet extends HttpServlet{
     
     public FornecedorDAO fornecedorDao = new FornecedorDAO();
@@ -49,6 +49,6 @@ public class FonecedoresCadastroServlet extends HttpServlet{
         FornecedorEntidade novoFornecedor = new FornecedorEntidade(nome, email, telefone, cnpj, cep, logradouro, numero);
         fornecedorDao.cadastrar(novoFornecedor);
         
-        response.sendRedirect(request.getContextPath() + "/fornecedores");
+        response.sendRedirect(request.getContextPath() + "/protegido/fornecedores");
     }
 }

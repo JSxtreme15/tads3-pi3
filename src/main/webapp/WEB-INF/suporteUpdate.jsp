@@ -24,9 +24,9 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/suporte" class="breadcrumb">Suporte</a>
-                        <a href="${pageContext.request.contextPath}/suporte/editar?id=${suporte.getId()}" class="breadcrumb">Edição de Chamado</a>
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/suporte" class="breadcrumb">Suporte</a>
+                        <a href="${pageContext.request.contextPath}/protegido/suporte/editar?id=${suporte.getId()}" class="breadcrumb">Edição de Chamado</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         </div>
                         
                         <div class="input-field right">
-                            <a href="${pageContext.request.contextPath}/suporte" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <a href="${pageContext.request.contextPath}/protegido/suporte" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
                             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Confirmar</button>
                         </div>
                     </div>

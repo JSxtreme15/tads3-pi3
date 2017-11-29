@@ -24,8 +24,8 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/fornecedores" class="breadcrumb">Fornecedores</a>
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/fornecedores" class="breadcrumb">Fornecedores</a>
                     </div>
                 </div>
             </div>
@@ -50,8 +50,8 @@
                             <td><c:out value="${fornecedor.getCnpj()}" /></td>
                             <td><c:out value="${forncecedor.getEmail()}" /></td>
                             <td><c:out value="${forncecedor.getTelefone()}" /></td>
-                            <td><a href="${pageContext.request.contextPath}/fornecedores/editar?id=${fornecedor.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
-                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/fornecedores/excluir?id=${fornecedor.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
+                            <td><a href="${pageContext.request.contextPath}/protegido/fornecedores/editar?id=${fornecedor.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
+                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/fornecedores/excluir?id=${fornecedor.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -61,7 +61,7 @@
         <br /> 
         
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Fornecedor" href="${pageContext.request.contextPath}/fornecedores/cadastro">
+            <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Fornecedor" href="${pageContext.request.contextPath}/protegido/fornecedores/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>

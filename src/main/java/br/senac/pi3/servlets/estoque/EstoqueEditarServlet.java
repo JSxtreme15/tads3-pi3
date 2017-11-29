@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "EstoqueServletEditar", urlPatterns = { "/estoque/editar" })
+@WebServlet(name = "EstoqueServletEditar", urlPatterns = { "/protegido/estoque/editar" })
 public class EstoqueEditarServlet extends HttpServlet{
     public EstoqueDAO estoqueDao = new EstoqueDAO();
     
@@ -53,7 +53,7 @@ public class EstoqueEditarServlet extends HttpServlet{
         
         estoqueDao.atualizar(id, estoqueatualizado);
         
-        response.sendRedirect(request.getContextPath() + "/estoque");
+        response.sendRedirect(request.getContextPath() + "/protegido/estoque");
         
     }
 }

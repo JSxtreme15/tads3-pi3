@@ -4,19 +4,35 @@
  * and open the template in the editor.
  */
 package br.senac.pi3.servlets.Filter;
-
-import br.senac.pi3.entidades.UsuarioSistema;
+import br.senac.pi3.daos.UsuarioDAO;
+import br.senac.pi3.entidades.UsuarioEntidade;
 
 /**
  *
- * @author kaio.hvsantos
+ * @author fernando.tsuda
  */
+public class UsuarioSistemaService extends UsuarioDAO implements UsuarioSistemaServiceInterface {
 
-    public interface UsuarioSistemaService {
-  
-  public UsuarioSistema autenticar(String username, String senha);
-  
-  public boolean autorizado(UsuarioSistema usuario, String funcionalidade);
-  
+  @Override
+  public UsuarioEntidade autenticar(String username, String senha) {
+    UsuarioEntidade usuario = findWhereUsername(username);
+
+    if (usuario != null && usuario.verificarSenha(senha)) {
+      return usuario;
+    }
+    return null;
+  }
+
+  @Override
+  public boolean autorizado(UsuarioEntidade usuario, String funcionalidade) {
+    if (funcionalidade != null) {
+      if (funcionalidade.contains("cadastro-produto") && usuario.temPapel("CHEFE")) {
+	return true;
+      } else if (funcionalidade.contains("protegido/") && usuario.temPapel("PEAO")) {
+	return true;
+      }
+    }
+    return false;
+  }
+
 }
-

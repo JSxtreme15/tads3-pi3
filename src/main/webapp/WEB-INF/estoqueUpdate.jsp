@@ -25,8 +25,8 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/estoque" class="breadcrumb">Estoque</a>
-                        <a href="${pageContext.request.contextPath}/estoque/atualizar?id=${estoque.getId()}" class="breadcrumb">Edição de Estoque</a>
+                        <a href="${pageContext.request.contextPath}/protegido/estoque" class="breadcrumb">Estoque</a>
+                        <a href="${pageContext.request.contextPath}/protegido/estoque/atualizar?id=${estoque.getId()}" class="breadcrumb">Edição de Estoque</a>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
 
                     
                         <div class="input-field right">
-                            <a href="${pageContext.request.contextPath}/estoque" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <a href="${pageContext.request.contextPath}/protegido/estoque" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
                             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Confirmar</button>
                         </div>
                             

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FornecedorExcluirServlet", urlPatterns = { "/fornecedores/excluir" })
+@WebServlet(name = "FornecedorExcluirServlet", urlPatterns = { "/protegido/fornecedores/excluir" })
 public class FornecedoresExcluirServlet extends HttpServlet{
     
     public FornecedorDAO fornecedoresDao = new FornecedorDAO();
@@ -29,6 +29,6 @@ public class FornecedoresExcluirServlet extends HttpServlet{
         int id = Integer.parseInt(request.getParameter("id"));
         fornecedoresDao.excluir(id);
          
-        response.sendRedirect(request.getContextPath() + "/fornecedores");
+        response.sendRedirect(request.getContextPath() + "/protegido/fornecedores");
      }
 }

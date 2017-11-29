@@ -25,8 +25,8 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/clientes" class="breadcrumb">Clientes</a>
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/clientes" class="breadcrumb">Clientes</a>
                     </div>
                 </div>
             </div>
@@ -58,8 +58,8 @@
                             <td><c:out value="${cliente.getLogradouro()}" /></td>
                             <td><c:out value="${cliente.getNumeroResidencia()}" /></td>
                             <td><c:out value="${cliente.getCep()}" /></td>
-                            <td><a href="${pageContext.request.contextPath}/clientes/editar?id=${cliente.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
-                            <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/clientes/excluir?id=${cliente.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
+                            <td><a href="${pageContext.request.contextPath}/protegido/clientes/editar?id=${cliente.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
+                            <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/clientes/excluir?id=${cliente.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -69,7 +69,7 @@
         <br/>
 
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped darken-3" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="./clientes/cadastro">
+            <a class="btn-floating btn-large tooltipped darken-3" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="${pageContext.request.contextPath}/protegido/clientes/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>

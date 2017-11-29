@@ -5,6 +5,7 @@
         $('.button-collapse').sideNav();
         $('.parallax').parallax();
         $('.modal').modal();
+        $(".dropdown-button").dropdown();
 
         $('#search-cep').click(() => {
             let cep = $("#cep").val();

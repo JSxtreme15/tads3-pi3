@@ -7,35 +7,41 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <style>
     img {
-        margin-top:1%; 
-        width:30%; 
-        height:80%;
+        margin-top: 1%;
+        width: 21%;
+        height: 80%;
     }
 </style>
 
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="${pageContext.request.contextPath}/logout">Sair</a></li>
+</ul>
+
 <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
+    <div class="nav-wrapper container-fluid">
         <img id="logo-container" src="http://ap.imagensbrasil.org/images/2017/10/19/astec.png" alt="astec.png"/>
         <ul class="right hide-on-med-and-down">
-            <li><a href="${pageContext.request.contextPath}/telaInicial">Início</a></li>
-            <li><a href="${pageContext.request.contextPath}/clientes">Clientes</a></li>
-            <li><a href="${pageContext.request.contextPath}/fornecedores">Fornecedores</a></li>
-            <li><a href="${pageContext.request.contextPath}/estoque">Estoque</a></li>
-            <li><a href="${pageContext.request.contextPath}/vendas">Vendas</a></li>
-            <li><a href="${pageContext.request.contextPath}/filiais">Filiais</a></li>
-            <li><a href="${pageContext.request.contextPath}/suporte">Suporte</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/telaInicial">Início</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/clientes">Clientes</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/fornecedores">Fornecedores</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/estoque">Estoque</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/vendas">Vendas</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/filiais">Filiais</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/suporte">Suporte</a></li>
+            <li><a class="dropdown-button" href="" data-activates="dropdown1" data-beloworigin="true" data-hover="true"><%= session.getAttribute("usuario_nome") %><i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
-            <li><a href="${pageContext.request.contextPath}/telaInicial">Início</a></li>
-            <li><a href="${pageContext.request.contextPath}/clientes">Clientes</a></li>
-            <li><a href="${pageContext.request.contextPath}/fornecedores">Fornecedores</a></li>
-            <li><a href="${pageContext.request.contextPath}/estoque">Estoque</a></li>
-            <li><a href="${pageContext.request.contextPath}/vendas">Vendas</a></li>
-            <li><a href="${pageContext.request.contextPath}/filiais">Filiais</a></li>
-            <li><a href="${pageContext.request.contextPath}/suporte">Suporte</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/telaInicial">Início</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/clientes">Clientes</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/fornecedores">Fornecedores</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/estoque">Estoque</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/vendas">Vendas</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/filiais">Filiais</a></li>
+            <li><a href="${pageContext.request.contextPath}/protegido/suporte">Suporte</a></li>
+            <li><a href="${pageContext.request.contextPath}/logout">Sair</a></li>
         </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 

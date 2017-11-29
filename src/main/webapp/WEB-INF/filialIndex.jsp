@@ -24,8 +24,8 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/filiais" class="breadcrumb">Filiais</a>
+                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/filiais" class="breadcrumb">Filiais</a>
                     </div>
                 </div>
             </div>
@@ -55,8 +55,8 @@
                             <td><c:out value="${filial.getLocalidade()}" /></td>
                             <td><c:out value="${filial.getLogradouro()}" /></td>
                             <td><c:out value="${filial.getNumeroResidencia()}" /></td>
-                            <td><a href="${pageContext.request.contextPath}/filiais/editar?id=${filial.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
-                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/filiais/excluir?id=${filial.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
+                            <td><a href="${pageContext.request.contextPath}/protegido/filiais/editar?id=${filial.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
+                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/filiais/excluir?id=${filial.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -66,7 +66,7 @@
         <br/>
 
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped darken-3" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="./filiais/cadastro">
+            <a class="btn-floating btn-large tooltipped darken-3" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="${pageContext.request.contextPath}/protegido/filiais/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>

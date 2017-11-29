@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FornecedorServlet", urlPatterns = { "/fornecedores" })
+@WebServlet(name = "FornecedorServlet", urlPatterns = { "/protegido/fornecedores" })
 public class FornecedorServlet extends HttpServlet {
     
     public FornecedorDAO fornecedorDao = new FornecedorDAO();

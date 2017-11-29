@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "FilialServletCadastro", urlPatterns = { "/filiais/cadastro" })
+@WebServlet(name = "FilialServletCadastro", urlPatterns = { "/protegido/filiais/cadastro" })
 public class FilialCadastroServlet extends HttpServlet{
     
     public FilialDAO filiaisDao = new FilialDAO();
@@ -48,6 +48,6 @@ public class FilialCadastroServlet extends HttpServlet{
         FilialEntidade novaFilial = new FilialEntidade(nome, cnpj, cep, localidade, logradouro, numero, telefone);
         filiaisDao.cadastrar(novaFilial);
         
-        response.sendRedirect(request.getContextPath() + "/filiais");
+        response.sendRedirect(request.getContextPath() + "/protegido/filiais");
     }
 }
