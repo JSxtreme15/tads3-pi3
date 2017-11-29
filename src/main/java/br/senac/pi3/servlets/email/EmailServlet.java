@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.senac.pi3.servlets.suporte;
+package br.senac.pi3.servlets.email;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,7 +23,7 @@ import org.apache.commons.mail.SimpleEmail;
 
 /**
  *
- * @author allan
+ * @author Felipe
  */
 //@WebServlet(name = "SuporteServlet", urlPatterns = {"/suporte"})
 public class EmailServlet extends HttpServlet {
@@ -34,22 +34,27 @@ public class EmailServlet extends HttpServlet {
             response.setContentType("text/html;charset=UTF-8");
             String Assunto = request.getParameter("Assunto");
             String Mensagem = request.getParameter("Mensagem");
-            enviaEmail();
-        } catch (EmailException ex) {
-            Logger.getLogger(EmailServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
-    
-    public void enviaEmail() throws EmailException{
-        SimpleEmail email = new SimpleEmail();
-        email.setHostName("smtp.gmail.com");
-        email.setSmtpPort(465);
-        email.setFrom("tardis.suporte@gmail.com");
-        email.addTo("tardis.suporte@gmail.com");
-        email.setSubject("teste");
-        email.setMsg("teste");
-        email.setSSL(true);
-        email.setAuthentication("tardis.suporte@gmail.com", "tardis123");
-        email.send();
-}}
+              
+
+      SimpleEmail email = new SimpleEmail();  
+  
+      email.setDebug(true);  
+      email.setHostName("smtp.gmail.com");  
+      email.setAuthentication("suporte.tardis@gmail.com","tardis123");  
+      email.setSSL(true);  
+      email.addTo("suporte.tardis@gmail.com"); //pode ser qualquer email  
+      email.setFrom("suporte.tardis@gmail.com"); //será passado o email que você fará a autenticação 
+      email.setSubject(Assunto);  
+      email.setMsg(Mensagem);  
+      email.send();  
+
+      } catch (EmailException e) {  
+
+      System.out.println(e.getMessage());  
+
+      }   
+
+  }  
+
+}
+

@@ -27,7 +27,7 @@
             
             <div class="col l3 s12 right">
                 <h5 class="white-text">Suporte</h5>
-                <form action="${pageContext.request.contextPath}/suporte" method="POST">
+                <form action="#" method="POST">
                     <select required="required" name="Assunto">
                         <option value="" disabled selected>Assunto</option>
                         <option value="1">Permissões</option>
@@ -35,7 +35,7 @@
                         <option value="3">Outros</option>
                     </select>
                     <textarea name="Mensagem" required="required" placeholder="Mensagem" id="textarea1" class="materialize-textarea" data-length="255" maxlength="255"></textarea>
-                    <button class="btn btn-default waves-effect waves-light" type="submit" name="action">Enviar
+                    <button  type="submit" class="btn btn-default waves-effect waves-light" name="action">Enviar
                         <i class="material-icons right">send</i>
                     </button>
                 </form>

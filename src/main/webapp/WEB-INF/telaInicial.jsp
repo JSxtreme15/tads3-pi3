@@ -45,9 +45,9 @@
 
             <div class="col m3 s12">
                 <div class="provider">
-                    <i>Fornecedores</i>
+                    
 
-                    <a name="icones" class="material-icons darken-text"  id="fornecedor" href="${pageContext.request.contextPath}/protegido/fornecedores">local_shipping</a>
+                    <a name="icones" class="material-icons darken-text tooltipped"  id="fornecedor" data-delay="50" data-tooltip="Fornecedores" href="${pageContext.request.contextPath}/protegido/fornecedores">local_shipping</a>
 
                 </div>
             </div>
@@ -55,23 +55,23 @@
 
             <div class="col m3 s12">
                 <div class="storage">                         
-                    <i>Estoque</i>
-                    <a name="icones" class="material-icons" id="estoque" href="${pageContext.request.contextPath}/protegido/estoque">storage</a>
+                    
+                    <a name="icones" class="material-icons tooltipped" id="estoque" data-delay="50" data-tooltip="Estoque" href="${pageContext.request.contextPath}/protegido/estoque">storage</a>
                 </div>
             </div>
 
             <div class="col m3 s12">
                 <div class="client">
-                    <i>Clientes</i>
-                    <a name="icones" class="material-icons" id="cliente" href="${pageContext.request.contextPath}/protegido/clientes">group</a>
+                    
+                    <a name="icones" class="material-icons tooltipped" id="cliente" data-delay="50" data-tooltip="Clientes" href="${pageContext.request.contextPath}/protegido/clientes">group</a>
                 </div>
             </div>
 
 
             <div class="col m3 s12">
                 <div class="TI">
-                    <i>TI</i>
-                    <a name="icones" class="material-icons" id="ti" href="${pageContext.request.contextPath}/suporte">computer</a>
+                    
+                    <a name="icones" class="material-icons tooltipped" id="ti" data-delay="50" data-tooltip="TI" href="${pageContext.request.contextPath}/protegido/suporte">computer</a>
                 </div>
             </div>
         </div>

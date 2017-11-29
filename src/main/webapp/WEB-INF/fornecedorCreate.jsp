@@ -74,7 +74,7 @@
 
                         <div class="input-field right">
                             <a href="${pageContext.request.contextPath}/protegido/fornecedores" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
-                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i> Cadastrar</button>
+                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Cadastrar</button>
                         </div>
                     </div>
                 </form>
