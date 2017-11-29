@@ -1,5 +1,5 @@
 <%-- 
-    Document   : suporteIndex
+    Document   : usuarioIndex
     Created on : 03/10/2017, 20:14:36
     Author     : allan
 --%>
@@ -38,22 +38,22 @@
             <table class="striped responsive-table">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
-                        <th>Ação</th>
-                            <select>
-                                <option value="" disabled selected>Opções</option>
-                                <option value="1">Usuários</option>
-                                <option value="2">Chamados</option>
-                            </select> 
+                        <th>Telefone</th>
+                        <th>Ação</th> 
                     </tr>
+                
                 </thead>
 
                 <tbody>
-                    <c:forEach items="${suporte}" var="suporte">
+                    <c:forEach items="${usuario}" var="usuario">
                     <tr>
-                        <td><c:out value="${suporte.getNome()}" /></td>
-                        <td><c:out value="${suporte.getEmail()}" /></td>
+                        <td><c:out value="${usuario.getID()}" /></td>
+                        <td><c:out value="${usuario.getNome()}" /></td>
+                        <td><c:out value="${usuario.getEmail()}" /></td>
+                        <td><c:out value="${usuario.getTelefone()}" /></td>
                         
                         <td><a href="${pageContext.request.contextPath}/protegido/suporte/editar?id=${suporte.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
                         <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/suporte/excluir?id=${suporte.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
@@ -64,7 +64,6 @@
         </main>
 
         <br /> 
-        
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large tooltipped" data-position="left" data-delay="50" data-tooltip="Novo Suporte" href="${pageContext.request.contextPath}/protegido/suporte/novoChamado">
                 <i class="large material-icons">textsms</i>
@@ -75,6 +74,7 @@
         </div>
         
         <jsp:include page="footer.jsp"/>
+        
 
 
         <!--  Scripts-->

@@ -14,7 +14,7 @@
 
 
             </div>
-            <div class="col l3 s12 right">
+            <div class="col l3 s12">
                 <h5 class="white-text">Contato</h5>
                 <ul>
                     <li><a class="white-text" href="#!">Avenida Engenheiro Eusébio Stevaux, 899</a></li>
@@ -23,6 +23,25 @@
                     <li><a class="white-text" href="#!">contato@astecgames.com.br</a></li>
                 </ul>
             </div>
+            
+            
+            <div class="col l3 s12 right">
+                <h5 class="white-text">Suporte</h5>
+                <form action="${pageContext.request.contextPath}/suporte" method="POST">
+                    <select required="required" name="Assunto">
+                        <option value="" disabled selected>Assunto</option>
+                        <option value="1">Permissões</option>
+                        <option value="2">Erros</option>
+                        <option value="3">Outros</option>
+                    </select>
+                    <textarea name="Mensagem" required="required" placeholder="Mensagem" id="textarea1" class="materialize-textarea" data-length="255" maxlength="255"></textarea>
+                    <button class="btn btn-default waves-effect waves-light" type="submit" name="action">Enviar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+            
+            
         </div>
     </div>
     <div class="footer-copyright">

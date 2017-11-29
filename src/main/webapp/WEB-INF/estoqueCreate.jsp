@@ -39,28 +39,28 @@
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="text" class="validate" required="required" >
+                            <input name="nome" id="nome" type="text" class="validate" required="required" data-length="150" maxlength="150">
                         </div>
                         
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="valor">Valor</label>
-                            <input name="valor" id="valor" type="number" class="validate" required="required" data-mask="000.000,00">
+                            <input name="valor" id="valor" type="number" class="validate" required="required" data-mask="000.000,00" >
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="desenvolvedora">Desenvolvido Por</label>
-                            <input name="desenvolvedora" id="desenvolvedora" type="text" class="validate" required="required" >
+                            <input name="desenvolvedora" id="desenvolvedora" type="text" class="validate" required="required" data-length="80" maxlength="80">
                         </div>
 
                         <div class="input-field col s12 m4 l4">
                             <label for="plataforma">Console</label>
-                            <input name="plataforma" id="plataforma" type="text" class="validate" required="required" >
+                            <input name="plataforma" id="plataforma" type="text" class="validate" required="required" data-length="80" maxlength="80">
                         </div>
 
                         <div class="input-field col s12 m4 l4">
                             <label for="quantidade">Quant. Estoque</label>
-                            <input name="quantidade" id="quantidade" type="number" class="validate" required="required" >
+                            <input name="quantidade" id="quantidade" type="number" class="validate" required="required" maxlength="6">
                         </div>
                         
                         <div class="input-field col s12 m4 l4">

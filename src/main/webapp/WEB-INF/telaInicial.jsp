@@ -14,13 +14,20 @@
         <title>Astec Games</title>
         <link rel="icon" type="imagem/png" href="http://ap.imagensbrasil.org/images/2017/10/19/astec.png" /> 
 
+    
+    <h2><c:out value="${sessionScope.usuario.nomeCompleto}" /></h2>
+    <h3><c:out value="${sessionScope.usuario.hashSenha}" /></h3>
+    
+   
+    
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body >
 
-        <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="${pageContext.request.contextPath}/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    </head>
-    <body >
+    <jsp:include page="header.jsp" />
 
         <jsp:include page="header.jsp" />
 
@@ -32,13 +39,14 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <br>
+    <br>
 
-        <main class="container" id="tela-inicio">           
+    <main class="container" id="tela-inicio">           
 
-            <div class="row">
+        <div class="row">
 
 
                 <div class="col s3">
@@ -49,6 +57,7 @@
 
                     </div>
                 </div>
+            </div>
 
 
                 <div class="col s3">
@@ -64,27 +73,28 @@
                         <a name="icones" class="material-icons" id="cliente" href="${pageContext.request.contextPath}/protegido/clientes">group</a>
                     </div>
                 </div>
+            </div>
 
                 <div class="col s3">
                     <div class="TI">
                         <i>TI</i>
-                        <a name="icones" class="material-icons" id="ti" href="javascript:;">computer</a>
-                        <p class="em-breve">Em breve</p>
+                        <a name="icones" class="material-icons" id="ti" href="${pageContext.request.contextPath}/suporte">computer</a>
                     </div>
                 </div>
-
             </div>
 
         </div>
-    </main>
 
-    <jsp:include page="footer.jsp" />
+    </div>
+</main>
 
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/jquery.mask.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/materialize.js"></script>
-    <script src="${pageContext.request.contextPath}/js/init.js"></script>
+<jsp:include page="footer.jsp" />
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.mask.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/materialize.js"></script>
+<script src="${pageContext.request.contextPath}/js/init.js"></script>
 
 </body>
 </html>

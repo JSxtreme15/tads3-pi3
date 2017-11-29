@@ -39,25 +39,41 @@
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="text" class="validate" required="required">
+                            <input name="nome" id="nome" type="text" class="validate" required="required" data-length="150" maxlength="150">
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="email">E-mail</label>
-                            <input name="email" id="email" type="text" class="validate" required="required">
+                            <input name="email" id="email" type="text" class="validate" required="required" data-length="100" maxlength="100">
                         </div>
                         
-                        <div class="row">
-                            <form class="col s12">
-                                <div class="row">
-                                  <div class="input-field col s12">
-                                    <i class="material-icons prefix">mode_edit</i>
-                                        <textarea id="texto" type="text" class="materialize-textarea" required="required" ></textarea>
-                                        <label for="textarea1">Seu problema...</label>
-                                  </div>
-                                </div>
-                            </form>
-                            </div>
+                        <div class="input-field col s12 m12 l4">
+                            <label for="telefone">Telefone</label>
+                            <input name="telefone" id="telefone" type="text" class="validate" required="required" data-mask="(00) 00000-0000">
+                        </div>
+                        
+                        <div class="input-field col s12">
+                            <select>
+                                <option value="" disabled selected>Perfil</option>
+                                <option value="1">Comprador</option>
+                                <option value="2">Vendendor</option>
+                                <option value="3">Gerente</option>
+                                <option value="4">Diretor</option>
+                                <option value="5">Super Usuário</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-field col s12">
+                            <select multiple>
+                                <option value="" disabled selected>Filial</option>
+                                <option value="1">Matriz</option>
+                                <option value="2">Minas Gerais</option>
+                                <option value="3">Rio de Janeiro</option>
+                                <option value="3">Bahia</option>
+                            </select>
+                            
+                        </div>
+                        
 
                         <div class="input-field right">
                             <a href="${pageContext.request.contextPath}/protegido/suporte" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>

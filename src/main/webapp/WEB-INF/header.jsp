@@ -30,6 +30,7 @@
             <li><a href="${pageContext.request.contextPath}/protegido/suporte">Suporte</a></li>
             <li><a class="dropdown-button" href="" data-activates="dropdown1" data-beloworigin="true" data-hover="true"><%= session.getAttribute("usuario_nome") %><i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
+            
 
         <ul id="nav-mobile" class="side-nav">
             <li><a href="${pageContext.request.contextPath}/protegido/telaInicial">Início</a></li>

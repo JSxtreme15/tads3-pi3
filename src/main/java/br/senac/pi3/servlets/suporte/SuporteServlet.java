@@ -5,7 +5,6 @@
  */
 package br.senac.pi3.servlets.suporte;
 
-import br.senac.pi3.servlets.suporte.*;
 import br.senac.pi3.daos.SuporteDAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;

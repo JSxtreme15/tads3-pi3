@@ -41,9 +41,9 @@ public class SuporteCadastroServlet extends HttpServlet{
 
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
-       
+        String telefone = request.getParameter("telefone");
         
-        SuporteEntidade novoSuporte = new SuporteEntidade(nome, email);
+        SuporteEntidade novoSuporte = new SuporteEntidade(nome, email, telefone);
         suporte1Dao.cadastrar(novoSuporte);
         
         response.sendRedirect(request.getContextPath() + "/protegido/suporte");
