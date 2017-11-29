@@ -119,29 +119,37 @@ footer.page-footer {
     margin: 0;
 }
 
+main#tela-inicio .material-icons {
+    transition: all ease .8s;
+}
+
+main#tela-inicio .material-icons:hover {
+    color: #191919;
+}
+
 #fornecedor 
 {
     position: auto;
-    color: black;
+    color: #565656;
 
 }
 
 #estoque
 {
     position: auto;
-    color: black;
+    color: #565656;
 }
 
 #cliente
 {
     position: auto;
-    color: black;
+    color: #565656;
 }
 
 #ti
 {
     position: auto;
-    color: black;
+    color: #565656;
 }
 
 @-webkit-keyframes fadeIn {
@@ -214,7 +222,9 @@ canvas {
 
 footer .select-wrapper .caret{
     color: #fff;
-    
 }
 
+body {
+    color: #565656 !important;
+}
 

@@ -5,7 +5,6 @@
  */
 package br.senac.pi3.servlets.Filter;
 
-import br.senac.pi3.entidades.UsuarioEntidade;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

@@ -35,7 +35,7 @@ public class VendaServlet extends HttpServlet {
             throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-
+        System.out.println("aqui");
         if (VendaDAO.vendas.isEmpty()) {
             List<EstoqueEntidade> produtos = estoqueDao.todos();
             ClienteEntidade cliente = new ClienteEntidade(1, "Allan Santos", "allanzi@hotmail.com", "424.768.828-60", "(11) 95802-6276", "Rua Cipolandia", 178, "05774-260");

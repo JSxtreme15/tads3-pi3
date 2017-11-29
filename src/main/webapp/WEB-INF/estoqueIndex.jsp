@@ -65,7 +65,7 @@
         </main>
 
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped darken-3 pulse" data-position="left" data-delay="50" data-tooltip="Novo Produto" href="${pageContext.request.contextPath}/protegido/estoque/cadastro">
+            <a class="btn-floating btn-large tooltipped darken-3" data-position="left" data-delay="50" data-tooltip="Novo Produto" href="${pageContext.request.contextPath}/protegido/estoque/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>

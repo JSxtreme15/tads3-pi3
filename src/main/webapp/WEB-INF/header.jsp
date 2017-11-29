@@ -40,6 +40,7 @@
             <li><a href="${pageContext.request.contextPath}/protegido/vendas">Vendas</a></li>
             <li><a href="${pageContext.request.contextPath}/protegido/filiais">Filiais</a></li>
             <li><a href="${pageContext.request.contextPath}/protegido/suporte">Suporte</a></li>
+            <li class="divider"></li>
             <li><a href="${pageContext.request.contextPath}/logout">Sair</a></li>
         </ul>
         <a href="" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
