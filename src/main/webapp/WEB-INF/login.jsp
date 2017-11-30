@@ -18,17 +18,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
 
     </head>
-    <body>
+    <body style="overflow-x: hidden!important">
         <script>
             var pattern = Trianglify({
                 width: window.innerWidth,
                 height: window.innerHeight,
-                x_colors: 'Spectral'
+                x_colors: 'Greens',
+                y_colors: 'match_x',
             });
             document.body.appendChild(pattern.canvas())
         </script>
         <div class="section"></div>
-
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+        
+        
 
         <main>
             <center>
