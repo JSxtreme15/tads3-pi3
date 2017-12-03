@@ -5,6 +5,10 @@
  *
  * Made By MaterializeCSS.com
  */
+footer div.center p {
+    color: #fff;
+}
+
 .em-breve {
     transform: rotateZ(35deg);
     color: red;
@@ -207,6 +211,7 @@ main#tela-inicio .material-icons:hover {
 
 canvas {
     position: absolute;
+    top: 0;
     z-index: -1;
 }
 

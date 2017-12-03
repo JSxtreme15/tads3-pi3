@@ -19,22 +19,10 @@
 
     </head>
     <body style="overflow-x: hidden!important">
-        <script>
-            var pattern = Trianglify({
-                width: window.innerWidth,
-                height: window.innerHeight,
-                x_colors: 'Greens',
-                y_colors: 'match_x',
-            });
-            document.body.appendChild(pattern.canvas())
-        </script>
         <div class="section"></div>
         <div class="section"></div>
         <div class="section"></div>
-        <div class="section"></div>
-        <div class="section"></div>
-        
-        
+        <div class="section"></div>        
 
         <main>
             <center>
@@ -88,6 +76,17 @@
                 <p>&copy; 2017 - Tardis</p>
             </div>
         </footer>
+        
+        <script>
+            var pattern = Trianglify({
+                width: window.innerWidth,
+                height: document.querySelector('body').offsetHeight+14,
+                x_colors: 'Greens',
+                y_colors: 'match_x',
+            });
+            document.body.appendChild(pattern.canvas())
+        </script>
+        
         <c:if test="${not empty mensagemErro}">
             <script>
                 alert("${mensagemErro}");
