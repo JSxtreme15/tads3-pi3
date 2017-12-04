@@ -13,6 +13,6 @@ import java.util.List;
  *
  * @author allan
  */
-public class VendaDAO {
+public class VendaDAO extends Conexao {
     public static List<VendaEntidade> vendas = new ArrayList<VendaEntidade>();
 }

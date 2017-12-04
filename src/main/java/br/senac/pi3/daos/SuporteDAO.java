@@ -18,16 +18,14 @@ import java.util.logging.Logger;
  *
  * @author allan
  */
-public class SuporteDAO {
-    
-    public Conexao conexao = new Conexao();
+public class SuporteDAO extends Conexao{
     
     public List<SuporteEntidade> todos() {
         List<SuporteEntidade> suporte = new ArrayList<SuporteEntidade>();
         
         try {
             String sql = "SELECT * FROM suporte ORDER BY id DESC";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             
             ResultSet resultado = comando.executeQuery();
             
@@ -47,7 +45,7 @@ public class SuporteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(SuporteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -57,7 +55,7 @@ public class SuporteDAO {
         
         try {
             String sql = "SELECT * FROM suporte WHERE id = ?";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, id);
             
             ResultSet resultado = comando.executeQuery();
@@ -78,7 +76,7 @@ public class SuporteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(SuporteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -87,7 +85,7 @@ public class SuporteDAO {
     public boolean cadastrar(SuporteEntidade suporte) {
         try {
             String sql = "INSERT INTO suporte (id, nome, email, telefone) values(?,?,?,?);";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setString(1, suporte.getNome());
             comando.setString(2, suporte.getEmail());
@@ -100,7 +98,7 @@ public class SuporteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(SuporteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -109,7 +107,7 @@ public class SuporteDAO {
     public boolean atualizar(int id, SuporteEntidade suporte) {
         try {
             String sql = "UPDATE suporte SET nome = ?, email = ? WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setString(1, suporte.getNome());
             comando.setString(2, suporte.getEmail());
@@ -122,7 +120,7 @@ public class SuporteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(SuporteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -132,7 +130,7 @@ public class SuporteDAO {
     public boolean excluir(int suporteId) {
         try {
             String sql = "DELETE FROM suporte WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, suporteId);
 
             comando.execute();
@@ -142,7 +140,7 @@ public class SuporteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(SuporteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;

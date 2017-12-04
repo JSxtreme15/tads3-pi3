@@ -18,16 +18,14 @@ import java.util.logging.Logger;
  *
  * @author allan
  */
-public class ClienteDAO {
-    
-    public Conexao conexao = new Conexao();
+public class ClienteDAO extends Conexao{
     
     public List<ClienteEntidade> todos(Object filialId) {
         List<ClienteEntidade> clientes = new ArrayList<ClienteEntidade>();
         
         try {
             String sql = "SELECT * FROM clientes where filial_id = ? ORDER BY id DESC";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setObject(1, filialId);
             
             ResultSet resultado = comando.executeQuery();
@@ -52,7 +50,7 @@ public class ClienteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -63,7 +61,7 @@ public class ClienteDAO {
         
         try {
             String sql = "SELECT * FROM clientes where filial_id = ? ORDER BY id DESC";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setObject(1, filialId);
             
             ResultSet resultado = comando.executeQuery();
@@ -81,7 +79,7 @@ public class ClienteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -91,7 +89,7 @@ public class ClienteDAO {
         
         try {
             String sql = "SELECT * FROM clientes WHERE id = ?";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, id);
             
             ResultSet resultado = comando.executeQuery();
@@ -116,7 +114,7 @@ public class ClienteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -126,7 +124,7 @@ public class ClienteDAO {
         
         try {
             String sql = "SELECT * FROM clientes WHERE email = ?";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setString(1, email);
             
             ResultSet resultado = comando.executeQuery();
@@ -151,7 +149,7 @@ public class ClienteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -160,7 +158,7 @@ public class ClienteDAO {
     public boolean cadastrar(ClienteEntidade cliente) {
         try {
             String sql = "INSERT INTO clientes (nome, email, telefone, cpf, cep, logradouro, numero, filial_id) values(?,?,?,?,?,?,?,?);";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setString(1, cliente.getNome());
             comando.setString(2, cliente.getEmail());
@@ -178,7 +176,7 @@ public class ClienteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -187,7 +185,7 @@ public class ClienteDAO {
     public boolean atualizar(int id, ClienteEntidade cliente) {
         try {
             String sql = "UPDATE clientes SET nome = ?, email = ?, telefone = ?, cpf = ?, cep = ?, logradouro = ?, numero = ? WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setString(1, cliente.getNome());
             comando.setString(2, cliente.getEmail());
@@ -205,7 +203,7 @@ public class ClienteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -215,7 +213,7 @@ public class ClienteDAO {
     public boolean excluir(int clienteId) {
         try {
             String sql = "DELETE FROM clientes WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, clienteId);
 
             comando.execute();
@@ -225,7 +223,7 @@ public class ClienteDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;

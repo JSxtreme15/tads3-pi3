@@ -18,16 +18,14 @@ import java.util.logging.Logger;
  *
  * @author allan
  */
-public class FornecedorDAO {
-    
-    public Conexao conexao = new Conexao();
+public class FornecedorDAO extends Conexao{
     
     public List<FornecedorEntidade> todos(Object filialId) {
         List<FornecedorEntidade> fornecedores = new ArrayList<FornecedorEntidade>();
         
         try {
             String sql = "SELECT * FROM fornecedores WHERE filial_id = ? ORDER BY id DESC";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setObject(1, filialId);
             ResultSet resultado = comando.executeQuery();
             
@@ -51,7 +49,7 @@ public class FornecedorDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -61,7 +59,7 @@ public class FornecedorDAO {
         
         try {
             String sql = "SELECT * FROM fornecedores WHERE id = ?";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, id);
             
             ResultSet resultado = comando.executeQuery();
@@ -86,7 +84,7 @@ public class FornecedorDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -95,7 +93,7 @@ public class FornecedorDAO {
     public boolean cadastrar(FornecedorEntidade fornecedor) {
         try {
             String sql = "INSERT INTO fornecedores (nome, email, telefone, cnpj, cep, logradouro, numero, filial_id) values(?,?,?,?,?,?,?,?);";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setString(1, fornecedor.getNome());
             comando.setString(2, fornecedor.getEmail());
@@ -113,7 +111,7 @@ public class FornecedorDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -122,7 +120,7 @@ public class FornecedorDAO {
     public boolean atualizar(int id, FornecedorEntidade fornecedor) {
         try {
             String sql = "UPDATE fornecedores SET nome = ?, email = ?, telefone = ?, cnpj = ?, cep = ?, logradouro = ?, numero = ? WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setString(1, fornecedor.getNome());
             comando.setString(2, fornecedor.getEmail());
@@ -140,7 +138,7 @@ public class FornecedorDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -150,7 +148,7 @@ public class FornecedorDAO {
     public boolean excluir(int fornecedorId) {
         try {
             String sql = "DELETE FROM fornecedores WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, fornecedorId);
 
             comando.execute();
@@ -160,7 +158,7 @@ public class FornecedorDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FornecedorDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;

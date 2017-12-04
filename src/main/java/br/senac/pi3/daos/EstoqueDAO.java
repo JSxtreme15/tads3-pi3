@@ -18,16 +18,14 @@ import java.util.logging.Logger;
  *
  * @author allan
  */
-public class EstoqueDAO {
-    
-    public Conexao conexao = new Conexao();
+public class EstoqueDAO extends Conexao{
     
     public List<EstoqueEntidade> todos(Object filialId) {
         List<EstoqueEntidade> estoque = new ArrayList<EstoqueEntidade>();
         
         try {
             String sql = "SELECT * FROM estoque where filial_id = ? ORDER BY id DESC";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setObject(1, filialId);
             ResultSet resultado = comando.executeQuery();
             
@@ -50,7 +48,7 @@ public class EstoqueDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -62,7 +60,7 @@ public class EstoqueDAO {
         
         try {
             String sql = "SELECT * FROM estoque where filial_id = ? ORDER BY id DESC";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setObject(1, filialId);
             ResultSet resultado = comando.executeQuery();
             
@@ -80,7 +78,7 @@ public class EstoqueDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -90,7 +88,7 @@ public class EstoqueDAO {
         
         try {
             String sql = "SELECT * FROM estoque WHERE id = ?";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, id);
             
             ResultSet resultado = comando.executeQuery();
@@ -114,7 +112,7 @@ public class EstoqueDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -125,7 +123,7 @@ public class EstoqueDAO {
         
         try {
             String sql = "SELECT * FROM estoque WHERE codigo = ?";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, codigo);
             
             ResultSet resultado = comando.executeQuery();
@@ -149,7 +147,7 @@ public class EstoqueDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -158,7 +156,7 @@ public class EstoqueDAO {
     public boolean cadastrar(EstoqueEntidade estoque) {
         try {
             String sql = "INSERT INTO estoque (codigo, nome, valor, desenvolvedora, plataforma, quantidade, filial_id) values(?,?,?,?,?,?,?);";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setInt(1, estoque.getCodigo());
             comando.setString(2, estoque.getNome());
@@ -175,7 +173,7 @@ public class EstoqueDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -184,7 +182,7 @@ public class EstoqueDAO {
     public boolean atualizar(int id, EstoqueEntidade estoque) {
         try {
             String sql = "UPDATE estoque SET codigo = ?, nome = ?, valor = ?, desenvolvedora = ?, plataforma = ?, quantidade = ? WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setInt(1, estoque.getCodigo());
             comando.setString(2, estoque.getNome());
@@ -201,7 +199,7 @@ public class EstoqueDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -210,7 +208,7 @@ public class EstoqueDAO {
     public boolean atualizarQtde(int id, int qtde) {
         try {
             String sql = "UPDATE estoque SET quantidade = ? WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             
             comando.setInt(1, qtde);
             comando.setInt(2, id);
@@ -222,7 +220,7 @@ public class EstoqueDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -232,7 +230,7 @@ public class EstoqueDAO {
     public boolean excluir(int estoqueId) {
         try {
             String sql = "DELETE FROM estoque WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, estoqueId);
 
             comando.execute();
@@ -242,7 +240,7 @@ public class EstoqueDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;

@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author allan
  */
-public class Conexao {
+public abstract class Conexao {
 
     public static String status = "Não conectou...";
 

@@ -18,16 +18,14 @@ import java.util.logging.Logger;
  *
  * @author allan
  */
-public class FilialDAO {
-    
-    public Conexao conexao = new Conexao();
+public class FilialDAO extends Conexao{
     
     public List<FilialEntidade> todos() {
         List<FilialEntidade> filiais = new ArrayList<FilialEntidade>();
         
         try {
             String sql = "SELECT * FROM filiais ORDER BY id DESC";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             
             ResultSet resultado = comando.executeQuery();
             
@@ -51,7 +49,7 @@ public class FilialDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FilialDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -61,7 +59,7 @@ public class FilialDAO {
         
         try {
             String sql = "SELECT * FROM filiais WHERE id = ?";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, id);
             
             ResultSet resultado = comando.executeQuery();
@@ -86,7 +84,7 @@ public class FilialDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FilialDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -96,7 +94,7 @@ public class FilialDAO {
         
         try {
             String sql = "SELECT * FROM filiais WHERE email = ?";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setString(1, email);
             
             ResultSet resultado = comando.executeQuery();
@@ -121,7 +119,7 @@ public class FilialDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FilialDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return null;
@@ -130,7 +128,7 @@ public class FilialDAO {
     public boolean cadastrar(FilialEntidade filial) {
         try {
             String sql = "INSERT INTO filiais (nome, cnpj, cep, localidade, logradouro, numero, telefone) values(?,?,?,?,?,?,?);";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setString(1, filial.getNome());
             comando.setString(2, filial.getCnpj());
@@ -147,7 +145,7 @@ public class FilialDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FilialDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -156,7 +154,7 @@ public class FilialDAO {
     public boolean atualizar(int id, FilialEntidade filial) {
         try {
             String sql = "UPDATE filiais SET nome = ?, cnpj = ?, cep = ?, localidade = ?, logradouro = ?, numero = ?, telefone = ? WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setString(1, filial.getNome());
             comando.setString(2, filial.getCnpj());
@@ -174,7 +172,7 @@ public class FilialDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FilialDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
@@ -184,7 +182,7 @@ public class FilialDAO {
     public boolean excluir(int filialId) {
         try {
             String sql = "DELETE FROM filiais WHERE id = ?;";
-            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setInt(1, filialId);
 
             comando.execute();
@@ -194,7 +192,7 @@ public class FilialDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FilialDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexao.FecharConexao();
+            FecharConexao();
         }
         
         return false;
