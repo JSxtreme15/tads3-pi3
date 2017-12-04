@@ -32,6 +32,7 @@ public class VendaCadastroServlet extends HttpServlet {
 
     ClienteDAO clienteDao = new ClienteDAO();
     EstoqueDAO estoqueDao = new EstoqueDAO();
+    VendaDAO vendaDao = new VendaDAO();
     
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -55,13 +56,15 @@ public class VendaCadastroServlet extends HttpServlet {
         Date data = new Date();
         BigDecimal total = obterTotal(produtos);
         String pagamento = request.getParameter("pagamento");
+        Object vendedor = request.getSession().getAttribute("usuario_id");
+        Object filialId = request.getSession().getAttribute("filial_id");
         
-        System.out.println(cliente.getNome());
-        VendaEntidade venda = new VendaEntidade(data, cliente, produtos, total, pagamento);
+        VendaEntidade venda = new VendaEntidade(data, cliente, produtos, total, pagamento, vendedor, filialId);
+        
+        vendaDao.cadastrar(venda);
         
         removerProdutosEstoque(produtos);
         
-        VendaDAO.vendas.add(venda);
         response.sendRedirect(request.getContextPath() + "/protegido/vendas");
     }
 

@@ -15,9 +15,9 @@ import java.sql.SQLException;
  */
 public abstract class Conexao {
 
-    public static String status = "Não conectou...";
+    protected static String status = "Não conectou...";
 
-    public static java.sql.Connection obterConexao() {
+    protected static java.sql.Connection obterConexao() {
 
         Connection conexao = null;
 
@@ -55,11 +55,11 @@ public abstract class Conexao {
         return null;
     }
 
-    public static String obterStatus() {
+    protected static String obterStatus() {
         return status;
     }
 
-    public static boolean FecharConexao() {
+    protected static boolean FecharConexao() {
 
         try {
             Conexao.obterConexao().close();
@@ -70,7 +70,7 @@ public abstract class Conexao {
         }
     }
 
-    public static java.sql.Connection ReiniciarConexao() {
+    protected static java.sql.Connection ReiniciarConexao() {
  
         FecharConexao(); 
         return Conexao.obterConexao();

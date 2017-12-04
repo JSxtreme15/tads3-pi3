@@ -5,10 +5,10 @@
  */
 package br.senac.pi3.servlets.vendas;
 
-import br.senac.pi3.daos.EstoqueDAO;
+import br.senac.pi3.daos.VendaDAO;
 import br.senac.pi3.daos.VendaDAO;
 import br.senac.pi3.entidades.ClienteEntidade;
-import br.senac.pi3.entidades.EstoqueEntidade;
+import br.senac.pi3.entidades.VendaEntidade;
 import br.senac.pi3.entidades.VendaEntidade;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -28,28 +28,15 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "VendaServlet", urlPatterns = {"/protegido/vendas"})
 public class VendaServlet extends HttpServlet {
 
-    public EstoqueDAO estoqueDao = new EstoqueDAO();
+    public VendaDAO vendaDao = new VendaDAO();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        System.out.println("aqui");
-        if (VendaDAO.vendas.isEmpty()) {
-            List<EstoqueEntidade> produtos = estoqueDao.todos(request.getSession().getAttribute("filial_id"));
-            ClienteEntidade cliente = new ClienteEntidade(1, "Allan Santos", "allanzi@hotmail.com", "424.768.828-60", "(11) 95802-6276", "Rua Cipolandia", 178, "05774-260");
-            VendaEntidade venda1 = new VendaEntidade(1, new Date(), cliente, produtos, new BigDecimal("6171.21"), "Cartão de Débito");
-            VendaEntidade venda2 = new VendaEntidade(1, new Date(), cliente, produtos, new BigDecimal("6171.21"), "Cartão de Débito");
-            VendaEntidade venda3 = new VendaEntidade(1, new Date(), cliente, produtos, new BigDecimal("6171.21"), "Cartão de Débito");
-            VendaEntidade venda4 = new VendaEntidade(1, new Date(), cliente, produtos, new BigDecimal("6171.21"), "Cartão de Débito");
-            VendaDAO.vendas.add(venda1);
-            VendaDAO.vendas.add(venda2);
-            VendaDAO.vendas.add(venda3);
-            VendaDAO.vendas.add(venda4);
-        }
 
-        request.setAttribute("vendas", VendaDAO.vendas);
+        request.setAttribute("vendas", vendaDao.todos(request.getSession().getAttribute("filial_id")));
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/vendaIndex.jsp");
         dispatcher.forward(request, response);
     }

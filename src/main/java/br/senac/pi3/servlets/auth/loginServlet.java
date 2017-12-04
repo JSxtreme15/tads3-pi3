@@ -46,6 +46,7 @@ public class loginServlet extends HttpServlet {
             HttpSession sessao = request.getSession();
             sessao.setAttribute("usuario", usuario);
             sessao.setAttribute("usuario_nome", usuario.getNome());
+            sessao.setAttribute("usuario_id", usuario.getId());
             sessao.setAttribute("filial_id", usuario.getFilialId());
             response.sendRedirect(request.getContextPath() + "/protegido/telaInicial");
         } else {

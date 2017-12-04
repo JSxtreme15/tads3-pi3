@@ -14,6 +14,7 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public final class UsuarioEntidade {
 
+    private int id;
     private String nome;
     private String email;
     private String telefone;
@@ -21,6 +22,16 @@ public final class UsuarioEntidade {
     private String hashSenha;
     private int filialId;
     private List<String> papeis;
+
+    public UsuarioEntidade(int id, String nome, String email, String telefone, String username, String hashSenha, int filialId) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.username = username;
+        this.hashSenha = hashSenha;
+        this.filialId = filialId;
+    }
 
     public UsuarioEntidade(String nomeCompleto, String username, String senha, List<String> papeis, int filial_id) {
         this.nome = nomeCompleto;
@@ -30,11 +41,20 @@ public final class UsuarioEntidade {
         this.filialId = filial_id;
     }
 
-    public UsuarioEntidade(String username, String nome, String senha, int filial_id) {
+    public UsuarioEntidade(String username, String nome, String senha, int filial_id, int id) {
         this.username = username;
         this.nome = nome;
         this.hashSenha = senha;
         this.filialId = filial_id;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getFilialId() {

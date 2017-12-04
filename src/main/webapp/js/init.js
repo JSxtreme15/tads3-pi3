@@ -35,7 +35,7 @@
             $("#search-product").attr('disabled', true);
             $('#search-product + .progress-button').css('display', 'block');
 
-            const codigo = $("#codigo");
+            const codigo = $("#codigo-search");
             const url = window.location.href.replace("/cadastro", "/");
 
             $.ajax({

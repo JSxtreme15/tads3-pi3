@@ -23,22 +23,53 @@ public class VendaEntidade {
     public List<EstoqueEntidade> produtos;
     public BigDecimal valor;
     public String pagamento;
+    public Object vendedor;
+    public Object FilialId;
 
-    public VendaEntidade(int id, Date data, ClienteEntidade cliente, List<EstoqueEntidade> produto, BigDecimal valor, String pagamento) {
+    public VendaEntidade(int id, Date data, ClienteEntidade cliente, List<EstoqueEntidade> produtos, BigDecimal valor, String pagamento, Object vendedor, Object FilialId) {
         this.id = id;
         this.data = data;
         this.cliente = cliente;
-        this.produtos = produto;
+        this.produtos = produtos;
         this.valor = valor;
         this.pagamento = pagamento;
+        this.vendedor = vendedor;
+        this.FilialId = FilialId;
     }
     
-    public VendaEntidade(Date data, ClienteEntidade cliente, List<EstoqueEntidade> produto, BigDecimal valor, String pagamento) {
+    public VendaEntidade(int id, Date data, ClienteEntidade cliente, BigDecimal valor, String pagamento, Object vendendor) {
+        this.id = id;
+        this.data = data;
+        this.cliente = cliente;
+        this.valor = valor;
+        this.pagamento = pagamento;
+        this.vendedor = vendendor;
+    }
+    
+    public VendaEntidade(Date data, ClienteEntidade cliente, List<EstoqueEntidade> produto, BigDecimal valor, String pagamento, Object vendedor, Object filialId) {
         this.data = data;
         this.cliente = cliente;
         this.produtos = produto;
         this.valor = valor;
         this.pagamento = pagamento;
+        this.vendedor = vendedor;
+        this.FilialId = filialId;
+    }
+
+    public Object getFilialId() {
+        return FilialId;
+    }
+
+    public void setFilialId(Object FilialId) {
+        this.FilialId = FilialId;
+    }
+
+    public Object getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Object vendedor) {
+        this.vendedor = vendedor;
     }
 
     public int getId() {

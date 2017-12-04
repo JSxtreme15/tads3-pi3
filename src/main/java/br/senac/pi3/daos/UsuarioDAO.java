@@ -5,6 +5,9 @@
  */
 package br.senac.pi3.daos;
 
+import static br.senac.pi3.daos.Conexao.FecharConexao;
+import static br.senac.pi3.daos.Conexao.obterConexao;
+import br.senac.pi3.entidades.UsuarioEntidade;
 import br.senac.pi3.entidades.UsuarioEntidade;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,7 +35,8 @@ public class UsuarioDAO extends Conexao {
                         resultado.getString("username"),
                         resultado.getString("nome"),
                         resultado.getString("senha"),
-                        resultado.getInt("filial_id")
+                        resultado.getInt("filial_id"),
+                        resultado.getInt("id")
                 );
 
                 return usuario;
@@ -46,6 +50,40 @@ public class UsuarioDAO extends Conexao {
             FecharConexao();
         }
 
+        return null;
+    }
+    
+    public UsuarioEntidade find(int id) {
+        
+        try {
+            String sql = "SELECT * FROM usuarios WHERE id = ?";
+            PreparedStatement comando = obterConexao().prepareStatement(sql);
+            comando.setInt(1, id);
+            
+            ResultSet resultado = comando.executeQuery();
+            
+            if (resultado.next()) {                
+                UsuarioEntidade usuario = new UsuarioEntidade(
+                    resultado.getInt("id"),
+                    resultado.getString("nome"),
+                    resultado.getString("email"),
+                    resultado.getString("telefone"),
+                    resultado.getString("username"),
+                    resultado.getString("senha"),
+                    resultado.getInt("filial_id")
+                );
+                
+                return usuario;
+            }
+            
+            return null;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            FecharConexao();
+        }
+        
         return null;
     }
 }
