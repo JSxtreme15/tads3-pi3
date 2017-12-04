@@ -45,8 +45,9 @@ public class FonecedoresCadastroServlet extends HttpServlet{
         String cep = request.getParameter("cep");
         String logradouro = request.getParameter("logradouro");
         int numero = Integer.parseInt(request.getParameter("numero"));
+        Object filialId = request.getSession().getAttribute("filial_id");
         
-        FornecedorEntidade novoFornecedor = new FornecedorEntidade(nome, email, telefone, cnpj, cep, logradouro, numero);
+        FornecedorEntidade novoFornecedor = new FornecedorEntidade(nome, email, telefone, cnpj, cep, logradouro, numero, filialId);
         fornecedorDao.cadastrar(novoFornecedor);
         
         response.sendRedirect(request.getContextPath() + "/protegido/fornecedores");

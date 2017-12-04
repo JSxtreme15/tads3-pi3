@@ -28,7 +28,7 @@ public class FornecedorServlet extends HttpServlet {
             throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        request.setAttribute("fornecedores", fornecedorDao.todos());
+        request.setAttribute("fornecedores", fornecedorDao.todos(request.getSession().getAttribute("filial_id")));
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/fornecedorIndex.jsp");
         dispatcher.forward(request, response);
     }

@@ -18,6 +18,7 @@ public class FornecedorEntidade {
     public String logradouro;
     public int numeroResidencia;
     public String cep;
+    public Object filialId;
 
     public FornecedorEntidade(int id, String nome, String email, String telefone, String cnpj, String cep, String logradouro, int numeroResidencia) {
         this.id = id;
@@ -30,7 +31,7 @@ public class FornecedorEntidade {
         this.cep = cep;
     }
     
-    public FornecedorEntidade(String nome, String email, String telefone, String cnpj, String cep, String logradouro, int numeroResidencia) {
+    public FornecedorEntidade(String nome, String email, String telefone, String cnpj, String cep, String logradouro, int numeroResidencia, Object filiaId) {
         this.nome = nome;
         this.email = email;
         this.cnpj = cnpj;
@@ -38,6 +39,15 @@ public class FornecedorEntidade {
         this.logradouro = logradouro;
         this.numeroResidencia = numeroResidencia;
         this.cep = cep;
+        this.filialId = filiaId;
+    }
+
+    public Object getFilialId() {
+        return filialId;
+    }
+
+    public void setFilialId(Object filialId) {
+        this.filialId = filialId;
     }
 
     public int getId() {

@@ -28,7 +28,7 @@ public class EstoqueServlet extends HttpServlet {
             throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        request.setAttribute("estoque", estoqueDao.todos());
+        request.setAttribute("estoque", estoqueDao.todos(request.getSession().getAttribute("filial_id")));
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/estoqueIndex.jsp");
         dispatcher.forward(request, response);
     }

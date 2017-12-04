@@ -19,19 +19,30 @@ public final class UsuarioEntidade {
     private String telefone;
     private String username;
     private String hashSenha;
+    private int filialId;
     private List<String> papeis;
 
-    public UsuarioEntidade(String nomeCompleto, String username, String senha, List<String> papeis) {
+    public UsuarioEntidade(String nomeCompleto, String username, String senha, List<String> papeis, int filial_id) {
         this.nome = nomeCompleto;
         this.username = username;
         setSenha(senha);
         this.papeis = papeis;
+        this.filialId = filial_id;
     }
 
-    public UsuarioEntidade(String username, String nome, String senha) {
+    public UsuarioEntidade(String username, String nome, String senha, int filial_id) {
         this.username = username;
         this.nome = nome;
         this.hashSenha = senha;
+        this.filialId = filial_id;
+    }
+
+    public int getFilialId() {
+        return filialId;
+    }
+
+    public void setFilialId(int filialId) {
+        this.filialId = filialId;
     }
 
     public String getEmail() {

@@ -44,8 +44,9 @@ public class ClienteCadastroServlet extends HttpServlet{
         String cep = request.getParameter("cep");
         String logradouro = request.getParameter("logradouro");
         int numero = Integer.parseInt(request.getParameter("numero"));
+        Object filialId = request.getSession().getAttribute("filial_id");
         
-        ClienteEntidade novoCliente = new ClienteEntidade(nome, email, cpf, telefone, logradouro, numero, cep);
+        ClienteEntidade novoCliente = new ClienteEntidade(nome, email, cpf, telefone, logradouro, numero, cep, filialId);
         clientesDao.cadastrar(novoCliente);
         
         response.sendRedirect(request.getContextPath() + "/protegido/clientes");

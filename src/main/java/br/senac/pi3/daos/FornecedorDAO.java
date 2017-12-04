@@ -22,16 +22,16 @@ public class FornecedorDAO {
     
     public Conexao conexao = new Conexao();
     
-    public List<FornecedorEntidade> todos() {
+    public List<FornecedorEntidade> todos(Object filialId) {
         List<FornecedorEntidade> fornecedores = new ArrayList<FornecedorEntidade>();
         
         try {
-            String sql = "SELECT * FROM fornecedores ORDER BY id DESC";
+            String sql = "SELECT * FROM fornecedores WHERE filial_id = ? ORDER BY id DESC";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
-            
+            comando.setObject(1, filialId);
             ResultSet resultado = comando.executeQuery();
             
-            while (resultado.next()) {                
+            while (resultado.next()) {
                 FornecedorEntidade fornecedor = new FornecedorEntidade(
                     resultado.getInt("id"),
                     resultado.getString("nome"),
@@ -42,7 +42,7 @@ public class FornecedorDAO {
                     resultado.getString("logradouro"),
                     resultado.getInt("numero")
                 );
-                
+
                 fornecedores.add(fornecedor);
             }
             
@@ -94,7 +94,7 @@ public class FornecedorDAO {
     
     public boolean cadastrar(FornecedorEntidade fornecedor) {
         try {
-            String sql = "INSERT INTO fornecedores (nome, email, telefone, cnpj, cep, logradouro, numero) values(?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO fornecedores (nome, email, telefone, cnpj, cep, logradouro, numero, filial_id) values(?,?,?,?,?,?,?,?);";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
 
             comando.setString(1, fornecedor.getNome());
@@ -104,6 +104,7 @@ public class FornecedorDAO {
             comando.setString(5, fornecedor.getCep());
             comando.setString(6, fornecedor.getLogradouro());
             comando.setInt(7, fornecedor.getNumeroResidencia());
+            comando.setObject(8, fornecedor.getFilialId());
 
             comando.execute();
             

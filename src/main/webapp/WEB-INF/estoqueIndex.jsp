@@ -36,7 +36,7 @@
 
 
         <main class="container-fluid">
-            <table>
+            <table class="striped responsive-table">
                 <thead>
                     <tr>
                         <th>Código</th>
@@ -54,7 +54,7 @@
                         <tr>
                             <td><c:out value="${estoque.getCodigo()}" /></td>
                             <td><c:out value="${estoque.getNome()}" /></td>
-                            <td><c:out value="${estoque.getValor()}" /></td>
+                            <td><c:out value="${estoque.getValorFormatado()}" /></td>
                             <td><c:out value="${estoque.getDesenvolvedora()}" /></td>
                             <td><c:out value="${estoque.getPlataforma()}" /></td>
                             <td><c:out value="${estoque.getQuantidade()}" /></td>

@@ -37,7 +37,7 @@ public class VendaServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         System.out.println("aqui");
         if (VendaDAO.vendas.isEmpty()) {
-            List<EstoqueEntidade> produtos = estoqueDao.todos();
+            List<EstoqueEntidade> produtos = estoqueDao.todos(request.getSession().getAttribute("filial_id"));
             ClienteEntidade cliente = new ClienteEntidade(1, "Allan Santos", "allanzi@hotmail.com", "424.768.828-60", "(11) 95802-6276", "Rua Cipolandia", 178, "05774-260");
             VendaEntidade venda1 = new VendaEntidade(1, new Date(), cliente, produtos, new BigDecimal("6171.21"), "Cartão de Débito");
             VendaEntidade venda2 = new VendaEntidade(1, new Date(), cliente, produtos, new BigDecimal("6171.21"), "Cartão de Débito");

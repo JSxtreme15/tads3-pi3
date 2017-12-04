@@ -51,7 +51,7 @@
 
                         <div class="input-field">
                             <label for="email">E-mail do cliente</label>
-                            <input id="email-search" type="email" class="validate" name="email-cliente" required="required" data-length="100" maxlength="100">
+                            <input id="email-search" type="email" class="validate" name="email-cliente" required="required">
 
                             <button type="button" class="btn btn-large waves-effect btn-products-search" id="search-client">Pesquisar</button>
 
@@ -90,12 +90,13 @@
 
                         <div class="input-field">
                             <label for="code">Código do produto</label>
-                            <input id="codigo" type="text" class="validate" data-mask="00000000">
+                            <input id="codigo-search" type="text" class="validate" data-mask="00000000">
 
                             <button type="button" class="btn btn-large waves-effect btn-products-search" id="search-product">Pesquisar</button>
                             <div class="progress progress-button">
                                 <div class="indeterminate"></div>
                             </div>
+                            <br>
                         </div>
 
                         <div id="cards">

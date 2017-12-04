@@ -47,8 +47,9 @@ public class FornecedoresEditarServlet extends HttpServlet{
         String cep = request.getParameter("cep");
         String logradouro = request.getParameter("logradouro");
         int numero = Integer.parseInt(request.getParameter("numero"));
+        Object filialId = request.getSession().getAttribute("filial_id");
         
-        FornecedorEntidade fornecedorAtualizado = new FornecedorEntidade(nome, email, telefone, cnpj, cep, logradouro, numero);
+        FornecedorEntidade fornecedorAtualizado = new FornecedorEntidade(nome, email, telefone, cnpj, cep, logradouro, numero, filialId);
         int id = Integer.parseInt(request.getParameter("id"));
         fornecedoresDao.atualizar(id, fornecedorAtualizado);
         

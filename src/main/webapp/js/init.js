@@ -125,14 +125,40 @@
 
         });
 
-        $('table').DataTable({
-            language: getTranslate(),
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ],
-            stateSave: true
-        });
+
+        if ($('table').length) {
+            $('table').DataTable({
+                language: getTranslate(),
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
+                stateSave: true
+            });
+        }
+
+        if ($('#codigo-search').length) {
+            $('#codigo-search').autocomplete({
+                data: autocompleteProdutoAjax(),
+                limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+                onAutocomplete: function (val) {
+                    // Callback function when value is autcompleted.
+                },
+                minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+            });
+        }
+        
+        
+        if ($('#email-search').length) {
+            $('#email-search').autocomplete({
+                data: autocompleteClienteAjax(),
+                limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+                onAutocomplete: function (val) {
+                    // Callback function when value is autcompleted.
+                },
+                minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+            });
+        }
 
     }); // end of document ready
 })(jQuery); // end of jQuery name space
@@ -209,4 +235,65 @@ function addClient() {
             alert('Ops algo deu errado!');
         }
     });
+}
+
+function autocompleteProdutoAjax() {
+
+    const url = window.location.href.replace("/vendas/cadastro", "/");
+    let codes = [];
+
+    $.ajax({
+        type: 'GET',
+        url: url + "vendas/produto/autocomplete",
+        async: false,
+        cache: false,
+        timeout: 30000,
+        success: function (data, textStatus, jqXHR) {
+            $.each(data, (key, item) => {
+                codes.push(codes[item.codigo] = '');
+            });
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('Ops algo deu errado!');
+        }
+    });
+
+    return convArrToObj(codes);
+}
+
+function autocompleteClienteAjax() {
+
+    const url = window.location.href.replace("/vendas/cadastro", "/");
+    let codes = [];
+
+    $.ajax({
+        type: 'GET',
+        url: url + "vendas/cliente/autocomplete",
+        async: false,
+        cache: false,
+        timeout: 30000,
+        success: function (data, textStatus, jqXHR) {
+            $.each(data, (key, item) => {
+                codes.push(codes[item.email] = '');
+            });
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('Ops algo deu errado!');
+        }
+    });
+
+    return convArrToObj(codes);
+}
+
+var convArrToObj = function (array) {
+    var thisEleObj = new Object();
+    if (typeof array == "object") {
+        for (var i in array) {
+            var thisEle = convArrToObj(array[i]);
+            thisEleObj[i] = thisEle;
+        }
+    } else {
+        thisEleObj = array;
+    }
+    return thisEleObj;
 }

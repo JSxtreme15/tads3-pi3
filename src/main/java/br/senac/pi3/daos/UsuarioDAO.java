@@ -16,34 +16,36 @@ import java.util.logging.Logger;
  *
  * @author allan
  */
-public class UsuarioDAO extends Conexao{
+public class UsuarioDAO extends Conexao {
+
     public UsuarioEntidade findWhereUsername(String username) {
-        
+
         try {
             String sql = "SELECT * FROM usuarios WHERE username = ?";
             PreparedStatement comando = obterConexao().prepareStatement(sql);
             comando.setString(1, username);
-            
+
             ResultSet resultado = comando.executeQuery();
-            
-            if (resultado.next()) {                
+
+            if (resultado.next()) {
                 UsuarioEntidade usuario = new UsuarioEntidade(
-                        resultado.getString("username"), 
-                        resultado.getString("nome"), 
-                        resultado.getString("senha")
+                        resultado.getString("username"),
+                        resultado.getString("nome"),
+                        resultado.getString("senha"),
+                        resultado.getInt("filial_id")
                 );
 
                 return usuario;
             }
-            
+
             return null;
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(EstoqueDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             FecharConexao();
         }
-        
+
         return null;
     }
 }

@@ -22,12 +22,13 @@ public class ClienteDAO {
     
     public Conexao conexao = new Conexao();
     
-    public List<ClienteEntidade> todos() {
+    public List<ClienteEntidade> todos(Object filialId) {
         List<ClienteEntidade> clientes = new ArrayList<ClienteEntidade>();
         
         try {
-            String sql = "SELECT * FROM clientes ORDER BY id DESC";
+            String sql = "SELECT * FROM clientes where filial_id = ? ORDER BY id DESC";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            comando.setObject(1, filialId);
             
             ResultSet resultado = comando.executeQuery();
             
@@ -41,6 +42,35 @@ public class ClienteDAO {
                     resultado.getString("logradouro"),
                     resultado.getInt("numero"),
                     resultado.getString("cep")
+                );
+                
+                clientes.add(cliente);
+            }
+            
+            return clientes;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexao.FecharConexao();
+        }
+        
+        return null;
+    }
+    
+    public List<ClienteEntidade> todosAutoComplete(Object filialId) {
+        List<ClienteEntidade> clientes = new ArrayList<ClienteEntidade>();
+        
+        try {
+            String sql = "SELECT * FROM clientes where filial_id = ? ORDER BY id DESC";
+            PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
+            comando.setObject(1, filialId);
+            
+            ResultSet resultado = comando.executeQuery();
+            
+            while (resultado.next()) {                
+                ClienteEntidade cliente = new ClienteEntidade(
+                    resultado.getString("email")
                 );
                 
                 clientes.add(cliente);
@@ -129,7 +159,7 @@ public class ClienteDAO {
     
     public boolean cadastrar(ClienteEntidade cliente) {
         try {
-            String sql = "INSERT INTO clientes (nome, email, telefone, cpf, cep, logradouro, numero) values(?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO clientes (nome, email, telefone, cpf, cep, logradouro, numero, filial_id) values(?,?,?,?,?,?,?,?);";
             PreparedStatement comando = conexao.obterConexao().prepareStatement(sql);
 
             comando.setString(1, cliente.getNome());
@@ -139,6 +169,7 @@ public class ClienteDAO {
             comando.setString(5, cliente.getCep());
             comando.setString(6, cliente.getLogradouro());
             comando.setInt(7, cliente.getNumeroResidencia());
+            comando.setObject(8, cliente.getFilialId());
 
             comando.execute();
             

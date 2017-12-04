@@ -35,6 +35,9 @@
                                 <div class="input-field col s12 center">
                                     <h4>Astec Games</h4>
                                 </div>
+                                <c:if test="${not empty mensagemErro}">
+                                    <div class="center red-text">Usuário e/ou Senha errado (s)</div
+                                </c:if>
                             </div>
 
                             <div class='row'>
@@ -76,22 +79,16 @@
                 <p>&copy; 2017 - Tardis</p>
             </div>
         </footer>
-        
+
         <script>
             var pattern = Trianglify({
                 width: window.innerWidth,
-                height: document.querySelector('body').offsetHeight+14,
+                height: document.querySelector('body').offsetHeight + 14,
                 x_colors: 'Greens',
                 y_colors: 'match_x',
             });
             document.body.appendChild(pattern.canvas())
         </script>
-        
-        <c:if test="${not empty mensagemErro}">
-            <script>
-                alert("${mensagemErro}");
-            </script>
-        </c:if>
         <script>
             document.addEventListener('load', function () {
                 // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered

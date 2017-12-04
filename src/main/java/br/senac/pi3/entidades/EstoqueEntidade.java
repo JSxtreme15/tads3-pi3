@@ -5,6 +5,8 @@
  */
 package br.senac.pi3.entidades;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author Joao Sergio
@@ -17,6 +19,7 @@ public class EstoqueEntidade {
     public String desenvolvedora;
     public String plataforma;
     public int quantidade;
+    public Object filialId;
 
     public EstoqueEntidade(int id, int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade) {
         this.id = id;
@@ -28,17 +31,27 @@ public class EstoqueEntidade {
         this.quantidade = quantidade;
     }
     
-    public EstoqueEntidade(int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade) {
+    public EstoqueEntidade(int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade, Object filialId) {
         this.codigo = codigo;
         this.nome = nome;
         this.valor = valor;
         this.desenvolvedora = desenvolvedora;
         this.plataforma = plataforma;
         this.quantidade = quantidade;
+        this.filialId = filialId;
+    }
+    
+    public EstoqueEntidade(int codigo, String nome) {
+        this.codigo = codigo;
+        this.nome = nome;
     }
 
-    public EstoqueEntidade(String id, String codigo, String nome, float valor, String desenvolvedora, String plataforma, int numero) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Object getFilialId() {
+        return filialId;
+    }
+
+    public void setFilialId(Object filialId) {
+        this.filialId = filialId;
     }
 
     public int getId() {
@@ -95,5 +108,9 @@ public class EstoqueEntidade {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+    
+    public String getValorFormatado() {
+        return NumberFormat.getCurrencyInstance().format(getValor());
     }
 }

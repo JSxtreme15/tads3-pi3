@@ -32,8 +32,9 @@ public class ClienteCadastroApiServlet extends HttpServlet{
         String email = request.getParameter("email");
         String telefone = request.getParameter("telefone");
         String cpf = request.getParameter("cpf");
+        Object filialId = request.getSession().getAttribute("filial_id");
         
-        ClienteEntidade novoCliente = new ClienteEntidade(nome, email, telefone, cpf);
+        ClienteEntidade novoCliente = new ClienteEntidade(nome, email, telefone, cpf, filialId);
         clienteDao.cadastrar(novoCliente);
         
         String json = new Gson().toJson(clienteDao.findWhereEmail(email));

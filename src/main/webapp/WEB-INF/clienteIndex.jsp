@@ -60,8 +60,8 @@
                             <td><c:out value="${cliente.getLogradouro()}" /></td>
                             <td><c:out value="${cliente.getNumeroResidencia()}" /></td>
                             <td><c:out value="${cliente.getCep()}" /></td>
-                            <td><a href="${pageContext.request.contextPath}/protegido/clientes/editar?id=${cliente.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a></td>
-                            <td><a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/clientes/excluir?id=${cliente.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
+                            <td><a href="${pageContext.request.contextPath}/protegido/clientes/editar?id=${cliente.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
+                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/clientes/excluir?id=${cliente.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>

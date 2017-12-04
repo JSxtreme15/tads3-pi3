@@ -40,8 +40,9 @@ public class EstoqueCadastroServlet extends HttpServlet{
         String desenvolvedora = request.getParameter("desenvolvedora");
         String plataforma = request.getParameter("plataforma");
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
+        Object filialId = request.getSession().getAttribute("filial_id");
         
-        EstoqueEntidade novoEstoque = new EstoqueEntidade(codigo, nome, valor, desenvolvedora, plataforma, quantidade);
+        EstoqueEntidade novoEstoque = new EstoqueEntidade(codigo, nome, valor, desenvolvedora, plataforma, quantidade, filialId);
         estoqueDao.cadastrar(novoEstoque);
         
         response.sendRedirect(request.getContextPath() + "/protegido/estoque");

@@ -50,8 +50,8 @@
                         <tr>
                             <td><c:out value="${fornecedor.getNome()}" /></td>
                             <td><c:out value="${fornecedor.getCnpj()}" /></td>
-                            <td><c:out value="${forncecedor.getEmail()}" /></td>
-                            <td><c:out value="${forncecedor.getTelefone()}" /></td>
+                            <td><c:out value="${fornecedor.getEmail()}" /></td>
+                            <td><c:out value="${fornecedor.getTelefone()}" /></td>
                             <td><a href="${pageContext.request.contextPath}/protegido/fornecedores/editar?id=${fornecedor.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
                                 <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/fornecedores/excluir?id=${fornecedor.getId()}"><i class="material-icons left">delete</i>Deletar</a></td>
                         </tr>

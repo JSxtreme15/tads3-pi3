@@ -46,8 +46,9 @@ public class ClienteEditarServlet extends HttpServlet{
         String cep = request.getParameter("cep");
         String logradouro = request.getParameter("logradouro");
         int numero = Integer.parseInt(request.getParameter("numero"));
+        Object filialId = request.getSession().getAttribute("filial_id");
         
-        ClienteEntidade clienteAtualizado = new ClienteEntidade(nome, email, cpf, telefone, logradouro, numero, cep);
+        ClienteEntidade clienteAtualizado = new ClienteEntidade(nome, email, cpf, telefone, logradouro, numero, cep, filialId);
         int id = Integer.parseInt(request.getParameter("id"));
         clientesDao.atualizar(id, clienteAtualizado);
         
