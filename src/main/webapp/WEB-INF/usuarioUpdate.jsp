@@ -56,6 +56,17 @@
                             <label for="telefone">Telefone</label>
                             <input name="telefone" id="telefone" type="text" class="validate" required="required" data-length="15" maxlength="15" data-mask="(00) 00000-0000" value="${usuario.getTelefone()}">
                         </div>
+                        
+                        <div class="input-field col s12 m12 l12">
+                            <select id="perfil" name="perfil">
+                                <option value="" disabled selected>Selecione Perfil</option>
+                                <option value="Caixa">Caixa</option>
+                                <option value="Comercial">Comercial</option>
+                                <option value="Gerente">Gerente</option>
+                                <option value="Administrador">Administrador</option>
+                            </select>
+                        </div>
+                        
 
                         <div class="input-field right">
                             <a href="${pageContext.request.contextPath}/protegido/usuario" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
