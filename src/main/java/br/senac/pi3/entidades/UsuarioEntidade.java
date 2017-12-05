@@ -5,7 +5,6 @@
  */
 package br.senac.pi3.entidades;
 
-import java.util.List;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
@@ -20,10 +19,20 @@ public final class UsuarioEntidade {
     private String telefone;
     private String username;
     private String hashSenha;
-    private int filialId;
-    private List<String> papeis;
+    private Object filialId;
+    private String perfil;
 
-    public UsuarioEntidade(int id, String nome, String email, String telefone, String username, String hashSenha, int filialId) {
+    public UsuarioEntidade(String nome, String email, String telefone, String username, String hashSenha, Object filialId, String perfil) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.username = username;
+        setSenha(hashSenha);
+        this.filialId = filialId;
+        this.perfil = perfil;
+    }
+
+    public UsuarioEntidade(int id, String nome, String email, String telefone, String username, String hashSenha, Object filialId, String perfil) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -31,22 +40,31 @@ public final class UsuarioEntidade {
         this.username = username;
         this.hashSenha = hashSenha;
         this.filialId = filialId;
+        this.perfil = perfil;
     }
 
-    public UsuarioEntidade(String nomeCompleto, String username, String senha, List<String> papeis, int filial_id) {
-        this.nome = nomeCompleto;
-        this.username = username;
-        setSenha(senha);
-        this.papeis = papeis;
-        this.filialId = filial_id;
-    }
-
-    public UsuarioEntidade(String username, String nome, String senha, int filial_id, int id) {
+    public UsuarioEntidade(String username, String nome, String senha, int filial_id, int id, String perfil) {
         this.username = username;
         this.nome = nome;
         this.hashSenha = senha;
         this.filialId = filial_id;
         this.id = id;
+        this.perfil = perfil;
+    }
+
+    public UsuarioEntidade(String nome, String email, String telefone, String username) {
+        this.username = username;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
     }
 
     public int getId() {
@@ -57,11 +75,11 @@ public final class UsuarioEntidade {
         this.id = id;
     }
 
-    public int getFilialId() {
+    public Object getFilialId() {
         return filialId;
     }
 
-    public void setFilialId(int filialId) {
+    public void setFilialId(Object filialId) {
         this.filialId = filialId;
     }
 
@@ -109,20 +127,12 @@ public final class UsuarioEntidade {
         this.hashSenha = BCrypt.hashpw(senha, BCrypt.gensalt());
     }
 
-    public List<String> getPapeis() {
-        return papeis;
-    }
-
-    public void setPapeis(List<String> papeis) {
-        this.papeis = papeis;
-    }
-
     public boolean verificarSenha(String senha) {
         return BCrypt.checkpw(senha, hashSenha);
     }
 
-    public boolean temPapel(String papel) {
-        return papeis.contains(papel);
+    public boolean temPerfil(String perfil) {
+        return perfil.equals(this.perfil);
     }
 
 }

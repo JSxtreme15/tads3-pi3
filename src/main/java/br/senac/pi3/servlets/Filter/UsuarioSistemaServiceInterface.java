@@ -15,6 +15,4 @@ public interface UsuarioSistemaServiceInterface {
 
     public UsuarioEntidade autenticar(String username, String senha);
 
-    public boolean autorizado(UsuarioEntidade usuario, String funcionalidade);
-
 }

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : clienteIndex
+    Document   : usuarioIndex
     Created on : 03/10/2017, 20:14:36
     Author     : allan
 --%>
@@ -28,7 +28,7 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/protegido/clientes" class="breadcrumb">Clientes</a>
+                        <a href="${pageContext.request.contextPath}/protegido/usuarios" class="breadcrumb">Usuarios</a>
                     </div>
                 </div>
             </div>
@@ -42,26 +42,20 @@
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Telefone</th>
-                        <th>Cpf</th>
-                        <th>Logradouro</th>
-                        <th>Número</th>
-                        <th>Cep</th>
+                        <th>Username</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <c:forEach items="${clientes}" var="cliente">
+                    <c:forEach items="${usuarios}" var="usuario">
                         <tr>
-                            <td><c:out value="${cliente.getNome()}" /></td>
-                            <td><c:out value="${cliente.getEmail()}" /></td>
-                            <td><c:out value="${cliente.getTelefone()}" /></td>
-                            <td><c:out value="${cliente.getCpf()}" /></td>
-                            <td><c:out value="${cliente.getLogradouro()}" /></td>
-                            <td><c:out value="${cliente.getNumeroResidencia()}" /></td>
-                            <td><c:out value="${cliente.getCep()}" /></td>
-                            <td><a href="${pageContext.request.contextPath}/protegido/clientes/editar?id=${cliente.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
-                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/clientes/excluir?id=${cliente.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
+                            <td><c:out value="${usuario.getNome()}" /></td>
+                            <td><c:out value="${usuario.getEmail()}" /></td>
+                            <td><c:out value="${usuario.getTelefone()}" /></td>
+                            <td><c:out value="${usuario.getUsername()}" /></td>
+                            <td><a href="${pageContext.request.contextPath}/protegido/usuarios/editar?id=${usuario.getId()}" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Editar</a>
+                            <a data-target="delete" class="waves-effect waves-light btn red modal-trigger" id="${pageContext.request.contextPath}/protegido/usuarios/excluir?id=${usuario.getId()}"><i class="material-icons left">delete</i>Excluir</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -71,7 +65,7 @@
         <br/>
 
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large tooltipped darken-3" data-position="left" data-delay="50" data-tooltip="Novo Cliente" href="${pageContext.request.contextPath}/protegido/clientes/cadastro">
+            <a class="btn-floating btn-large tooltipped darken-3" data-position="left" data-delay="50" data-tooltip="Novo Usuario" href="${pageContext.request.contextPath}/protegido/usuarios/cadastro">
                 <i class="large material-icons">add</i>
             </a>
         </div>

@@ -48,6 +48,7 @@ public class loginServlet extends HttpServlet {
             sessao.setAttribute("usuario_nome", usuario.getNome());
             sessao.setAttribute("usuario_id", usuario.getId());
             sessao.setAttribute("filial_id", usuario.getFilialId());
+            sessao.setAttribute("perfil", usuario.getPerfil());
             response.sendRedirect(request.getContextPath() + "/protegido/telaInicial");
         } else {
             request.setAttribute("mensagemErro", "Usuário ou senha inválido");

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : suporteIndex
+    Document   : fornecedorIndex
     Created on : 03/10/2017, 20:14:36
     Author     : allan
 --%>
@@ -18,15 +18,15 @@
         <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <jsp:include page="header.jsp" />
+        <%@ include file="header.jsp" %>
         
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/protegido/suporte" class="breadcrumb">Suporte</a>
-                        <a href="${pageContext.request.contextPath}/protegido/suporte/novoChamado" class="breadcrumb">Novo Chamado</a>
+                        <a href="${pageContext.request.contextPath}/protegido/usuario" class="breadcrumb">Usuario</a>
+                        <a href="${pageContext.request.contextPath}/protegido/usuario/atualizar?id=${usuario.getId()}" class="breadcrumb">Cadastro de Usuario</a>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
         
         <main class="container">
             <div class="row">
-                <form name="form-suporte" action="#" method="POST" class="col s12" accept-charset="UTF-8">
+                <form name="form-usuario" action="#" method="POST" class="col s12" accept-charset="UTF-8">
                     <div class="row">
                         
                         <div class="input-field col s12 m12 l4">
@@ -42,43 +42,49 @@
                             <input name="nome" id="nome" type="text" class="validate" required="required" data-length="150" maxlength="150">
                         </div>
                         
+                        
                         <div class="input-field col s12 m12 l4">
                             <label for="email">E-mail</label>
-                            <input name="email" id="email" type="text" class="validate" required="required" data-length="100" maxlength="100">
+                            <input name="email" id="email" type="email" class="validate" required="required">
                         </div>
                         
                         <div class="input-field col s12 m12 l4">
                             <label for="telefone">Telefone</label>
-                            <input name="telefone" id="telefone" type="text" class="validate" required="required" data-mask="(00) 00000-0000">
+                            <input name="telefone" id="telefone" type="text" class="validate" required="required" data-length="15" maxlength="15" data-mask="(00) 00000-0000">
                         </div>
-                        
-                        <div class="input-field col s12">
-                            <select>
-                                <option value="" disabled selected>Perfil</option>
-                                <option value="1">Comprador</option>
-                                <option value="2">Vendendor</option>
-                                <option value="3">Gerente</option>
-                                <option value="4">Diretor</option>
-                                <option value="5">Super Usuário</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-field col s12">
-                            <select multiple>
-                                <option value="" disabled selected>Filial</option>
-                                <option value="1">Matriz</option>
-                                <option value="2">Minas Gerais</option>
-                                <option value="3">Rio de Janeiro</option>
-                                <option value="3">Bahia</option>
-                            </select>
-                            
-                        </div>
-                        
 
-                        <div class="input-field right">
-                            <a href="${pageContext.request.contextPath}/protegido/suporte" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
-                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Salvar</button>
+                        <div class="input-field col s12 m4 l4">
+                            <label for="username">Username</label>
+                            <input name="username" id="username" type="text" class="validate" required="required" data-length="80" maxlength="80">
                         </div>
+
+                        <div class="input-field col s12 m4 l4">
+                            <label for="senha">Senha</label>
+                            <input name="senha" id="senha" type="password" class="validate" required="required">
+                        </div>
+                        
+                        <div class="input-field col s12 m4 l4">
+                            <label for="confirmacao_senha">Senha Confirmação</label>
+                            <input name="confirmacao_senha" id="confirmacao_senha" type="password" class="validate" required="required">
+                        </div>
+                        
+                        
+                        <div class="input-field col s12 m12 l12">
+                            <select id="perfil" name="perfil">
+                                <option value="" disabled selected>Selecione Perfil</option>
+                                <option value="Caixa">Caixa</option>
+                                <option value="Comercial">Comercial</option>
+                                <option value="Gerente">Gerente</option>
+                                <option value="Administrador">Administrador</option>
+                            </select>
+                        </div>
+
+                    
+                        <div class="input-field right">
+                            <a href="${pageContext.request.contextPath}/protegido/usuario" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Confirmar</button>
+                        </div>
+                            
                     </div>
                 </form>
             </div>

@@ -18,7 +18,7 @@
         <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <jsp:include page="header.jsp"/>
+        <%@ include file="header.jsp" %>
 
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.senac.pi3.servlets.suporte;
+package br.senac.pi3.servlets.usuarios;
 
-import br.senac.pi3.daos.SuporteDAO;
+import br.senac.pi3.daos.UsuarioDAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,18 +18,17 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "SuporteServlet", urlPatterns = { "/protegido/suporte" })
-public class SuporteServlet extends HttpServlet {
+@WebServlet(name = "UsuarioServlet", urlPatterns = { "/protegido/usuarios" })
+public class UsuarioServlet extends HttpServlet {
     
-    public SuporteDAO suporteDao = new SuporteDAO();
+    public UsuarioDAO usuariosDao = new UsuarioDAO();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        request.setAttribute("suporte", suporteDao.todos());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/suporteIndex.jsp");
+        request.setAttribute("usuarios", usuariosDao.todos(request.getSession().getAttribute("filial_id")));
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/usuarioIndex.jsp");
         dispatcher.forward(request, response);
     }
 }

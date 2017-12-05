@@ -73,8 +73,8 @@
             <div class="section"></div>
             <div class="section"></div>
         </main>
-        <hr>
-        <footer>
+        <footer style="position: absolute;bottom: 0;width: 100%;">
+            <hr>
             <div class="center">
                 <p>&copy; 2017 - Tardis</p>
             </div>
@@ -83,7 +83,7 @@
         <script>
             var pattern = Trianglify({
                 width: window.innerWidth,
-                height: document.querySelector('body').offsetHeight + 14,
+                height: window.innerHeight > document.querySelector('body').offsetHeight + 14 ? window.innerHeight : document.querySelector('body').offsetHeight + 14,
                 x_colors: 'Greens',
                 y_colors: 'match_x',
             });

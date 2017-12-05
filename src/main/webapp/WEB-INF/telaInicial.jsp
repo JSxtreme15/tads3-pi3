@@ -21,7 +21,7 @@
         <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body >
-        <jsp:include page="header.jsp" />
+        <%@ include file="header.jsp" %>
 
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">
@@ -43,43 +43,62 @@
 
         <div class="row">
 
-            <div class="col m3 s12">
-                <div class="provider">
-                    
+            <c:if test = "${sessionScope.perfil == 'Comercial' 
+                            || sessionScope.perfil == 'Administrador'
+                            || sessionScope.perfil == 'Gerente'}">
+                <div class="col m3 s12">
+                    <div class="provider">
 
-                    <a name="icones" class="material-icons darken-text tooltipped"  id="fornecedor" data-delay="50" data-tooltip="Fornecedores" href="${pageContext.request.contextPath}/protegido/fornecedores">local_shipping</a>
+                        <a name="icones" class="material-icons darken-text tooltipped"  id="fornecedor" data-delay="50" data-tooltip="Fornecedores" href="${pageContext.request.contextPath}/protegido/fornecedores">local_shipping</a>
 
+                    </div>
                 </div>
-            </div>
+            </c:if>
 
+            <c:if test = "${sessionScope.perfil == 'Comercial' 
+                            || sessionScope.perfil == 'Administrador'
+                            || sessionScope.perfil == 'Gerente'}">
 
-            <div class="col m3 s12">
-                <div class="storage">                         
-                    
-                    <a name="icones" class="material-icons tooltipped" id="estoque" data-delay="50" data-tooltip="Estoque" href="${pageContext.request.contextPath}/protegido/estoque">storage</a>
+                <div class="col m3 s12">
+                    <div class="storage">                         
+
+                        <a name="icones" class="material-icons tooltipped" id="estoque" data-delay="50" data-tooltip="Estoque" href="${pageContext.request.contextPath}/protegido/estoque">list</a>
+                    </div>
                 </div>
-            </div>
+            </c:if>
 
-            <div class="col m3 s12">
-                <div class="client">
-                    
-                    <a name="icones" class="material-icons tooltipped" id="cliente" data-delay="50" data-tooltip="Clientes" href="${pageContext.request.contextPath}/protegido/clientes">group</a>
+            <c:if test = "${sessionScope.perfil == 'Caixa' 
+                            || sessionScope.perfil == 'Administrador'
+                            || sessionScope.perfil == 'Gerente'}">
+                <div class="col m3 s12">
+                    <div class="client">
+
+                        <a name="icones" class="material-icons tooltipped" id="cliente" data-delay="50" data-tooltip="Clientes" href="${pageContext.request.contextPath}/protegido/clientes">group</a>
+                    </div>
                 </div>
-            </div>
+            </c:if>
 
 
-            <div class="col m3 s12">
-                <div class="TI">
-                    
-                    <a name="icones" class="material-icons tooltipped" id="ti" data-delay="50" data-tooltip="TI" href="${pageContext.request.contextPath}/protegido/suporte">computer</a>
+            <c:if test = "${sessionScope.perfil == 'Administrador'}">
+                <div class="col m3 s12">
+                    <div class="TI">
+
+                        <a name="icones" class="material-icons tooltipped" id="ti" data-delay="50" data-tooltip="Filiais" href="${pageContext.request.contextPath}/protegido/filiais">store</a>
+                    </div>
                 </div>
-            </div>
+            </c:if>
         </div>
     </div>
-
+    <br>
 </div>
 </main>
 
+<c:if test="${not empty naoAutorizado}">
+    <script>
+        alert('Sinto Muito, você não possui permissão para acessar!!')
+    </script>
+</c:if>
+    
 <jsp:include page="footer.jsp" />
 
 <!--  Scripts-->

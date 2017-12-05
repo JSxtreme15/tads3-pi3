@@ -20,7 +20,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css"/>
     </head>
     <body>
-        <jsp:include page="header.jsp"/>
+        <%@ include file="header.jsp" %>
 
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">

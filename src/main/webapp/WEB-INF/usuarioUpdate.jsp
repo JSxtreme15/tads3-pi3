@@ -1,5 +1,5 @@
 <%-- 
-    Document   : suporteIndex
+    Document   : fornecedorIndex
     Created on : 03/10/2017, 20:14:36
     Author     : allan
 --%>
@@ -18,41 +18,47 @@
         <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <jsp:include page="header.jsp" />
-        
+        <%@ include file="header.jsp" %>
+
         <nav style="transform: translateY(-21px);" class="teal">
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="${pageContext.request.contextPath}/protegido/telaInicial" class="breadcrumb">Inicío</a>
-                        <a href="${pageContext.request.contextPath}/protegido/suporte" class="breadcrumb">Suporte</a>
-                        <a href="${pageContext.request.contextPath}/protegido/suporte/editar?id=${suporte.getId()}" class="breadcrumb">Edição de Chamado</a>
+                        <a href="${pageContext.request.contextPath}" class="breadcrumb">Inicío</a>
+                        <a href="${pageContext.request.contextPath}/protegido/usuario" class="breadcrumb">Usuario</a>
+                        <a href="${pageContext.request.contextPath}/protegido/usuario/atualizar?id=${usuario.getId()}" class="breadcrumb">Cadastro de Usuario</a>
                     </div>
                 </div>
             </div>
         </nav>
-        
+
         <main class="container">
             <div class="row">
-                <form name="form-suporte" action="#" method="POST" class="col s12" accept-charset="UTF-8">
+                <form name="form-usuario" action="#" method="POST" class="col s12" accept-charset="UTF-8">
                     <div class="row">
-                        <div class="input-field col s12 m12 l4">
+
+                        <div class="input-field col s12 m12 l6">
                             <label for="nome">Nome</label>
-                            <input name="nome" id="nome" type="text" class="validate" required="required" value="${suporte.getNome()}">
+                            <input name="nome" id="nome" type="text" class="validate" required="required" data-length="150" maxlength="150" value="${usuario.getNome()}">
                         </div>
 
-                        <div class="input-field col s12 m12 l4">
-                            <label for="email">Email</label>
-                            <input name="email" id="email" type="email" class="validate" required="required" value="${suporte.getEmail()}">
+                        <div class="input-field col s12 m12 l6">
+                            <label for="email">E-mail</label>
+                            <input name="email" id="email" type="email" class="validate" required="required" value="${usuario.getEmail()}">
                         </div>
-                        
-                        <div class="input-field col s12 m12 l4">
+
+                        <div class="input-field col s12 m12 l6 right">
+                            <label for="username">Username</label>
+                            <input name="username" id="username" type="text" class="validate" required="required" data-length="80" maxlength="80" value="${usuario.getUsername()}">
+                        </div>
+
+                        <div class="input-field col s12 m12 l6 right">
                             <label for="telefone">Telefone</label>
-                            <input name="telefone" id="telefone" type="telefone" class="validate" required="required" value="${suporte.getEmail()}">
+                            <input name="telefone" id="telefone" type="text" class="validate" required="required" data-length="15" maxlength="15" data-mask="(00) 00000-0000" value="${usuario.getTelefone()}">
                         </div>
-                        
+
                         <div class="input-field right">
-                            <a href="${pageContext.request.contextPath}/protegido/suporte" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
+                            <a href="${pageContext.request.contextPath}/protegido/usuario" class="waves-effect waves-light btn grey lighten-3 black-text"><i class="material-icons left">arrow_back</i>Voltar</a>
                             <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>Confirmar</button>
                         </div>
                     </div>
@@ -61,7 +67,7 @@
         </main>
 
         <jsp:include page="footer.jsp" />
-        
+
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.mask.min.js"></script>

@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.senac.pi3.servlets.suporte;
+package br.senac.pi3.servlets.usuarios;
 
-import br.senac.pi3.servlets.suporte.*;
-import br.senac.pi3.daos.SuporteDAO;
-import br.senac.pi3.entidades.SuporteEntidade;
+import br.senac.pi3.daos.UsuarioDAO;
+import br.senac.pi3.entidades.UsuarioEntidade;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,32 +19,36 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-@WebServlet(name = "SuporteesServletNovoChamado", urlPatterns = { "/protegido/suporte/novoChamado" })
-public class SuporteCadastroServlet extends HttpServlet{
-    
-    public SuporteDAO suporte1Dao = new SuporteDAO();
+@WebServlet(name = "UsuarioServletEditar", urlPatterns = { "/protegido/usuarios/editar" })
+public class UsuarioEditarServlet extends HttpServlet{
+    public UsuarioDAO usuariosDao = new UsuarioDAO();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/suporteCreate.jsp");
+        int id = Integer.parseInt(request.getParameter("id"));
+        request.setAttribute("usuario", usuariosDao.find(id));
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/usuarioUpdate.jsp");
         dispatcher.forward(request, response);
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
-
+        
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String telefone = request.getParameter("telefone");
+        String username = request.getParameter("username");
         
-        SuporteEntidade novoSuporte = new SuporteEntidade(nome, email, telefone);
-        suporte1Dao.cadastrar(novoSuporte);
+        UsuarioEntidade usuario = new UsuarioEntidade(nome, email, telefone, username);
+
+        int id = Integer.parseInt(request.getParameter("id"));
+        usuariosDao.atualizar(id, usuario);
         
-        response.sendRedirect(request.getContextPath() + "/protegido/suporte");
+        response.sendRedirect(request.getContextPath() + "/protegido/usuarios");
     }
 }
