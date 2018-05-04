@@ -25,7 +25,7 @@
             </div>
             
             
-            <div class="col l3 s12 right">
+<!--            <div class="col l3 s12 right">
                 <h5 class="white-text">Suporte</h5>
                 <form action="#" method="POST">
                     <select required="required" name="Assunto">
@@ -39,7 +39,7 @@
                         <i class="material-icons right">send</i>
                     </button>
                 </form>
-            </div>
+            </div>-->
             
             
         </div>

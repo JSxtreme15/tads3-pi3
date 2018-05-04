@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.senac</groupId>
-    <artifactId>pi3</artifactId>
+    <artifactId>pi4</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>pi3</name>
+    <name>pi4</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -73,6 +73,14 @@
             <artifactId>commons-email</artifactId>
             <version>1.3.1</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.ckeditor/ckeditor-java-core -->
+        <dependency>
+            <groupId>com.ckeditor</groupId>
+            <artifactId>ckeditor-java-core</artifactId>
+            <version>3.5.3</version>
+        </dependency>
+
 
 
 

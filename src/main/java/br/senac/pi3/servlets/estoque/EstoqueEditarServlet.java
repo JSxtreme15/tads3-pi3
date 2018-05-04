@@ -46,8 +46,11 @@ public class EstoqueEditarServlet extends HttpServlet{
         String desenvolvedora = request.getParameter("desenvolvedora");
         String plataforma = request.getParameter("plataforma");
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-
-        EstoqueEntidade estoqueatualizado = new EstoqueEntidade(id,codigo,nome, valor, desenvolvedora, plataforma, quantidade);
+        String descricao_curta = request.getParameter("descricao_curta");
+        String descricao_longa = request.getParameter("descricao_longa");
+        String imagens = request.getParameter("imagens");
+        
+        EstoqueEntidade estoqueatualizado = new EstoqueEntidade(id,codigo,nome, valor, desenvolvedora, plataforma, quantidade, descricao_curta, descricao_longa, imagens);
         
         //int id = Integer.parseInt(request.getParameter("id"));
         

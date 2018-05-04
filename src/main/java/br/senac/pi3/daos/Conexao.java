@@ -26,16 +26,17 @@ public abstract class Conexao {
 
             Class.forName(driverName);
 
-            String serverName = "35.194.5.64";
+            String serverName = "localhost";
 
-            String database = "pi3";
+            String database = "tardis";
 
             String url = "jdbc:mysql://" + serverName + "/" + database;
 
             String username = "root";
 
-            String password = "root";
-
+            String password = "123456";
+            
+            
             conexao = DriverManager.getConnection(url, username, password);
 
             if (conexao != null) {

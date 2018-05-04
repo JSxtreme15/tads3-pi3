@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="${pageContext.request.contextPath}/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
     </head>
     <body>
         <%@ include file="header.jsp" %>
@@ -37,36 +38,49 @@
                 <form name="form-estoque" action="#" method="POST" class="col s12" accept-charset="UTF-8">
                     <div class="row">
                         
-                        <div class="input-field col s12 m12 l4">
+                        <div class="input-field col12 s12 m12 l4">
                             <label for="nome">Nome</label>
                             <input name="nome" id="nome" type="text" class="validate" required="required" value="${estoque.getNome()}">
                         </div>
                         
                         
-                        <div class="input-field col s12 m12 l4">
+                        <div class="input-field col12 s12 m12 l4">
                             <label for="valor">Valor</label>
                             <input name="valor" id="valor" type="number" class="validate" required="required" data-mask="000.000,00" value="${estoque.getValor()}">
                         </div>
                         
-                        <div class="input-field col s12 m12 l4">
+                        <div class="input-field col12 s12 m12 l4">
                             <label for="desenvolvedora">Desenvolvido Por</label>
                             <input name="desenvolvedora" id="desenvolvedora" type="text" class="validate" required="required" value="${estoque.getDesenvolvedora()}">
                         </div>
 
-                        <div class="input-field col s12 m4 l4">
+                        <div class="input-field col12 s12 m4 l4">
                             <label for="plataforma">Console</label>
                             <input name="plataforma" id="plataforma" type="text" class="validate" required="required"  value="${estoque.getPlataforma()}">
                         </div>
 
-                        <div class="input-field col s12 m4 l4">
+                        <div class="input-field col12 s12 m4 l4">
                             <label for="quantidade">Quant. Estoque</label>
                             <input name="quantidade" id="quantidade" type="number" class="validate" required="required" value="${estoque.getQuantidade()}">
                         </div>
                         
-                        <div class="input-field col s12 m4 l4">
+                        <div class="input-field col12 s12 m4 l4">
                             <label for="codigo">Código</label>
                             <input name="codigo" id="codigo" type="number" class="validate" required="required" data-mask="00000000" value="${estoque.getCodigo()}">
                         </div>
+                        
+                        
+                        <div class="input-field col12 s12 m12 l4">
+                            <label for="descricao_curta">Descrição Curta</label>
+                            <input name="descricao_curta" id="descricao_curta" type="text" class="validate" required="required" value="${estoque.getDescricao_curta()}" >
+                        <br/>                            
+                                               
+                        <textarea name="descricao_longa" id="descricao_longa" rows="20" cols="80">
+                                ${estoque.getDescricao_longa()}
+                            </textarea>
+                            <script>
+                                CKEDITOR.replace('descricao_longa');
+                            </script>
 
                     
                         <div class="input-field right">

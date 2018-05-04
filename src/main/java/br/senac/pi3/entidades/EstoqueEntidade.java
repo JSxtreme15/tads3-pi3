@@ -6,6 +6,7 @@
 package br.senac.pi3.entidades;
 
 import java.text.NumberFormat;
+import static javax.ws.rs.client.Entity.json;
 
 /**
  *
@@ -20,8 +21,12 @@ public class EstoqueEntidade {
     public String plataforma;
     public int quantidade;
     public Object filialId;
+    public String descricao_curta;
+    public String descricao_longa;
+    public String imagens;
+    
 
-    public EstoqueEntidade(int id, int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade) {
+    public EstoqueEntidade(int id, int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade, String descricao_curta, String descricao_longa, String imagens) {
         this.id = id;
         this.codigo = codigo;
         this.nome = nome;
@@ -29,9 +34,12 @@ public class EstoqueEntidade {
         this.desenvolvedora = desenvolvedora;
         this.plataforma = plataforma;
         this.quantidade = quantidade;
+        this.descricao_curta = descricao_curta;
+        this.descricao_longa = descricao_longa;
+        this.imagens = imagens;
     }
     
-    public EstoqueEntidade(int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade, Object filialId) {
+    public EstoqueEntidade(int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade, Object filialId,  String descricao_curta, String descricao_longa, String imagens) {
         this.codigo = codigo;
         this.nome = nome;
         this.valor = valor;
@@ -39,6 +47,9 @@ public class EstoqueEntidade {
         this.plataforma = plataforma;
         this.quantidade = quantidade;
         this.filialId = filialId;
+        this.descricao_curta = descricao_curta;
+        this.descricao_longa = descricao_longa;
+        this.imagens = imagens;
     }
     
     public EstoqueEntidade(int codigo, String nome) {
@@ -113,4 +124,30 @@ public class EstoqueEntidade {
     public String getValorFormatado() {
         return NumberFormat.getCurrencyInstance().format(getValor());
     }
+
+    public String getDescricao_curta() {
+        return descricao_curta;
+    }
+
+    public void setDescricao_curta(String descricao_curta) {
+        this.descricao_curta = descricao_curta;
+    }
+
+    public String getDescricao_longa() {
+        return descricao_longa;
+    }
+
+    public void setDescricao_longa(String descricao_longa) {
+        this.descricao_longa = descricao_longa;
+    }
+
+    public String getImagens() {
+        return imagens;
+    }
+
+    public void setImagens(String imagens) {
+        this.imagens = imagens;
+    }
+
+    
 }

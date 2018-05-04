@@ -37,7 +37,10 @@ public class EstoqueDAO extends Conexao{
                     resultado.getFloat("valor"),
                     resultado.getString("desenvolvedora"),
                     resultado.getString("plataforma"),
-                    resultado.getInt("quantidade")
+                    resultado.getInt("quantidade"),
+                    resultado.getString("descricao_curta"),
+                    resultado.getString("descricao_longa"),    
+                    resultado.getString("imagens")    
                 );
                 
                 estoque.add(estoq);
@@ -101,7 +104,10 @@ public class EstoqueDAO extends Conexao{
                     resultado.getFloat("valor"),
                     resultado.getString("desenvolvedora"),
                     resultado.getString("plataforma"),
-                    resultado.getInt("quantidade")
+                    resultado.getInt("quantidade"),
+                    resultado.getString("descricao_curta"),
+                    resultado.getString("descricao_longa"),    
+                    resultado.getString("imagens")
                 );
                 
                 return estoque;
@@ -136,7 +142,10 @@ public class EstoqueDAO extends Conexao{
                     resultado.getFloat("valor"),
                     resultado.getString("desenvolvedora"),
                     resultado.getString("plataforma"),
-                    resultado.getInt("quantidade")
+                    resultado.getInt("quantidade"),
+                    resultado.getString("descricao_curta"),
+                    resultado.getString("descricao_longa"),    
+                    resultado.getString("imagens")    
                 );
 
                 return estoque;
@@ -155,7 +164,7 @@ public class EstoqueDAO extends Conexao{
     
     public boolean cadastrar(EstoqueEntidade estoque) {
         try {
-            String sql = "INSERT INTO estoque (codigo, nome, valor, desenvolvedora, plataforma, quantidade, filial_id) values(?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO estoque (codigo, nome, valor, desenvolvedora, plataforma, quantidade, filial_id, descricao_curta, descricao_longa, imagens) values(?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setInt(1, estoque.getCodigo());
@@ -164,7 +173,10 @@ public class EstoqueDAO extends Conexao{
             comando.setString(4, estoque.getDesenvolvedora());
             comando.setString(5, estoque.getPlataforma());
             comando.setInt(6, estoque.getQuantidade());
-            comando.setObject(7, estoque.getFilialId());
+            comando.setObject(7, "1");
+            comando.setString(8, estoque.getDescricao_curta());
+            comando.setString(9, estoque.getDescricao_longa());
+            comando.setString(10, estoque.getImagens());
 
             comando.execute();
             
@@ -181,7 +193,7 @@ public class EstoqueDAO extends Conexao{
     
     public boolean atualizar(int id, EstoqueEntidade estoque) {
         try {
-            String sql = "UPDATE estoque SET codigo = ?, nome = ?, valor = ?, desenvolvedora = ?, plataforma = ?, quantidade = ? WHERE id = ?;";
+            String sql = "UPDATE estoque SET codigo = ?, nome = ?, valor = ?, desenvolvedora = ?, plataforma = ?, quantidade = ?, descricao_curta = ?, descricao_longa = ?, imagens = ? WHERE id = ?;";
             PreparedStatement comando = obterConexao().prepareStatement(sql);
 
             comando.setInt(1, estoque.getCodigo());
@@ -190,7 +202,10 @@ public class EstoqueDAO extends Conexao{
             comando.setString(4, estoque.getDesenvolvedora());
             comando.setString(5, estoque.getPlataforma());
             comando.setInt(6, estoque.getQuantidade());
-            comando.setInt(7, id);
+            comando.setString(7, estoque.getDescricao_curta());
+            comando.setString(8, estoque.getDescricao_longa());
+            comando.setString(9, estoque.getImagens());
+            comando.setInt(10, id);
 
             comando.execute();
             

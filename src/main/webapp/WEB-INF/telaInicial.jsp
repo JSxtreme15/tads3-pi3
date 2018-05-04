@@ -48,45 +48,11 @@
                             || sessionScope.perfil == 'Gerente'}">
                 <div class="col m3 s12">
                     <div class="provider">
-
-                        <a name="icones" class="material-icons darken-text tooltipped"  id="fornecedor" data-delay="50" data-tooltip="Fornecedores" href="${pageContext.request.contextPath}/protegido/fornecedores">local_shipping</a>
-
+                        <img id="grafico" src=http://www.gametech.ru/sadm_images/00jin/2014/august/27/2.png ><img>
                     </div>
                 </div>
             </c:if>
 
-            <c:if test = "${sessionScope.perfil == 'Comercial' 
-                            || sessionScope.perfil == 'Administrador'
-                            || sessionScope.perfil == 'Gerente'}">
-
-                <div class="col m3 s12">
-                    <div class="storage">                         
-
-                        <a name="icones" class="material-icons tooltipped" id="estoque" data-delay="50" data-tooltip="Estoque" href="${pageContext.request.contextPath}/protegido/estoque">list</a>
-                    </div>
-                </div>
-            </c:if>
-
-            <c:if test = "${sessionScope.perfil == 'Caixa' 
-                            || sessionScope.perfil == 'Administrador'
-                            || sessionScope.perfil == 'Gerente'}">
-                <div class="col m3 s12">
-                    <div class="client">
-
-                        <a name="icones" class="material-icons tooltipped" id="cliente" data-delay="50" data-tooltip="Clientes" href="${pageContext.request.contextPath}/protegido/clientes">group</a>
-                    </div>
-                </div>
-            </c:if>
-
-
-            <c:if test = "${sessionScope.perfil == 'Administrador'}">
-                <div class="col m3 s12">
-                    <div class="TI">
-
-                        <a name="icones" class="material-icons tooltipped" id="ti" data-delay="50" data-tooltip="Filiais" href="${pageContext.request.contextPath}/protegido/filiais">store</a>
-                    </div>
-                </div>
-            </c:if>
         </div>
     </div>
     <br>
