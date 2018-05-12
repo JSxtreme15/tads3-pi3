@@ -173,10 +173,10 @@ public class EstoqueDAO extends Conexao{
             comando.setString(4, estoque.getDesenvolvedora());
             comando.setString(5, estoque.getPlataforma());
             comando.setInt(6, estoque.getQuantidade());
-            comando.setObject(7, "1");
+            comando.setObject(7, "2");
             comando.setString(8, estoque.getDescricao_curta());
             comando.setString(9, estoque.getDescricao_longa());
-            comando.setString(10, estoque.getImagens());
+            comando.setObject(10, estoque.getImagens());
 
             comando.execute();
             
@@ -204,7 +204,7 @@ public class EstoqueDAO extends Conexao{
             comando.setInt(6, estoque.getQuantidade());
             comando.setString(7, estoque.getDescricao_curta());
             comando.setString(8, estoque.getDescricao_longa());
-            comando.setString(9, estoque.getImagens());
+            comando.setObject(9, estoque.getImagens());
             comando.setInt(10, id);
 
             comando.execute();

@@ -23,10 +23,10 @@ public class EstoqueEntidade {
     public Object filialId;
     public String descricao_curta;
     public String descricao_longa;
-    public String imagens;
+    public Object imagens;
     
 
-    public EstoqueEntidade(int id, int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade, String descricao_curta, String descricao_longa, String imagens) {
+    public EstoqueEntidade(int id, int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade, String descricao_curta, String descricao_longa, Object imagens) {
         this.id = id;
         this.codigo = codigo;
         this.nome = nome;
@@ -39,7 +39,7 @@ public class EstoqueEntidade {
         this.imagens = imagens;
     }
     
-    public EstoqueEntidade(int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade, Object filialId,  String descricao_curta, String descricao_longa, String imagens) {
+    public EstoqueEntidade(int codigo, String nome, float valor, String desenvolvedora, String plataforma, int quantidade, Object filialId,  String descricao_curta, String descricao_longa, Object imagens) {
         this.codigo = codigo;
         this.nome = nome;
         this.valor = valor;
@@ -141,11 +141,11 @@ public class EstoqueEntidade {
         this.descricao_longa = descricao_longa;
     }
 
-    public String getImagens() {
+    public Object getImagens() {
         return imagens;
     }
 
-    public void setImagens(String imagens) {
+    public void setImagens(Object imagens) {
         this.imagens = imagens;
     }
 

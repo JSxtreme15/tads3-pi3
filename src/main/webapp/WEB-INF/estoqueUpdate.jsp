@@ -56,7 +56,7 @@
 
                         <div class="input-field col12 s12 m4 l4">
                             <label for="plataforma">Console</label>
-                            <input name="plataforma" id="plataforma" type="text" class="validate" required="required"  value="${estoque.getPlataforma()}">
+                            <input name="plataforma" id="plataforma" type="text" class="validate" value="${estoque.getPlataforma()}">
                         </div>
 
                         <div class="input-field col12 s12 m4 l4">
@@ -69,6 +69,10 @@
                             <input name="codigo" id="codigo" type="number" class="validate" required="required" data-mask="00000000" value="${estoque.getCodigo()}">
                         </div>
                         
+                        <div class="input-field col12 s12 m12 l4">
+                            <label for="imagens">Imagens</label>
+                            <input name="imagens" id="imagens" type="text" class="validate" required="required" placeholder="Insira os Links Separados por ;" value="${estoque.getImagens()}">
+                        </div>                        
                         
                         <div class="input-field col12 s12 m12 l4">
                             <label for="descricao_curta">Descrição Curta</label>

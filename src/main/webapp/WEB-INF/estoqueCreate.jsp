@@ -53,11 +53,11 @@
                         <div class="input-field col12 s12 m12 l4">
                             <label for="desenvolvedora">Desenvolvido Por</label>
                             <input name="desenvolvedora" id="desenvolvedora" type="text" class="validate" required="required" data-length="80" maxlength="80">
-                        </div>
+                        </div>                       
 
                         <div class="input-field col12 s12 m12 l4">
                             <label for="plataforma">Console</label>
-                            <input name="plataforma" id="plataforma" type="text" class="validate" required="required" data-length="80" maxlength="80">
+                            <input name="plataforma" id="plataforma" type="text" class="validate" data-length="80" maxlength="80">
                         </div>
 
                         <div class="input-field col12 s12 m12 l4">

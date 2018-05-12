@@ -8,11 +8,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <title>Astec Games</title>
-        <link rel="icon" type="imagem/png" href="http://ap.imagensbrasil.org/images/2017/10/19/astec.png" />     
+        <link rel="icon" type="imagem/png" href="http://ap.imagensbrasil.org/images/2017/10/19/astec.png" />
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 
         <!-- CSS  -->
@@ -20,7 +25,7 @@
         <link href="${pageContext.request.contextPath}/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="${pageContext.request.contextPath}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
-    <body >
+    <body>
         <%@ include file="header.jsp" %>
 
         <nav style="transform: translateY(-21px);" class="teal">
@@ -46,12 +51,80 @@
             <c:if test = "${sessionScope.perfil == 'Comercial' 
                             || sessionScope.perfil == 'Administrador'
                             || sessionScope.perfil == 'Gerente'}">
-                <div class="col m3 s12">
-                    <div class="provider">
-                        <img id="grafico" src=http://www.gametech.ru/sadm_images/00jin/2014/august/27/2.png ><img>
-                    </div>
+                <div class="col12 m3 s12">
+                   <div id="container"></div>
+                   <script>
+                       Highcharts.chart('container', {
+
+                    title: {
+                      text: 'Venda Mensal de Consoles'
+                    },
+
+                    subtitle: {
+                      text: ''
+                    },
+
+                    yAxis: {
+                      title: {
+                        text: 'Valor Faturado'
+                      }
+                    },
+                    legend: {
+                      layout: 'vertical',
+                      align: 'right',
+                      verticalAlign: 'middle'
+                    },
+                    
+                    xAxis: {
+                        type: 'datetime'
+                    },
+
+                    plotOptions: {
+                      series: {
+                        label: {
+                          connectorAllowed: false
+                        },
+                        pointStart: Date.UTC(2017, 8, 1),
+                        pointIntervalUnit: 'month'
+                      }
+                    },
+
+                    series: [{
+                      name: 'Playstation 4',
+                      data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+                    }, {
+                      name: 'Xbox One',
+                      data: [24916, 24064, 29742, 29851, 32490, 30282, 40434, 45987]
+                    }, {
+                      name: 'WII U',
+                      data: [11744, 17722, 16005, 19771, 20185, 24377, 26945, 31088]
+                      }],
+                      
+
+                    responsive: {
+                      rules: [{
+                        condition: {
+                          maxWidth: 500
+                        },
+                        chartOptions: {
+                          legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                          }
+                        }
+                      }]
+                    }
+
+                  });
+                  
+                  
+                </script>        
+                    
                 </div>
             </c:if>
+            
+            
 
         </div>
     </div>

@@ -40,7 +40,7 @@ public class EstoqueCadastroServlet extends HttpServlet{
         String desenvolvedora = request.getParameter("desenvolvedora");
         String plataforma = request.getParameter("plataforma");
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-        Object filialId = ("1");
+        Object filialId = ("2");
         String descricao_curta = request.getParameter("descricao_curta");
         String descricao_longa = request.getParameter("descricao_longa");
         String imagens = request.getParameter("imagens");
